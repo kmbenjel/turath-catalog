@@ -124,7 +124,7 @@ row anywhere open. This dataset makes it one, with the evidence for each value.
 ### Source data
 
 The editions are those of a 16,700-volume library of Arabic PDF scans assembled and checked by the
-curator in 2025–2026. For each edition, values come from, in order of strength:
+curator. For each edition, values come from, in order of strength:
 
 | source (`field_sources`) | what it is | editions using it |
 |---|---|---|

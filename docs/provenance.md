@@ -6,8 +6,12 @@ left out. The numbers are those of release 0.1.0 (`build-report.json`).
 ## The editions
 
 The editions are the printed books (and a few manuscript copies, lithographs, theses and offprints) of
-a 16,700-volume library of Arabic PDF scans, checked one by one in 2025–2026. A scan file is never part of
-the dataset; only its byte size is kept (`edition_files`), so that anyone holding a copy can recognise it.
+a 16,700-volume library of Arabic PDF scans. Each edition's values come from its own scan (the title page,
+read by eye for 2,230 editions, or the imprint page), from a catalog record tied to the scan by its exact byte
+size, or from the Shamela card of the same edition; the stronger source gives the value (the table below
+gives the order), and editions whose sources were found to disagree are held out until the title page settles
+them. A scan file is never part of the dataset; only its byte size is kept (`edition_files`), so that anyone
+holding a copy can recognise it.
 
 ## Sources of values
 
