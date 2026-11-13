@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kmbenjel/turath-catalog/schema/authors.schema.json",
+  "title": "turath-catalog authors",
+  "description": "One row per author. Two people who share a name form are two rows when their death years differ.",
+  "type": "object",
+  "properties": {
+    "author_id": {
+      "description": "Stable id: `a_` + first 10 hex digits of sha1(`author_key` or `author_key|death_ah`).",
+      "type": "string",
+      "pattern": "^a_[0-9a-f]{10}$"
+    },
+    "name_ar": {
+      "description": "The name by which the author is cited (shuhra), as on the editions.",
+      "type": "string"
+    },
+    "full_name_ar": {
+      "description": "Full name (ism, nasab, kunya, nisba) when a source gives it.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "full_name_source": {
+      "description": "Source of full_name_ar.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "title_page",
+        "imprint_page",
+        "catalog_record",
+        "shamela_card",
+        "shamela_author",
+        "file_label",
+        "user",
+        null
+      ]
+    },
+    "death_ah": {
+      "description": "Death year, Hijri.",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 1450
+    },
+    "death_ce_from": {
+      "description": "First Gregorian year that the Hijri death year overlaps.",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 600,
+      "maximum": 2030
+    },
+    "death_ce_to": {
+      "description": "Last Gregorian year that the Hijri death year overlaps (equal to or one more than death_ce_from).",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 600,
+      "maximum": 2030
+    },
+    "century_ah": {
+      "description": "Hijri century of death (from death_ah, else from a catalog record).",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 15
+    },
+    "death_source": {
+      "description": "`shamela_book`: the Shamela author record of a Shamela book matched to one of the author's works; `author_table`: the same name's year on another of the author's books, or Shamela's author table when name and century agree.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "shamela_book",
+        "author_table",
+        "user",
+        null
+      ]
+    },
+    "death_confidence": {
+      "description": "`high`: every edition that gives a year agrees and the year is in the recorded century; `medium`: a single witness.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        null
+      ]
+    },
+    "n_works": {
+      "description": "Number of the author's works in the dataset.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "openiti_author_uri": {
+      "description": "OpenITI author URI.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}[A-Za-z]+$"
+    },
+    "wikidata_qid": {
+      "description": "Wikidata item of the author, through Wikidata's Shamela author id (P12435), with the death year checked.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^Q\\d+$"
+    },
+    "ext_ids": {
+      "description": "`;`-separated `scheme:id` (`shamela_author` = al-Maktaba al-Shamila author id).",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([a-z_]+:[^;:\\s]+)(;[a-z_]+:[^;:\\s]+)*$"
+    }
+  },
+  "required": [
+    "author_id",
+    "name_ar",
+    "n_works"
+  ],
+  "additionalProperties": false
+}

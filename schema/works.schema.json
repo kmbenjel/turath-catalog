@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kmbenjel/turath-catalog/schema/works.schema.json",
+  "title": "turath-catalog works",
+  "description": "One row per work (a text by an author), whatever the number of its editions in the dataset.",
+  "type": "object",
+  "properties": {
+    "work_id": {
+      "description": "Stable id: `w_` + first 10 hex digits of sha1(`title_key|author_key`).",
+      "type": "string",
+      "pattern": "^w_[0-9a-f]{10}$"
+    },
+    "title_ar": {
+      "description": "Title of the work in Arabic, as on the best-attested edition.",
+      "type": "string"
+    },
+    "alt_titles_ar": {
+      "description": "Other titles of the work, `;`-separated (titles written «A = B» are split).",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "author_id": {
+      "description": "The work's author (authors.author_id). Empty for anonymous works and collections.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^a_[0-9a-f]{10}$"
+    },
+    "author_name_ar": {
+      "description": "The author's name as cited (denormalised from authors.name_ar for convenience).",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "category_ar": {
+      "description": "Subject category, one of the 40 categories of al-Maktaba al-Shamila.",
+      "type": "string"
+    },
+    "category_en": {
+      "description": "English name of the category.",
+      "type": "string"
+    },
+    "openiti_uri": {
+      "description": "OpenITI book URI (2025.1.9 release) of the same work.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}[A-Za-z]+\\.[A-Za-z0-9]+$"
+    },
+    "openiti_confidence": {
+      "description": "How the OpenITI link was made: `high` = same death year, same title, author name agrees; `medium` = same death year, one title is a prefix of the other (3+ words), author agrees.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        null
+      ]
+    },
+    "wikidata_qid": {
+      "description": "Wikidata item of the work, through the Wikidata item of a Shamela edition (P12239 → P629).",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^Q\\d+$"
+    },
+    "ext_ids": {
+      "description": "Other catalogs' ids for the work, `;`-separated `scheme:id` (scheme `shamela` = al-Maktaba al-Shamila book id).",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([a-z_]+:[^;:\\s]+)(;[a-z_]+:[^;:\\s]+)*$"
+    },
+    "n_editions": {
+      "description": "Number of editions of this work in the dataset.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "confidence": {
+      "description": "Confidence of the work's identity (title and author): the best confidence among its editions.",
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    }
+  },
+  "required": [
+    "work_id",
+    "title_ar",
+    "category_ar",
+    "category_en",
+    "n_editions",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

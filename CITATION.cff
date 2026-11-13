@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "turath-catalog: classical Arabic works and their printed editions"
+abstract: >-
+  An open bibliographic dataset (metadata only) of classical Arabic works and their printed editions:
+  works, editions (editor, publisher, place, year, edition number, volumes, pages), authors with Hijri
+  death years and their Gregorian ranges, editors and their roles, and manuscript copies with their
+  holding library. Every value names its source and every edition carries a confidence level. Works and
+  authors link to OpenITI, Wikidata and al-Maktaba al-Shamila.
+authors:
+  - family-names: Benjelloun
+    given-names: Khalid
+version: 0.1.0
+date-released: 2026-11-13
+license: CC-BY-4.0
+repository-code: "https://github.com/kmbenjel/turath-catalog"
+url: "https://warraq.benjelloun.dev/turath-catalog/"
+keywords:
+  - Arabic
+  - bibliography
+  - turath
+  - printed editions
+  - manuscripts
+  - Hijri calendar
+  - OpenITI
+  - Wikidata
+  - digital humanities
+  - Islamic studies

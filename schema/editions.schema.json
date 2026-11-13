@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kmbenjel/turath-catalog/schema/editions.schema.json",
+  "title": "turath-catalog editions",
+  "description": "One row per edition (a printing, lithograph, thesis or manuscript copy) of a work.",
+  "type": "object",
+  "properties": {
+    "edition_id": {
+      "description": "Stable id: `e_` + first 10 hex digits of sha1 of the edition's label within its category.",
+      "type": "string",
+      "pattern": "^e_[0-9a-f]{10}$"
+    },
+    "work_id": {
+      "description": "The work (works.work_id).",
+      "type": "string",
+      "pattern": "^w_[0-9a-f]{10}$"
+    },
+    "title_ar": {
+      "description": "Title as given on this edition.",
+      "type": "string"
+    },
+    "label_ar": {
+      "description": "Composed label «title - author - editor - publisher place», the library's citation form.",
+      "type": "string"
+    },
+    "kind": {
+      "description": "printed, lithograph, manuscript (a copy of a manuscript), thesis (university thesis) or offprint (a journal article).",
+      "type": "string",
+      "enum": [
+        "printed",
+        "lithograph",
+        "manuscript",
+        "thesis",
+        "offprint"
+      ]
+    },
+    "editors_ar": {
+      "description": "Editors and other contributors, `;`-separated, in order (details in edition_editors).",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publisher_ar": {
+      "description": "Publisher or printing house.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "place_ar": {
+      "description": "Place of publication (cities `-`-separated).",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "year_ah": {
+      "description": "Year of this printing, Hijri.",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1100,
+      "maximum": 1460
+    },
+    "year_ce": {
+      "description": "Year of this printing, Gregorian.",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1700,
+      "maximum": 2026
+    },
+    "edition_number": {
+      "description": "Edition number (الطبعة الأولى = 1).",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 50
+    },
+    "edition_statement_ar": {
+      "description": "Edition statement when it is not a plain number (e.g. «طبعة خاصة»).",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "volumes": {
+      "description": "Number of volumes of the printed set, as the edition or its catalog record gives it.",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 500
+    },
+    "pages": {
+      "description": "Number of printed pages, as the edition's catalog record gives it.",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "n_files": {
+      "description": "Number of scan files (volumes as scanned) in the library.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "size_bytes": {
+      "description": "Total size of the scan files in bytes (exact sizes per file in edition_files).",
+      "type": "integer",
+      "minimum": 1
+    },
+    "title_page_read": {
+      "description": "True when the title page of this scan was read by eye and the label made from it.",
+      "type": "boolean"
+    },
+    "wikidata_qid": {
+      "description": "Wikidata item of the same edition (the item that carries this Shamela book id, P12239).",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^Q\\d+$"
+    },
+    "ext_ids": {
+      "description": "`;`-separated `scheme:id`: `waqfeya` = waqfeya.net book id of a record for this very scan (linked by exact file size); `shamela` = Shamela book whose card describes this same edition.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([a-z_]+:[^;:\\s]+)(;[a-z_]+:[^;:\\s]+)*$"
+    },
+    "field_sources": {
+      "description": "JSON object: column → source of its value (title_page, imprint_page, catalog_record, shamela_card, shamela_author, file_label, user).",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence": {
+      "description": "`high`: title page read by eye; `medium`: values from a size-linked catalog record or the same-edition Shamela card; `low`: from the library's label only.",
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    }
+  },
+  "required": [
+    "edition_id",
+    "work_id",
+    "title_ar",
+    "label_ar",
+    "kind",
+    "n_files",
+    "size_bytes",
+    "title_page_read",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

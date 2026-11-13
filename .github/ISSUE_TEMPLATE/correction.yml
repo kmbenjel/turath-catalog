@@ -1,0 +1,31 @@
+name: Correction
+description: A value in the dataset is wrong or missing
+labels: [data]
+body:
+  - type: input
+    id: id
+    attributes:
+      label: Row id
+      description: edition_id, work_id or author_id (e.g. e_f5c4f8c472)
+    validations:
+      required: true
+  - type: input
+    id: column
+    attributes:
+      label: Column
+      placeholder: editors_ar
+    validations:
+      required: true
+  - type: input
+    id: value
+    attributes:
+      label: Proposed value
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: What the title page or imprint page of this edition says (a photo helps), or a catalog record of the same edition.
+    validations:
+      required: true

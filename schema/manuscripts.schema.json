@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kmbenjel/turath-catalog/schema/manuscripts.schema.json",
+  "title": "turath-catalog manuscripts",
+  "description": "Manuscript copies in the library: where the manuscript itself is kept, as the copy shows it.",
+  "type": "object",
+  "properties": {
+    "manuscript_id": {
+      "description": "Stable id: `m_` + first 10 hex digits of sha1 of the edition id.",
+      "type": "string",
+      "pattern": "^m_[0-9a-f]{10}$"
+    },
+    "edition_id": {
+      "description": "The copy as an edition row (kind = manuscript).",
+      "type": "string",
+      "pattern": "^e_[0-9a-f]{10}$"
+    },
+    "work_id": {
+      "description": "works.work_id",
+      "type": "string",
+      "pattern": "^w_[0-9a-f]{10}$"
+    },
+    "title_ar": {
+      "description": "Title.",
+      "type": "string"
+    },
+    "author_id": {
+      "description": "authors.author_id",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^a_[0-9a-f]{10}$"
+    },
+    "holding_library_ar": {
+      "description": "Library that holds the manuscript (as its stamp, card or ownership note shows). Empty when the copy does not show it.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shelfmark": {
+      "description": "Shelfmark or number in that library.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "holding_confidence": {
+      "description": "`high`: read in the copy itself; `medium`: from the upload's own description; `low`: probable (the copy suggests it).",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        null
+      ]
+    },
+    "printed_edition_id": {
+      "description": "A printed edition of the same work in the dataset, when there is one.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^e_[0-9a-f]{10}$"
+    }
+  },
+  "required": [
+    "manuscript_id",
+    "edition_id",
+    "work_id",
+    "title_ar"
+  ],
+  "additionalProperties": false
+}

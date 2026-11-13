@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uvx ruff check src tests
+      - run: uvx ruff format --check src tests
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: uv venv && uv pip install -e ".[dev]"
+      - run: uv run pytest --cov=turath_catalog --cov-report=term-missing --cov-fail-under=85
+      - run: uv run turath-catalog validate sample

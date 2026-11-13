@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kmbenjel/turath-catalog/schema/edition_editors.schema.json",
+  "title": "turath-catalog edition_editors",
+  "description": "Who did what for each edition (many-to-many between editions and editors).",
+  "type": "object",
+  "properties": {
+    "edition_id": {
+      "description": "editions.edition_id",
+      "type": "string",
+      "pattern": "^e_[0-9a-f]{10}$"
+    },
+    "person_id": {
+      "description": "editors.person_id",
+      "type": "string",
+      "pattern": "^p_[0-9a-f]{10}$"
+    },
+    "role": {
+      "description": "Contribution: editor, compiler, commentator, corrector, introducer, translator, supervisor.",
+      "type": "string",
+      "enum": [
+        "editor",
+        "compiler",
+        "commentator",
+        "corrector",
+        "introducer",
+        "translator",
+        "supervisor"
+      ]
+    },
+    "role_ar": {
+      "description": "Contribution in Arabic (تحقيق، شرح، جمع، ضبط وتصحيح، تقديم، ترجمة، إشراف).",
+      "type": "string"
+    },
+    "seq": {
+      "description": "Order of the person on the edition.",
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "edition_id",
+    "person_id",
+    "role",
+    "role_ar",
+    "seq"
+  ],
+  "additionalProperties": false
+}

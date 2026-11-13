@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kmbenjel/turath-catalog/schema/editors.schema.json",
+  "title": "turath-catalog editors",
+  "description": "One row per person named as editor or contributor of an edition.",
+  "type": "object",
+  "properties": {
+    "person_id": {
+      "description": "Stable id: `p_` + first 10 hex digits of sha1 of the folded name.",
+      "type": "string",
+      "pattern": "^p_[0-9a-f]{10}$"
+    },
+    "name_ar": {
+      "description": "The fullest form of the name found.",
+      "type": "string"
+    },
+    "name_variants_ar": {
+      "description": "Shorter forms merged into this person, `;`-separated.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "n_editions": {
+      "description": "Number of editions the person contributed to.",
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "person_id",
+    "name_ar",
+    "n_editions"
+  ],
+  "additionalProperties": false
+}

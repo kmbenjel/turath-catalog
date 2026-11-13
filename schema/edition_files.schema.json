@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kmbenjel/turath-catalog/schema/edition_files.schema.json",
+  "title": "turath-catalog edition_files",
+  "description": "One row per scan file (volume) of an edition: its order and exact size, for matching copies by size. No file names or paths.",
+  "type": "object",
+  "properties": {
+    "edition_id": {
+      "description": "editions.edition_id",
+      "type": "string",
+      "pattern": "^e_[0-9a-f]{10}$"
+    },
+    "seq": {
+      "description": "Order of the file in the edition.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "volume_label": {
+      "description": "Volume number as labelled (`00` = front matter).",
+      "type": "string"
+    },
+    "size_bytes": {
+      "description": "Exact size of the file in bytes.",
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "edition_id",
+    "seq",
+    "volume_label",
+    "size_bytes"
+  ],
+  "additionalProperties": false
+}
