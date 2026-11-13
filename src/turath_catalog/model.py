@@ -140,7 +140,7 @@ TABLES: dict[str, dict] = {
             C(
                 "label_ar",
                 "string",
-                "Composed label «title - author - editor - publisher place», the library's citation form.",
+                "Citation form composed from this row's fields: «title - author - ت editors - publisher place» (title_ar without alternative titles, the author's name, editors_ar with their role, publisher_ar, place_ar).",
                 required=True,
             ),
             C(

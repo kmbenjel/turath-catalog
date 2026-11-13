@@ -321,7 +321,11 @@ class WarraqWorkspace:
                     self.report.dropped_values["editor: not a person's name"] += 1
             if "publisher" in ei:
                 rec.publisher, rec.place = self.split_place(str(ei["publisher"]["v"]))
-                rec.sources["publisher"] = src("publisher")
+                if src("publisher") == "file_label" and rec.author and norm(rec.publisher) == norm(rec.author):
+                    self.report.dropped_values["publisher: the author's name, read from a file label"] += 1
+                    rec.publisher = rec.place = ""
+                if rec.publisher or rec.place:
+                    rec.sources["publisher"] = src("publisher")
                 if rec.place:
                     rec.sources["place"] = src("publisher")
             h, g = _int(ei.get("hijri", {}).get("v")), _int(ei.get("gregorian", {}).get("v"))

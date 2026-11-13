@@ -136,3 +136,9 @@ def test_split_place(ws, value, expected):
 )
 def test_joint_editors(value, names):
     assert [e.name for e in WarraqWorkspace.parse_editors(value, "")] == names
+
+
+def test_a_file_label_publisher_that_is_the_author_is_dropped(ws):
+    r = by_title(ws.records())["مسائل"]
+    assert (r.publisher, r.place) == ("", "") and "publisher" not in r.sources
+    assert ws.report.dropped_values["publisher: the author's name, read from a file label"] == 1

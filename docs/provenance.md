@@ -53,6 +53,7 @@ Their prose (descriptions, biographies, blurbs) is never read into a record.
 | death years outside the recorded century | 48 values | the year and the catalog's century disagree |
 | Hijri/Gregorian year pairs that disagree | 32 pairs | both dropped rather than guessing which is right |
 | "editor" values that are not a person | 80 values | e.g. an edition statement or a thesis note in the editor field |
+| publisher values that repeat the author's name | 3 values | read from a file label, where the author's name had taken the publisher's place |
 | file names, paths, download links, OCR text, notes, comments | all | never part of a record; the validator rejects paths, URLs, e-mails, IPs and credential words |
 
 ## Identifier schemes

@@ -159,7 +159,8 @@ falls in the century a catalog record gives, `medium` for a single witness.
 151 editions whose sources disagree and 116 whose title or author is under review; 125 titles not in
 Arabic script. Values that fail a check are dropped rather than kept: 166 death years where two people
 may share a name, 48 death years outside the century given by a catalog record, 32 Hijri/Gregorian
-year pairs that disagree, 80 "editor" values that are not a person's name. File names, paths, download
+year pairs that disagree, 80 "editor" values that are not a person's name, 3 publisher values from a file
+label that repeat the author's name. File names, paths, download
 links, OCR text, notes and comments are never part of a record. The counts of each build are in
 `build-report.json`.
 

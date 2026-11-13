@@ -36,7 +36,7 @@ One row per edition (a printing, lithograph, thesis or manuscript copy) of a wor
 | `edition_id` | string | yes | Stable id: `e_` + first 10 hex digits of sha1 of the edition's label within its category. |
 | `work_id` | string | yes | The work (works.work_id). |
 | `title_ar` | string | yes | Title as given on this edition. |
-| `label_ar` | string | yes | Composed label «title - author - editor - publisher place», the library's citation form. |
+| `label_ar` | string | yes | Citation form composed from this row's fields: «title - author - ت editors - publisher place» (title_ar without alternative titles, the author's name, editors_ar with their role, publisher_ar, place_ar). |
 | `kind` | string | yes | printed, lithograph, manuscript (a copy of a manuscript), thesis (university thesis) or offprint (a journal article). (one of `printed`, `lithograph`, `manuscript`, `thesis`, `offprint`) |
 | `editors_ar` | string |  | Editors and other contributors, `;`-separated, in order (details in edition_editors). |
 | `publisher_ar` | string |  | Publisher or printing house. |

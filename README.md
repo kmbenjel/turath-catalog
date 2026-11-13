@@ -182,7 +182,7 @@ names, titles, years, counts. Left out by design:
   Arabic script;
 - values that fail a check: 166 death years where two people may share a name, 48 outside the century
   the catalog gives, 32 pairs of Hijri and Gregorian years that disagree, 80 "editor" values that are not
-  a person's name.
+  a person's name, 3 publisher values from a file label that repeat the author's name.
 
 The counts are in each release's `build-report.json`; details in [docs/provenance.md](docs/provenance.md).
 

@@ -25,6 +25,27 @@ def work_id_for(title: str, author: str) -> str:
     return h10("w", f"{title_key(title)}|{author_key(author)}")
 
 
+_ROLE_MARK = {"editor": "ت", "translator": "ترجمة"}
+
+
+def compose_label(r: EditionRecord) -> str:
+    """The edition's citation form, composed from its own fields only, so it can never disagree with them:
+    «title - author - ت editor وeditor - publisher place» (a role other than editing is written out: «شرح فلان»)."""
+    parts = [r.title.split(" = ")[0].strip()]
+    if r.author:
+        parts.append(r.author)
+    by_role: dict[str, list[str]] = {}
+    for e in r.editors:
+        by_role.setdefault(e.role, []).append(e.name)
+    for role, names in by_role.items():
+        mark = _ROLE_MARK.get(role) or ROLE_AR.get(role, "ت")
+        parts.append(f"{mark} " + " و".join(names))
+    imprint = " ".join(x for x in (r.publisher, r.place.replace(" - ", " ")) if x)
+    if imprint:
+        parts.append(imprint)
+    return " - ".join(p for p in parts if p)
+
+
 def edition_confidence(r: EditionRecord) -> str:
     if r.title_page_read:
         return "high"
@@ -159,7 +180,7 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
                 "edition_id": eid,
                 "work_id": work_of[i],
                 "title_ar": r.title,
-                "label_ar": r.label or r.title,
+                "label_ar": compose_label(r),
                 "kind": r.kind,
                 "editors_ar": ";".join(e.name for e in r.editors) or None,
                 "publisher_ar": r.publisher or None,

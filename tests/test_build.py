@@ -1,9 +1,14 @@
 import re
 
-from turath_catalog.build import build_tables, h10, work_id_for
+from turath_catalog.build import build_tables, compose_label, h10, work_id_for
 from turath_catalog.model import ID
+from turath_catalog.record import EditionRecord, Editor
 from turath_catalog.textnorm import author_key, title_key
 from turath_catalog.validate import check
+
+
+def rec(key, title, author="", **kw) -> EditionRecord:
+    return EditionRecord(key=key, title=title, author=author, category_ar="الفقه العام", **kw)
 
 
 def test_tables_validate_and_ids_have_their_form(records):
@@ -90,3 +95,22 @@ def test_files_and_sizes(records):
 
 def test_build_is_deterministic(records):
     assert build_tables(records) == build_tables(list(reversed(records)))
+
+
+def test_label_is_composed_from_the_fields_not_the_input_label():
+    r = rec(
+        "k",
+        "كتاب المجروحين من المحدثين = المجروحين",
+        "ابن حبان البستي",
+        label="كتاب المجروحين من المحدثين - ابن حبان البستي (ت حمدي السلفي - دار الوعي)",
+        editors=[Editor("حمدي السلفي"), Editor("محمد علي", role="translator")],
+        publisher="دار الصميعي",
+        place="الرياض - السعودية",
+    )
+    assert compose_label(r) == "كتاب المجروحين من المحدثين - ابن حبان البستي - ت حمدي السلفي - ترجمة محمد علي - دار الصميعي الرياض السعودية"
+    e = build_tables([r])["editions"][0]
+    assert e["label_ar"] == compose_label(r)
+    assert "دار الوعي" not in e["label_ar"] and "(" not in e["label_ar"]
+    assert compose_label(rec("t", "الرسالة")) == "الرسالة"
+    two = rec("u", "الأم", "الشافعي", editors=[Editor("رفعت فوزي"), Editor("علي محمد")])
+    assert compose_label(two) == "الأم - الشافعي - ت رفعت فوزي وعلي محمد"

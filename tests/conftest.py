@@ -171,7 +171,10 @@ def workspace(tmp_path: Path) -> Path:
             "hijri": {"v": 1420, "s": "صفحة الحقوق"},
             "gregorian": {"v": 1950, "s": "صفحة الحقوق"},
         },
-        "الفقه العام/مسائل - ابن أبي شيبة": {"death": {"v": 235, "s": "الشاملة (المؤلف)"}},
+        "الفقه العام/مسائل - ابن أبي شيبة": {
+            "death": {"v": 235, "s": "الشاملة (المؤلف)"},
+            "publisher": {"v": "ابن أبي شيبة", "s": "اسم المجلد"},  # the author's name in the publisher's slot
+        },
     }
     (d / "editions/edition-info.json").write_text(json.dumps(info, ensure_ascii=False), encoding="utf-8")
     (d / "editions/groups.json").write_text("[]", encoding="utf-8")
