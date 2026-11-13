@@ -1,7 +1,7 @@
 # releases/
 
 Built releases land here (`make release`) and are published as GitHub release assets and on Hugging Face;
-they are not committed, to keep the repository small. The repository carries a 150-work sample in
+they are not committed, to keep the repository small. The repository carries a 149-work sample in
 `src/turath_catalog/sample/` that passes the same validation.
 
 A release folder holds:
