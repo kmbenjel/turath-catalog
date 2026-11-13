@@ -32,7 +32,7 @@ bench:         ## coverage against OpenITI, Wikidata and Shamela -> bench/result
 	PYTHON=$(PY) TC=$(TC) bench/compare.sh $(RELEASE)
 
 zip:           ## one archive per release for the GitHub release page
-	cd releases && zip -qr turath-catalog-$(VERSION).zip turath-catalog-$(VERSION)
+	cd releases && ../$(PY) -m zipfile -c turath-catalog-$(VERSION).zip turath-catalog-$(VERSION)
 
 clean:
 	rm -rf .pytest_cache .ruff_cache .coverage htmlcov dist
