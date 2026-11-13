@@ -209,7 +209,7 @@ Corrections are welcome: open an issue with the edition id and the title-page ev
 [CONTRIBUTING.md](CONTRIBUTING.md)). Cite with [CITATION.cff](CITATION.cff). Data: [CC BY 4.0](LICENSE-DATA);
 code: [MIT](LICENSE). Arabic documentation: <https://warraq.benjelloun.dev/turath-catalog/>.
 
-Part of **Warraq** (الورّاق), open tools for Arabic libraries:
+Part of **[Warraq](https://warraq.benjelloun.dev)** (الورّاق), open tools for digital heritage libraries:
 [safha](https://github.com/kmbenjel/safha) ·
 [planfs](https://github.com/kmbenjel/planfs) ·
 [arabic-bib](https://github.com/kmbenjel/arabic-bib) ·
