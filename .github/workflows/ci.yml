@@ -21,6 +21,6 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           python-version: ${{ matrix.python }}
-      - run: uv venv && uv pip install -e ".[dev]"
+      - run: uv venv --clear && uv pip install -e ".[dev]"
       - run: uv run pytest --cov=turath_catalog --cov-report=term-missing --cov-fail-under=85
       - run: uv run turath-catalog validate sample
