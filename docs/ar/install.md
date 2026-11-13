@@ -42,7 +42,7 @@ pip install turath-catalog
 pip install "turath-catalog[pandas]"
 ```
 
-وفي الحزمة عيّنة من 150 كتابًا تكفي للتجربة دون تنزيل شيء آخر:
+وفي الحزمة عيّنة من 149 كتابًا تكفي للتجربة دون تنزيل شيء آخر:
 
 ```bash
 turath-catalog info sample

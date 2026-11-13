@@ -29,7 +29,7 @@ turath-catalog info sample
 python -c "import turath_catalog as tc; print(tc.load('sample', 'editions', as_pandas=True).head())"
 ```
 
-The package carries a 150-work sample (`load("sample")`); the full tables come as CSV, Parquet and JSON
+The package carries a 149-work sample (`load("sample")`); the full tables come as CSV, Parquet and JSON
 Lines from the [GitHub release](https://github.com/kmbenjel/turath-catalog/releases) or Hugging Face:
 
 ```python
