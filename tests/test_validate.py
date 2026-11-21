@@ -104,3 +104,38 @@ def test_counts_must_agree(t):
     _first(t, "editions")["size_bytes"] += 1
     errs = "\n".join(check(t))
     assert "n_editions" in errs and "n_works" in errs and "size_bytes" in errs
+
+
+def test_a_release_built_before_a_column_existed_is_still_valid(t):
+    old = {
+        "works": ("title_clean_ar",),
+        "editions": ("title_clean_ar", "alt_titles_ar", "title_note_ar"),
+        "authors": ("canonical_author_id",),
+    }
+    for table, cols in old.items():
+        for r in t[table]:
+            for c in cols:
+                r.pop(c)
+    assert check(t) == []
+    t["works"][0]["title_clean_ar"] = None  # once a column is there, a required value must be too
+    t["works"][1]["title_clean_ar"] = t["works"][1]["title_ar"]
+    assert any("works[0].title_clean_ar: required value missing" in e for e in check(t))
+
+
+def test_clean_title_must_be_the_title_alone(t):
+    _first(t, "editions")["title_clean_ar"] = "الجامع لأحكام القرآن = تفسير القرطبي"
+    t["works"][0]["title_clean_ar"] = "الحماسة البصرية (ط. الخانجي)"
+    t["works"][1]["alt_titles_ar"] = t["works"][1]["title_clean_ar"]
+    errs = check(t)
+    assert sum("still carries «=» or a bracket" in e for e in errs) == 2
+    assert any("lists its own title among alt_titles_ar" in e for e in errs)
+
+
+def test_canonical_author_must_exist_and_be_its_own_canonical(t):
+    a, b, c = t["authors"][:3]
+    a["canonical_author_id"] = "a_0000000000"
+    b["canonical_author_id"] = c["author_id"]
+    c["canonical_author_id"] = t["authors"][3]["author_id"]
+    errs = check(t)
+    assert any("authors.canonical_author_id" in e and "missing from authors" in e for e in errs)
+    assert any(f"{b['author_id']} points to {c['author_id']}, which is not its own canonical row" in e for e in errs)

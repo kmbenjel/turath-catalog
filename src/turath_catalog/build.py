@@ -6,11 +6,13 @@ from __future__ import annotations
 import hashlib
 import json
 from collections import Counter, defaultdict
+from dataclasses import dataclass
 
 from .hijri import ah_to_ce_range, century_ah
 from .model import CATEGORY_EN, ROLE_AR
 from .record import EditionRecord
-from .textnorm import author_key, nfc, norm, title_key
+from .textnorm import WAW_NAMES, author_key, nfc, norm, title_key
+from .titles import mark_agrees, split_title
 
 Tables = dict[str, list[dict]]
 _RANK = {"high": 0, "medium": 1, "low": 2}
@@ -28,10 +30,48 @@ def work_id_for(title: str, author: str) -> str:
 _ROLE_MARK = {"editor": "ت", "translator": "ترجمة"}
 
 
+def main_title(title: str) -> str:
+    """«A = B» → «A»: the part of a title that names the work (and that its id hashes)."""
+    return title.split(" = ")[0].strip()
+
+
+@dataclass(frozen=True)
+class ResolvedTitle:
+    """A record's title, split (`titles.split_title`) and checked against the record's own edition fields."""
+
+    clean: str
+    alts: tuple[str, ...]
+    notes: tuple[str, ...]
+    publisher: str  # the record's publisher, or the title's «ط X» mark when the record names none
+    publisher_from_mark: bool
+
+
+def resolve_title(r: EditionRecord) -> ResolvedTitle:
+    """An edition mark written in the title («ط. الخانجي», «ت - الميمني») says nothing new when the row already
+    names that publisher or editor: it is dropped from the clean title. When the row names no publisher, the
+    mark gives it. A mark that disagrees with the row is kept as a remark, so no source is silently overruled."""
+    p = split_title(r.title, r.author)
+    notes = list(p.notes)
+    publisher, from_mark = r.publisher, False
+    for m in p.publisher_marks:
+        if mark_agrees(m, f"{r.publisher} {r.place}"):
+            continue
+        if not publisher and not r.place and len(p.publisher_marks) == 1:
+            publisher, from_mark = m, True
+        else:
+            notes.append(f"ط {m}")
+    for m in p.editor_marks:
+        if not any(mark_agrees(m, e.name) for e in r.editors):
+            notes.append(f"ت {m}")
+    return ResolvedTitle(p.clean, p.alts, tuple(notes), publisher, from_mark)
+
+
 def compose_label(r: EditionRecord) -> str:
     """The edition's citation form, composed from its own fields only, so it can never disagree with them:
-    «title - author - ت editor وeditor - publisher place» (a role other than editing is written out: «شرح فلان»)."""
-    parts = [r.title.split(" = ")[0].strip()]
+    «title - author - ت editor وeditor - publisher place» (a role other than editing is written out: «شرح فلان»).
+    The title is the clean one: other titles, remarks and edition marks have their own columns."""
+    rt = resolve_title(r)
+    parts = [rt.clean]
     if r.author:
         parts.append(r.author)
     by_role: dict[str, list[str]] = {}
@@ -40,7 +80,7 @@ def compose_label(r: EditionRecord) -> str:
     for role, names in by_role.items():
         mark = _ROLE_MARK.get(role) or ROLE_AR.get(role, "ت")
         parts.append(f"{mark} " + " و".join(names))
-    imprint = " ".join(x for x in (r.publisher, r.place.replace(" - ", " ")) if x)
+    imprint = " ".join(x for x in (rt.publisher, r.place.replace(" - ", " ")) if x)
     if imprint:
         parts.append(imprint)
     return " - ".join(p for p in parts if p)
@@ -94,6 +134,26 @@ def _people(recs: list[EditionRecord]) -> dict[int, str]:
     return out
 
 
+def _names_two_people(name: str) -> bool:
+    """«الطبراني وابن مردويه»: a later word opens with «و» and is not itself a name («وهبة», «ولي»)."""
+    return any(w.startswith("و") and len(w) > 2 and w not in WAW_NAMES for w in name.split()[1:])
+
+
+def _canonical_authors(rows: dict[str, dict]) -> None:
+    """Rows that one catalog identifier shows to be one person («ابن الجوزي», «أبو الفرج ابن الجوزي») point to a
+    single row, the dated one with the most works. Decided by identifier and death year, never by name alone."""
+    by_ext: dict[str, list[dict]] = defaultdict(list)
+    for a in rows.values():
+        if a["ext_ids"] and not _names_two_people(a["name_ar"]):
+            by_ext[a["ext_ids"]].append(a)
+    for group in by_ext.values():
+        if len(group) < 2 or len({a["death_ah"] for a in group if a["death_ah"]}) > 1:
+            continue
+        head = min(group, key=lambda a: (a["death_ah"] is None, -a["n_works"], len(a["name_ar"]), a["author_id"]))
+        for a in group:
+            a["canonical_author_id"] = head["author_id"]
+
+
 def build_tables(recs: list[EditionRecord]) -> Tables:
     recs = sorted(recs, key=lambda r: nfc(r.key))
     n = len(recs)
@@ -103,7 +163,7 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
     uf = _UF(n)
     first: dict[tuple, int] = {}
     for i, r in enumerate(recs):
-        keys = [("t", title_key(r.title), person_of.get(i, ""))]
+        keys = [("t", title_key(main_title(r.title)), person_of.get(i, ""))]  # «A = B» is the work «A»
         if r.work_group:
             keys.append(("g", r.work_group))
         for k in keys:
@@ -115,6 +175,7 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
     for i in range(n):
         clusters[uf.find(i)].append(i)
 
+    resolved = [resolve_title(r) for r in recs]
     works, editions, files, ed_eds, manuscripts = [], [], [], [], []
     work_of: dict[int, str] = {}
     edition_of: dict[str, str] = {}
@@ -123,12 +184,13 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
     for root in sorted(clusters):
         idx = clusters[root]
         best = min(idx, key=lambda i: (_RANK[edition_confidence(recs[i])], len(recs[i].title), nfc(recs[i].key)))
-        titles = Counter(recs[i].title.split(" = ")[0].strip() for i in idx)
-        title = recs[best].title.split(" = ")[0].strip()
+        titles = Counter(main_title(recs[i].title) for i in idx)
+        title = main_title(recs[best].title)
         if titles.most_common(1)[0][1] > titles[title]:
             title = titles.most_common(1)[0][0]
-        alts = sorted({t.strip() for i in idx for t in recs[i].title.split(" = ")[1:] if t.strip()} - {title})
         author = recs[best].author
+        title_clean = split_title(title, author).clean
+        alts = sorted({t for i in idx for t in resolved[i].alts} - {title, title_clean})
         wid = work_id_for(title, author)
         if wid in seen_wid:  # same title key and author name, different people or groups: disambiguate
             wid = h10("w", f"{title_key(title)}|{author_key(author)}|{person_of.get(best, '')}|{recs[best].category_ar}")
@@ -154,6 +216,7 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
                 "ext_ids": ";".join(f"shamela:{s}" for s, _ in sorted(sham.items(), key=lambda kv: (-kv[1], kv[0]))) or None,
                 "n_editions": len(idx),
                 "confidence": min((edition_confidence(recs[i]) for i in idx), key=_RANK.get),
+                "title_clean_ar": title_clean,
             }
         )
         for i in idx:
@@ -175,6 +238,9 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
             for k, v in sorted(r.sources.items())
             if k != "author_full_name"
         }
+        rt = resolved[i]
+        if rt.publisher_from_mark:
+            sources["publisher_ar"] = r.title_source
         editions.append(
             {
                 "edition_id": eid,
@@ -183,7 +249,7 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
                 "label_ar": compose_label(r),
                 "kind": r.kind,
                 "editors_ar": ";".join(e.name for e in r.editors) or None,
-                "publisher_ar": r.publisher or None,
+                "publisher_ar": rt.publisher or None,
                 "place_ar": r.place or None,
                 "year_ah": r.year_ah,
                 "year_ce": r.year_ce,
@@ -198,6 +264,9 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
                 "ext_ids": ";".join(ext) or None,
                 "field_sources": json.dumps(sources, ensure_ascii=False, sort_keys=True) if sources else None,
                 "confidence": edition_confidence(r),
+                "title_clean_ar": rt.clean,
+                "alt_titles_ar": ";".join(rt.alts) or None,
+                "title_note_ar": ";".join(rt.notes) or None,
             }
         )
         for s, f in enumerate(r.files, 1):
@@ -269,6 +338,12 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
         fname, fsrc = full.most_common(1)[0][0] if full else (None, None)
         sids = Counter(r.shamela_author_id for r in rs if r.shamela_author_id)
         sid = sids.most_common(1)[0][0] if len(sids) == 1 else None
+        if not death:
+            dconf = None
+        elif not any(r.death_name_matched for r in rs if r.death_ah == death):
+            dconf = "low"  # the year of a matched catalog book's author, whose name does not match this one
+        else:
+            dconf = "high" if deaths[death] >= 2 or (cents and century_ah(death) in cents) else "medium"
         lo, hi = ah_to_ce_range(death) if death else (None, None)
         names = Counter(r.author for r in rs)
         author_rows[aid] = {
@@ -281,14 +356,14 @@ def build_tables(recs: list[EditionRecord]) -> Tables:
             "death_ce_to": hi,
             "century_ah": cent,
             "death_source": dsrc,
-            "death_confidence": None
-            if not death
-            else ("high" if deaths[death] >= 2 or (cents and century_ah(death) in cents) else "medium"),
+            "death_confidence": dconf,
             "n_works": work_authors[aid],
             "openiti_author_uri": None,
             "wikidata_qid": None,
             "ext_ids": f"shamela_author:{sid}" if sid else None,
+            "canonical_author_id": aid,
         }
+    _canonical_authors(author_rows)
 
     # ---- manuscripts ---------------------------------------------------------------------------------------
     for i, r in enumerate(recs):

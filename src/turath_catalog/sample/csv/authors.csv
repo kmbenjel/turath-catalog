@@ -1,108 +1,106 @@
-author_id,name_ar,full_name_ar,full_name_source,death_ah,death_ce_from,death_ce_to,century_ah,death_source,death_confidence,n_works,openiti_author_uri,wikidata_qid,ext_ids
-a_055b8cf232,الطيالسي,سليمان بن داود بن الجارود مولى قريش، أبو داود الطيالسي,catalog_record,204,819,820,3,shamela_book,high,1,0204AbuDawudTayalisi,Q4670117,shamela_author:219
-a_0565918ca6,أبو زيد عبد الرحمن بن عبد العزيز التادلي,,,,,,,,,1,,,
-a_090f4cd580,المقريزي,أحمد بن علي بن عبد القادر، أبو العباس الحسيني العبيدي، تقي الدين المقريزي,shamela_author,845,1441,1442,9,shamela_book,high,1,0845Maqrizi,Q293604,shamela_author:693
-a_0a1cf02036,أبو الفرج ابن الجوزي,عبد الرحمن بن علي بن محمد الجوزي القرشي البغدادي، أبو الفرج,shamela_author,597,1200,1201,6,shamela_book,high,1,0597IbnJawzi,Q731866,shamela_author:51
-a_0a70ed0964,قوام السنة الأصبهاني,أبو القاسم، إسماعيل بن محمد بن الفضل بن علي القرشي الطليحي التيمي الأصبهاني، الملقب بقوام السنة,shamela_author,535,1140,1141,6,shamela_book,high,1,0535QawwamSunna,Q16125235,shamela_author:204
-a_0a9bcc54c0,ابن أبي زيد القيرواني,أبو محمد عبد الله بن أبي زيد القيرواني، المالكي، ويقال له,shamela_author,386,996,997,4,shamela_book,high,2,0386IbnAbiZaydQayrawani,Q5984167,shamela_author:428
-a_0c1d6b30ad,أبو حيان الأندلسي,محمد بن يوسف بن علي بن يوسف ابن حيان الغرناطي الأندلسي الجياني، النفزي، أثير الدين، أبو,shamela_author,745,1344,1345,8,shamela_book,high,1,0745AbuHayyanGharnati,Q1640082,shamela_author:99
-a_0ca3895848,الحبال,إبراهيم بن سعيد النعماني - بالولاء - المصري، أبو إسحاق الحبال,shamela_author,482,1089,1090,5,shamela_book,high,1,0482AbuIshaqHabbal,Q12177684,shamela_author:1664
-a_0ed0c8e840,ابن فرحون,إبراهيم بن علي بن محمد، ابن فرحون، برهان الدين اليعمري,shamela_author,799,1396,1397,8,shamela_book,high,1,0799IbnFarhun,Q6537286,shamela_author:623
-a_0fb965bedd,ابن أبي عاصم,أحمد بن عمرو بن أبي عاصم الضحاك ابن مخلد الشيباني، أبو بكر بن أبي عاصم، ويقال,shamela_author,287,900,900,3,shamela_book,high,1,0287IbnAbiCasim,Q5984157,shamela_author:230
-a_11a593cc43,ابن عبد البر,يوسف بن عبد الله بن محمد بن عبد البر النمري القرطبي المالكي، أبو عمر,shamela_author,463,1070,1071,5,shamela_book,high,4,0463IbnCabdBarr,Q732363,shamela_author:76
-a_12b883a810,السهيلي,عبد الرحمن بن عبد الله بن أحمد الخثعمي السهيلي,shamela_author,581,1185,1186,6,shamela_book,high,2,0581AbuQasimSuhayli,Q4703267,shamela_author:394
-a_13dbc886f5,الشافعي,محمد بن إدريس بن العباس بن عثمان ابن شافع الهاشمي القرشي المطلبي، أبو عبد الله,catalog_record,204,819,820,3,shamela_book,high,5,0204Shafici,Q294281,shamela_author:20
-a_1456d29f56,الباقلاني,محمد بن الطيب بن محمد بن جعفر، أبو بكر,catalog_record,403,1012,1013,5,shamela_book,high,1,0403AbuBakrBaqillani,Q2608002,shamela_author:15
-a_14d5b833b8,محمد بن نصر المروزي,محمد بن نصر المروزى، أبو عبد الله,shamela_author,294,906,907,3,shamela_book,medium,1,0294IbnNasrMarwazi,Q12240275,shamela_author:310
-a_173fe7cc14,عبد الملك بن حبيب السلمي القرطبي,عبد الملك بن حبيب بن سليمان بن هارون السلمي الإلبيري القرطبي، أبو مروان,shamela_author,238,852,853,3,shamela_book,medium,1,0238IbnHabibQurtubi,Q12223823,shamela_author:1781
-a_17f38c8a8e,الخطيب البغدادي,أبو بكر أحمد بن علي بن ثابت بن أحمد بن مهدي البغدادي، المعروف بالخطيب,shamela_author,463,1070,1071,5,shamela_book,high,3,0463KhatibBaghdadi,Q557961,shamela_author:246
-a_1bd8296fe5,الحميري، علي بن محمد بن هارون بن زياد أبو الحسن الكوفي,,,323,934,935,4,shamela_book,high,1,0323CaliHimyari,Q136709754,shamela_author:375
-a_1eb94a3544,ابن أبي الدنيا,عبد الله بن محمد بن عبيد بن سفيان، ابن أبي الدنيا القرشي الأموي، مولاهم، البغدادي، أبو بكر,catalog_record,281,894,895,3,shamela_book,high,4,0281IbnAbiDunya,Q6532706,shamela_author:273
-a_1f98e17e6f,أبو العباس أحمد بن عبد المؤمن القيسي الشريشي,,,619,1222,1223,7,shamela_book,medium,1,0619AbuCabbasSharishi,Q2829407,shamela_author:2969
-a_2109c9dd7f,الشيباني,محمد بن الحسن بن فرقد، من موالي بني شيبان، أبو عبد الله,shamela_author,189,804,805,2,shamela_book,high,1,0189MuhammadShaybani,Q293612,shamela_author:277
-a_2283e33fd7,البيضاوي,عبد الله بن عمر بن محمد بن علي الشيرازي، أبو سعيد، أو أبو الخير، ناصر الدين البيضاوي,catalog_record,685,1286,1287,7,shamela_book,high,1,0685NasirDinBaydawi,Q287573,shamela_author:104
-a_236fc7505d,جرير,,,110,728,729,2,shamela_book,medium,1,0110JarirShacir,Q912031,shamela_author:2959
-a_283d9db09f,ابن الأثير,علي بن محمد بن عبد الكريم بن عبد الواحد الشيباني الجزري، أبو الحسن عز الدين ابن الأثير,catalog_record,630,1232,1233,7,shamela_book,high,1,0630IbnAthirCizzDin,Q334854,shamela_author:244
-a_2c5e6ee699,ابن حجر العسقلاني,أحمد بن علي بن محمد الكناني العسقلاني، أبو الفضل، شهاب الدين، ابن حجر,shamela_author,852,1448,1449,9,shamela_book,high,2,0852IbnHajarCasqalani,Q471116,shamela_author:202
-a_2d09bf814a,النسائي,أحمد بن علي بن شعيب بن علي بن سنان بن بحر بن دينار، أبو عبد الرحمن النسائي,catalog_record,303,915,916,4,shamela_book,high,2,0303Nasai,Q293535,shamela_author:49
-a_2f9e48c8ef,الدنيا,,,281,894,895,3,shamela_book,high,1,0281IbnAbiDunya,Q6532706,shamela_author:273
-a_493f9f47b5,أبو القاسم القشيري النيسابوري,عبد الكريم بن هوازن بن عبد الملك ابن طلحة النيسابورى القشيري، من بني قشير ابن كعب,shamela_author,465,1072,1073,5,shamela_book,medium,1,0465IbnHawazinQushayri,Q4115259,shamela_author:125
-a_49a0f72d1a,ابن هشام,عبد الملك بن هشام بن أيوب الحميري المعافري، أبو محمد، جمال الدين,catalog_record,213,828,829,3,shamela_book,high,1,0213IbnHisham,Q461096,shamela_author:448
-a_4c3561b675,لسان الدين ابن الخطيب,محمد بن عبد الله بن سعيد السلماني اللوشي الأصل، الغرناطي الأندلسي، أبو عبد الله، الشهير بلسان,shamela_author,776,1374,1375,8,shamela_book,high,1,0776LisanDinIbnKhatib,Q2737184,shamela_author:698
-a_4c80649dd6,الذهبي,محمد بن أحمد بن عثمان بن قايماز الذهبي، شمس الدين، أبو عبد الله,shamela_author,748,1347,1348,8,shamela_book,high,3,0748Dhahabi,Q293554,shamela_author:362
-a_4dd969d1eb,أبو عبيد,القاسم بن سلام الهروي الأزدي الخزاعي، بالولاء، الخراساني البغدادي، أبو عبيد,shamela_author,224,838,839,3,shamela_book,high,2,0224QasimIbnSallam,Q12178105,shamela_author:26
-a_5598de18b8,إبراهيم اللقاني المالكي,,,,,,,,,1,,,
-a_55e9499722,جلال الدين السيوطي,عبد الرحمن بن أبي بكر بن محمد ابن سابق الدين الخضيري السيوطي، جلال الدين,shamela_author,911,1505,1506,10,shamela_book,high,2,0911Suyuti,Q468432,shamela_author:7
-a_56313cb3f7,محمد العبدري البلنسي,,,,,,,,,1,,,
-a_5785c1fe38,ابن عقيل,,,513,1119,1120,6,shamela_book,high,1,0513AbuWafaIbnCaqil,Q11728390,shamela_author:2609
-a_5cb18e685c,أبو الحسين أحمد بن فارس بن زكريا,أحمد بن فارس بن زكرياء القزويني الرازي، أبو الحسين,shamela_author,395,1004,1005,4,shamela_book,medium,1,0395IbnFarisQazwini,Q6419062,shamela_author:892
-a_5e3870f169,بديع الزمان,أحمد بن الحسين بن يحيى الهمذاني، أبو الفضل,catalog_record,398,1007,1008,4,shamela_book,high,1,0398BadicZamanHamadhani,Q374608,shamela_author:822
-a_602680ab38,أبو الحسن الأشعري,هو علي بن إسماعيل بن إسحاق بن سالم بن إسماعيل بن عبد الله بن موسى بن,shamela_author,324,935,936,4,shamela_book,high,2,0324Ashcari,Q316349,shamela_author:58
-a_638bc7edae,ياقوت الحموي,ياقوت بن عبد الله الرومي الحموي، أبو عبد الله، شهاب الدين,shamela_author,626,1228,1229,7,shamela_book,high,1,0626YaqutHamawi,Q316364,shamela_author:765
-a_6458847089,الآجري,محمد بن الحسين بن عبد الله، أبو بكر الآجري,shamela_author,360,970,971,4,shamela_book,high,2,0360AbuBakrAjurri,Q12183231,shamela_author:264
-a_645c1cf583,ابن حزم,علي بن أحمد بن سعيد بن حزم الظاهري، أبو محمد,shamela_author,456,1063,1064,5,shamela_book,high,1,0456IbnHazm,Q317787,shamela_author:2
-a_68f42e3c0d,أبو الحسن الماوردي,,,450,1058,1059,5,shamela_book,high,1,0450AbuHasanMawardi,Q335635,shamela_author:109
-a_696448fa14,ابن بشكوال,خلف بن عبد الملك بن مسعود بن بشكوال الخزرجي الأنصاري الأندلسي، أبو القاسم,shamela_author,578,1182,1183,6,shamela_book,high,1,0578IbnBashkuwal,Q1655886,shamela_author:205
-a_6b1bab4278,ابن الزبير,أحمد بن إبراهيم بن الزبير الثقفي الغرناطي، أبو جعفر,shamela_author,708,1308,1309,8,shamela_book,high,1,0708IbnIbrahimAbuJacfarGharnati,Q3147471,shamela_author:1178
-a_6c54c04246,ابن حنبل,أبو عبد الله أحمد بن محمد بن حنبل بن هلال بن أسد الشيباني,shamela_author,241,855,856,3,shamela_book,high,2,0241IbnHanbal,Q194442,shamela_author:220
-a_6e7d9d83a7,سيف الدين الآمدي,أبو الحسن، سيف الدين، علي بن محمد بن سالم التغلبي الآمدي,shamela_author,631,1233,1234,7,shamela_book,high,1,0631SayfDinAmidi,Q292484,shamela_author:95
-a_6f2a99cca9,ابن العربي,محمد بن عبد الله بن محمد المعافري الإشبيلي المالكي، أبو بكر ابن العربي,shamela_author,543,1148,1149,6,shamela_book,high,1,0543IbnCarabiIshbili,Q918471,shamela_author:22
-a_74d8203a13,أبو منصور الثعالبي,عبد الملك بن محمد بن إسماعيل، أبو منصور الثعالبي,shamela_author,429,1037,1038,5,shamela_book,high,1,0429AbuMansurThacalibi,Q1231017,shamela_author:112
-a_7618333432,ابن تيمية,أحمد بن عبد الحليم بن عبد السلام بن عبد الله بن أبي القاسم الخضر النميري الحراني الدمشقي الحنبلي، أبو العباس، تقي الدين ابن تيمية,catalog_record,728,1327,1328,8,shamela_book,high,2,0728IbnTaymiyya,Q491558,shamela_author:54
-a_793838a11a,أبو هلال العسكري,أبو هلال، الحسن بن عبد الله بن سهل بن سعيد ابن يحيى بن مهران العسكري,shamela_author,395,1004,1005,4,shamela_book,high,1,0395AbuHilalCaskari,Q4670215,shamela_author:348
-a_7d813526af,الونشريسي,أحمد بن يحيى بن محمد الونشريسي التلمساني، أبو العباس,shamela_author,914,1508,1509,10,shamela_book,high,1,0914IbnYahyaWansharisi,Q16117724,shamela_author:1689
-a_7df5d2ffe9,ابن السيد البطليوسي,عبد الله بن محمد بن السيد، أبو محمد,shamela_author,521,1127,1128,6,shamela_book,high,1,0521IbnMuhammadBatalyawsi,Q5655018,shamela_author:637
-a_7f130fedd8,القرافي,أحمد بن إدريس بن عبد الرحمن، أبو العباس، شهاب الدين الصنهاجي القرافي,shamela_author,684,1285,1286,7,shamela_book,high,1,0684ShihabDinQarafi,Q7496464,shamela_author:615
-a_8303d6aa44,برهان الدين ابن فرحون,إبراهيم بن علي بن محمد، ابن فرحون، برهان الدين اليعمري,shamela_author,799,1396,1397,8,shamela_book,high,1,0799IbnFarhun,Q6537286,shamela_author:623
-a_83762f2987,ابن بطة,عبيد الله بن محمد بن محمد بن حمدان، أبو عبد الله العكبري، المعروف بابن بطة,shamela_author,387,997,998,4,shamela_book,high,1,0387IbnBattaCukbari,Q5984193,shamela_author:143
-a_84694cf459,أحمد بن علي بن حجر العسقلاني,أحمد بن علي بن محمد الكناني العسقلاني، أبو الفضل، شهاب الدين، ابن حجر,shamela_author,852,1448,1449,9,shamela_book,high,1,0852IbnHajarCasqalani,Q471116,shamela_author:202
-a_84993758a6,الدولابي,محمد بن أحمد بن حماد بن سعد بن مسلم، أبو بشر الأنصاري، بالولاء، الرازي الدولابي الوراق,shamela_author,310,922,923,4,shamela_book,high,1,0310IbnAhmadDulabi,Q12187477,shamela_author:300
-a_85a9259c5d,الأزهري,محمد بن أحمد بن الأزهري الهروي، أبو منصور,shamela_author,370,980,981,4,shamela_book,high,1,0370AbuMansurAzhari,Q6820795,shamela_author:901
-a_863dbcf220,ابن هشام,عبد الله بن يوسف بن أحمد بن عبد الله بن يوسف، أبو محمد، جمال الدين، ابن هشام,catalog_record,761,1359,1360,8,shamela_book,high,1,0761JamalDinIbnHisham,Q6538102,shamela_author:893
-a_897f52ddbd,الدارمي,عثمان بن سعيد بن خالد الدارمي السجستاني، أبو سعيد,shamela_author,280,893,894,3,shamela_book,high,1,0280CuthmanIbnSacidDarimi,Q12224360,shamela_author:379
-a_9031a879e4,الطرطوشي,محمد بن الوليد بن محمد بن خلف القرشى الفهرى الأندلسي، أبو بكر الطرطوشى، ويقال له ابن,shamela_author,520,1126,1127,6,shamela_book,high,1,0520IbnWalidTurtushi,Q2837555,shamela_author:80
-a_911469bacd,السمعاني,أبو سعد، عبد الكريم بن محمد بن منصور التميمي السمعاني المروزي,shamela_author,562,1166,1167,6,shamela_book,high,1,0562Samcani,Q12178019,shamela_author:408
-a_93238c5ad7,ابن الأبار,محمد بن عبد الله بن أبي بكر القضاعي البلنسي، أبو عبد الله، ابن الأبار,shamela_author,658,1259,1260,7,shamela_book,high,1,0658IbnAbbar,Q3321466,shamela_author:689
-a_962bda78e4,أبو محمد عبد الله بن مسلم بن قتيبة,عبد الله بن مسلم بن قتيبة الدينوري، أبو محمد,shamela_author,276,889,890,3,shamela_book,medium,1,0276IbnQutaybaDinawari,Q984663,shamela_author:249
-a_9b729f9f43,أبو الوليد الباجي,سليمان بن خلف بن سعد التجيبي القرطبي، أبو الوليد الباجي,shamela_author,474,1081,1082,5,shamela_book,high,2,0474IbnKhalafBaji,Q4670455,shamela_author:360
-a_9c7d0a8dcc,ابن قدامة,عبد الله بن محمد بن قدامة الجماعيلي المقدسي ثم الدمشقي الحنبلي، أبو محمد، موفق الدين,shamela_author,620,1223,1224,7,shamela_book,high,2,0620IbnQudamaMaqdisi,Q785506,shamela_author:474
-a_9c7e21ed3d,الروداني,,,1094,1682,1683,11,shamela_book,medium,1,1094IbnSulaymanRudani,Q6893439,shamela_author:2305
-a_9f306fc0aa,ابن الجوزي,عبد الرحمن بن علي بن محمد الجوزي القرشي البغدادي، أبو الفرج,shamela_author,597,1200,1201,6,shamela_book,high,4,0597IbnJawzi,Q731866,shamela_author:51
-a_9fc101de63,الجلال السيوطي,عبد الرحمن بن أبي بكر بن محمد ابن سابق الدين الخضيري السيوطي، جلال الدين,shamela_author,911,1505,1506,10,shamela_book,high,2,0911Suyuti,Q468432,shamela_author:7
-a_a3cf058dae,عياض,عياض بن موسى بن عياض بن عمرون اليحصبي السبتي، أبو الفضل,shamela_author,544,1149,1150,6,shamela_book,high,1,0544QadiCiyad,Q3101035,shamela_author:662
-a_a71dd1c601,عمر بن محمد السنامي,عمر بن محمد بن عوض السنامي,shamela_author,734,1333,1334,8,shamela_book,medium,1,,,shamela_author:1740
-a_afc95aac9e,ابن الجارود,عبد الله بن علي بن الجارود، أبو محمد النيسابوري، المجاور بمكة,shamela_author,307,919,920,4,shamela_book,high,1,0307IbnJarudNaysaburi,Q22684420,shamela_author:372
-a_b011f029b7,ابن السني,,,364,974,975,4,shamela_book,high,1,0364IbnSunniDinawari,Q6533874,shamela_author:518
-a_b6aa400c48,أبو يعلى,أحمد بن علي بن المثنى التميمي الموصلي، أبو يعلى,catalog_record,307,919,920,4,shamela_book,high,1,0307AbuYaclaMawsili,Q12178251,shamela_author:234
-a_b6ba247a6e,ضياء الدين المقدسي,محمد بن عبد الواحد بن أحمد بن عبد الرحمن السعدي، المقدسي الأصل، الصالحي الحنبلي، أبو عبد,shamela_author,643,1245,1246,7,shamela_book,high,1,0643DiyaDinMaqdisi,Q5285014,shamela_author:603
-a_ba1d185303,العقيلي,محمد بن عمرو بن موسى بن حماد العقيلي المكي، أبو جعفر,shamela_author,322,933,934,4,shamela_book,high,2,0322AbuJacfarCuqayli,Q12177922,shamela_author:312
-a_bef435141f,الحكيم الترمذي,محمد بن علي بن الحسن بن بشر، أبو عبد الله، الحكيم الترمذي,shamela_author,320,932,933,4,shamela_book,high,1,0320HakimTirmidhi,Q1088315,shamela_author:647
-a_c0812b16bb,ابن عبد ربه,أحمد بن محمد بن عبد ربه ابن حبيب ابن حدير بن سالم، أبو عمر,catalog_record,328,939,940,4,shamela_book,high,2,0328IbnCabdRabbih,Q3143113,shamela_author:788
-a_c90046a44f,البلاذري,أحمد بن يحيى بن جابر بن داود البلاذري,shamela_author,279,892,893,3,shamela_book,high,1,0279Baladhuri,Q293528,shamela_author:356
-a_ca981d4646,الماوردي,علي بن محمد حبيب، أبو الحسن الماوردي,catalog_record,450,1058,1059,5,shamela_book,high,2,0450AbuHasanMawardi,Q335635,shamela_author:109
-a_ccc5a8c207,اليوسي,,,,,,,,,1,,,
-a_ceb2798b44,ابن منده,محمد بن إسحاق بن محمد بن يحيى، ابن منده، أبو عبد الله العبدي الأصبهاني,catalog_record,395,1004,1005,4,shamela_book,high,1,0395IbnMandaMuhammad,Q6351410,shamela_author:243
-a_cf2b8bf711,العز بن عبد السلام,عبد العزيز بن عبد السلام بن أبي القاسم بن الحسن السلمي الدمشقي، عز الدين الملقب بسلطان,shamela_author,660,1261,1262,7,shamela_book,high,1,0660SultanCulamaCizzDinDimashqi,Q12190169,shamela_author:126
-a_cfaac31374,أبو الشيخ الأصبهاني,أبو محمد، عبد الله بن محمد بن جعفر بن حيان، الأصبهاني، المعروف بأبي الشيخ، صاحب التصانيف,shamela_author,369,979,980,4,shamela_book,high,1,0369AbuShaykhIsbahani,Q20383638,shamela_author:265
-a_d2547cd009,أبو عبد الله محمد بن علي بن عمر التميمي المازري,محمد بن علي بن عمر التميمي المازري، أبو عبد الله,shamela_author,536,1141,1142,6,shamela_book,medium,1,0536IbnCaliMazariTamimi,Q3796574,shamela_author:2605
-a_d7ff8b8de6,الأنباري,عبد الرحمن بن محمد بن عبيد الله الأنصاري، أبو البركات، كمال الدين الأنباري,shamela_author,577,1181,1182,6,shamela_book,high,2,0577AbuBarakatAnbari,Q15686106,shamela_author:894
-a_dc0f587e3d,الواحدي,علي بن أحمد بن محمد بن علي الواحدي، النيسابوري، الشافعي أبو الحسن,shamela_author,468,1075,1076,5,shamela_book,high,1,0468IbnAhmadWahidiNaysaburi,Q12227985,shamela_author:1
-a_de553b8079,الشهرستاني,محمد بن عبد الكريم بن أحمد، أبو الفتح الشهرستاني,shamela_author,548,1153,1154,6,shamela_book,high,1,0548Shahrastani,Q1050887,shamela_author:139
-a_deb5c294d0,ابن حبان,محمد بن حبان بن أحمد بن حبان بن معاذ بن معبد التميمي، أبو حاتم البستي، ويقال,shamela_author,354,965,966,4,shamela_book,high,1,0354IbnHibbanBusti,Q4794354,shamela_author:235
-a_e096df1cc9,ابن كثير,إسماعيل بن عمر بن كثير بن ضو بن درع القرشي البصروي ثم الدمشقي، أبو الفداء، عماد الدين,catalog_record,774,1372,1373,8,shamela_book,high,1,0774IbnKathir,Q369690,shamela_author:3
-a_e2f3b87898,الطبراني,سليمان بن أحمد بن أيوب بن مطير اللخمي الشامي، أبو القاسم,catalog_record,360,970,971,4,shamela_book,high,2,0360Tabarani,Q2627801,shamela_author:232
-a_e3f35991bf,إسماعيل بن يحيى المزني,إسماعيل بن يحيى بن إسماعيل، أبو إبراهيم المزني,shamela_author,264,877,878,3,shamela_book,high,1,0264IbnYahyaMuzani,Q48703,shamela_author:429
-a_e44279abe0,الحاكم النيسابوري,محمد بن عبد الله بن حمدويه بن نعيم الضبي، الطهماني النيسابورى، الشهير بالحاكم، ويعرف بابن البيع,shamela_author,405,1014,1015,5,shamela_book,high,1,0405HakimNaysaburi,Q1093121,shamela_author:231
-a_e5cd8270fa,النووي,يحيى بن شرف بن مري بن حسن الحزامي الحوراني، النووي، الشافعي، أبو زكريا، محيي الدين,catalog_record,676,1277,1278,7,shamela_book,high,4,0676Nawawi,Q293571,shamela_author:44
-a_e746b97c51,أبو إسحاق الشيرازي,أبو إسحاق، إبراهيم بن علي بن يوسف الفيروزآبادي الشيرازي,shamela_author,476,1083,1084,5,shamela_book,high,2,0476AbuIshaqShirazi,Q3603848,shamela_author:627
-a_e81b88efd6,أبو عبد الرحمن السلمي,محمد بن الحسين بن محمد بن موسى الأزدي السلمي النيسابوري، أبو عبد الرحمن,shamela_author,412,1021,1022,5,shamela_book,high,1,0412Sulami,Q293651,shamela_author:266
-a_e95f6508ca,شعبان بن محمد الآثاري,,,,,,,,,1,,,
-a_ef49e4071e,ابن سيده,أبو الحسن، علي بن إسماعيل، المعروف بابن سيده,shamela_author,458,1065,1066,5,shamela_book,high,1,0458IbnSidaMursi,Q3778265,shamela_author:874
-a_efd417a53e,ابن خالويه,الحسين بن أحمد بن خالويه، أبو عبد الله,shamela_author,370,980,981,4,shamela_book,high,1,0370IbnAhmadIbnKhalawayh,Q4118843,shamela_author:1436
-a_f258ba1d4e,ابن جرير الطبري,أبو جعفر، محمد بن جرير بن يزيد الطبري,shamela_author,310,922,923,4,shamela_book,high,2,0310Tabari,Q192124,shamela_author:59
-a_f4ffe63b08,الزركشي، محمد بن عبد الله بن محمد الحنبلي، أبو عبد الله شمس الدين,,,772,1370,1371,8,shamela_book,high,1,0772ShamsDinHanbaliZarqashi,Q107344361,shamela_author:1356
-a_f6b2d9d846,الثعالبي,عبد الملك بن محمد بن إسماعيل، أبو منصور الثعالبي,shamela_author,429,1037,1038,5,shamela_book,high,1,0429AbuMansurThacalibi,Q1231017,shamela_author:112
-a_f94ec89453,الشاطبي,إبراهيم بن موسى بن محمد اللخمي الغرناطي [أبو إسحاق]، الشهير بالشاطبي,shamela_author,790,1388,1389,8,shamela_book,high,1,0790IbnMusaGharnatiShatibi,Q2621743,shamela_author:68
-a_fa4ec6a5f0,أحمد بن الحسين البيهقي,أحمد بن الحسين بن علي بن موسى أبو بكر البيهقي، من أئمة الحديث,shamela_author,458,1065,1066,5,shamela_book,high,1,0458Bayhaqi,Q293663,shamela_author:74
-a_fc06a98849,الصنعاني,محمد بن إسماعيل بن صلاح بن محمد الحسني، الكحلاني ثم الصنعاني، أبو إبراهيم، عز الدين، المعروف,shamela_author,1182,1768,1769,12,shamela_book,high,1,1182IbnIsmacilSancani,Q12240084,shamela_author:141
-a_ffb8dd33b3,أبو عمر يوسف بن عبد البر القرطبي,يوسف بن عبد الله بن محمد بن عبد البر النمري القرطبي المالكي، أبو عمر,shamela_author,463,1070,1071,5,shamela_book,medium,1,0463IbnCabdBarr,Q732363,shamela_author:76
+author_id,name_ar,full_name_ar,full_name_source,death_ah,death_ce_from,death_ce_to,century_ah,death_source,death_confidence,n_works,openiti_author_uri,wikidata_qid,ext_ids,canonical_author_id
+a_055b8cf232,الطيالسي,سليمان بن داود بن الجارود مولى قريش، أبو داود الطيالسي,catalog_record,204,819,820,3,shamela_book,high,1,0204AbuDawudTayalisi,Q4670117,shamela_author:219,a_055b8cf232
+a_0565918ca6,أبو زيد عبد الرحمن بن عبد العزيز التادلي,,,,,,,,,1,,,,a_0565918ca6
+a_090f4cd580,المقريزي,أحمد بن علي بن عبد القادر، أبو العباس الحسيني العبيدي، تقي الدين المقريزي,shamela_author,845,1441,1442,9,shamela_book,high,1,0845Maqrizi,Q293604,shamela_author:693,a_090f4cd580
+a_0a1cf02036,أبو الفرج ابن الجوزي,عبد الرحمن بن علي بن محمد الجوزي القرشي البغدادي، أبو الفرج,shamela_author,597,1200,1201,6,shamela_book,high,1,0597IbnJawzi,Q731866,shamela_author:51,a_9f306fc0aa
+a_0a70ed0964,قوام السنة الأصبهاني,أبو القاسم، إسماعيل بن محمد بن الفضل بن علي القرشي الطليحي التيمي الأصبهاني، الملقب بقوام السنة,shamela_author,535,1140,1141,6,shamela_book,high,1,0535QawwamSunna,Q16125235,shamela_author:204,a_0a70ed0964
+a_0a9bcc54c0,ابن أبي زيد القيرواني,أبو محمد عبد الله بن أبي زيد القيرواني، المالكي، ويقال له,shamela_author,386,996,997,4,shamela_book,high,2,0386IbnAbiZaydQayrawani,Q5984167,shamela_author:428,a_0a9bcc54c0
+a_0c1d6b30ad,أبو حيان الأندلسي,محمد بن يوسف بن علي بن يوسف ابن حيان الغرناطي الأندلسي الجياني، النفزي، أثير الدين، أبو,shamela_author,745,1344,1345,8,shamela_book,high,1,0745AbuHayyanGharnati,Q1640082,shamela_author:99,a_0c1d6b30ad
+a_0ca3895848,الحبال,إبراهيم بن سعيد النعماني - بالولاء - المصري، أبو إسحاق الحبال,shamela_author,482,1089,1090,5,shamela_book,high,1,0482AbuIshaqHabbal,Q12177684,shamela_author:1664,a_0ca3895848
+a_0ed0c8e840,ابن فرحون,إبراهيم بن علي بن محمد، ابن فرحون، برهان الدين اليعمري,shamela_author,799,1396,1397,8,shamela_book,high,1,0799IbnFarhun,Q6537286,shamela_author:623,a_0ed0c8e840
+a_0fb965bedd,ابن أبي عاصم,أحمد بن عمرو بن أبي عاصم الضحاك ابن مخلد الشيباني، أبو بكر بن أبي عاصم، ويقال,shamela_author,287,900,900,3,shamela_book,high,1,0287IbnAbiCasim,Q5984157,shamela_author:230,a_0fb965bedd
+a_11a593cc43,ابن عبد البر,يوسف بن عبد الله بن محمد بن عبد البر النمري القرطبي المالكي، أبو عمر,shamela_author,463,1070,1071,5,shamela_book,high,4,0463IbnCabdBarr,Q732363,shamela_author:76,a_11a593cc43
+a_12b883a810,السهيلي,عبد الرحمن بن عبد الله بن أحمد الخثعمي السهيلي,shamela_author,581,1185,1186,6,shamela_book,high,2,0581AbuQasimSuhayli,Q4703267,shamela_author:394,a_12b883a810
+a_13dbc886f5,الشافعي,محمد بن إدريس بن العباس بن عثمان ابن شافع الهاشمي القرشي المطلبي، أبو عبد الله,catalog_record,204,819,820,3,shamela_book,high,5,0204Shafici,Q294281,shamela_author:20,a_13dbc886f5
+a_1456d29f56,الباقلاني,محمد بن الطيب بن محمد بن جعفر، أبو بكر,catalog_record,403,1012,1013,5,shamela_book,high,1,0403AbuBakrBaqillani,Q2608002,shamela_author:15,a_1456d29f56
+a_14d5b833b8,محمد بن نصر المروزي,محمد بن نصر المروزى، أبو عبد الله,shamela_author,294,906,907,3,shamela_book,medium,1,0294IbnNasrMarwazi,Q12240275,shamela_author:310,a_14d5b833b8
+a_173fe7cc14,عبد الملك بن حبيب السلمي القرطبي,عبد الملك بن حبيب بن سليمان بن هارون السلمي الإلبيري القرطبي، أبو مروان,shamela_author,238,852,853,3,shamela_book,medium,1,0238IbnHabibQurtubi,Q12223823,shamela_author:1781,a_173fe7cc14
+a_17f38c8a8e,الخطيب البغدادي,أبو بكر أحمد بن علي بن ثابت بن أحمد بن مهدي البغدادي، المعروف بالخطيب,shamela_author,463,1070,1071,5,shamela_book,high,3,0463KhatibBaghdadi,Q557961,shamela_author:246,a_17f38c8a8e
+a_1bd8296fe5,الحميري، علي بن محمد بن هارون بن زياد أبو الحسن الكوفي,,,323,934,935,4,shamela_book,high,1,0323CaliHimyari,Q136709754,shamela_author:375,a_1bd8296fe5
+a_1eb94a3544,ابن أبي الدنيا,عبد الله بن محمد بن عبيد بن سفيان، ابن أبي الدنيا القرشي الأموي، مولاهم، البغدادي، أبو بكر,catalog_record,281,894,895,3,shamela_book,high,4,0281IbnAbiDunya,Q6532706,shamela_author:273,a_1eb94a3544
+a_1f98e17e6f,أبو العباس أحمد بن عبد المؤمن القيسي الشريشي,,,619,1222,1223,7,shamela_book,medium,1,0619AbuCabbasSharishi,Q2829407,shamela_author:2969,a_1f98e17e6f
+a_2109c9dd7f,الشيباني,محمد بن الحسن بن فرقد، من موالي بني شيبان، أبو عبد الله,shamela_author,189,804,805,2,shamela_book,high,1,0189MuhammadShaybani,Q293612,shamela_author:277,a_2109c9dd7f
+a_2283e33fd7,البيضاوي,عبد الله بن عمر بن محمد بن علي الشيرازي، أبو سعيد، أو أبو الخير، ناصر الدين البيضاوي,catalog_record,685,1286,1287,7,shamela_book,high,1,0685NasirDinBaydawi,Q287573,shamela_author:104,a_2283e33fd7
+a_236fc7505d,جرير,,,110,728,729,2,shamela_book,medium,1,0110JarirShacir,Q912031,shamela_author:2959,a_236fc7505d
+a_283d9db09f,ابن الأثير,علي بن محمد بن عبد الكريم بن عبد الواحد الشيباني الجزري، أبو الحسن عز الدين ابن الأثير,catalog_record,630,1232,1233,7,shamela_book,high,1,0630IbnAthirCizzDin,Q334854,shamela_author:244,a_283d9db09f
+a_2c5e6ee699,ابن حجر العسقلاني,أحمد بن علي بن محمد الكناني العسقلاني، أبو الفضل، شهاب الدين، ابن حجر,shamela_author,852,1448,1449,9,shamela_book,high,2,0852IbnHajarCasqalani,Q471116,shamela_author:202,a_2c5e6ee699
+a_2d09bf814a,النسائي,أحمد بن علي بن شعيب بن علي بن سنان بن بحر بن دينار، أبو عبد الرحمن النسائي,catalog_record,303,915,916,4,shamela_book,high,3,0303Nasai,Q293535,shamela_author:49,a_2d09bf814a
+a_2f9e48c8ef,الدنيا,,,281,894,895,3,shamela_book,high,1,0281IbnAbiDunya,Q6532706,shamela_author:273,a_1eb94a3544
+a_493f9f47b5,أبو القاسم القشيري النيسابوري,عبد الكريم بن هوازن بن عبد الملك ابن طلحة النيسابورى القشيري، من بني قشير ابن كعب,shamela_author,465,1072,1073,5,shamela_book,medium,1,0465IbnHawazinQushayri,Q4115259,shamela_author:125,a_493f9f47b5
+a_49a0f72d1a,ابن هشام,عبد الملك بن هشام بن أيوب الحميري المعافري، أبو محمد، جمال الدين,catalog_record,213,828,829,3,shamela_book,high,1,0213IbnHisham,Q461096,shamela_author:448,a_49a0f72d1a
+a_4c3561b675,لسان الدين ابن الخطيب,محمد بن عبد الله بن سعيد السلماني اللوشي الأصل، الغرناطي الأندلسي، أبو عبد الله، الشهير بلسان,shamela_author,776,1374,1375,8,shamela_book,high,1,0776LisanDinIbnKhatib,Q2737184,shamela_author:698,a_4c3561b675
+a_4c80649dd6,الذهبي,محمد بن أحمد بن عثمان بن قايماز الذهبي، شمس الدين، أبو عبد الله,shamela_author,748,1347,1348,8,shamela_book,high,3,0748Dhahabi,Q293554,shamela_author:362,a_4c80649dd6
+a_4dd969d1eb,أبو عبيد,القاسم بن سلام الهروي الأزدي الخزاعي، بالولاء، الخراساني البغدادي، أبو عبيد,shamela_author,224,838,839,3,shamela_book,high,2,0224QasimIbnSallam,Q12178105,shamela_author:26,a_4dd969d1eb
+a_5598de18b8,إبراهيم اللقاني المالكي,,,,,,,,,1,,,,a_5598de18b8
+a_55e9499722,جلال الدين السيوطي,عبد الرحمن بن أبي بكر بن محمد ابن سابق الدين الخضيري السيوطي، جلال الدين,shamela_author,911,1505,1506,10,shamela_book,high,2,0911Suyuti,Q468432,shamela_author:7,a_9fc101de63
+a_56313cb3f7,محمد العبدري البلنسي,,,,,,,,,1,,,,a_56313cb3f7
+a_5785c1fe38,ابن عقيل,,,513,1119,1120,6,shamela_book,high,1,0513AbuWafaIbnCaqil,Q11728390,shamela_author:2609,a_5785c1fe38
+a_5cb18e685c,أبو الحسين أحمد بن فارس بن زكريا,أحمد بن فارس بن زكرياء القزويني الرازي، أبو الحسين,shamela_author,395,1004,1005,4,shamela_book,medium,1,0395IbnFarisQazwini,Q6419062,shamela_author:892,a_5cb18e685c
+a_5e3870f169,بديع الزمان,أحمد بن الحسين بن يحيى الهمذاني، أبو الفضل,catalog_record,398,1007,1008,4,shamela_book,high,1,0398BadicZamanHamadhani,Q374608,shamela_author:822,a_5e3870f169
+a_602680ab38,أبو الحسن الأشعري,هو علي بن إسماعيل بن إسحاق بن سالم بن إسماعيل بن عبد الله بن موسى بن,shamela_author,324,935,936,4,shamela_book,high,2,0324Ashcari,Q316349,shamela_author:58,a_602680ab38
+a_638bc7edae,ياقوت الحموي,ياقوت بن عبد الله الرومي الحموي، أبو عبد الله، شهاب الدين,shamela_author,626,1228,1229,7,shamela_book,high,1,0626YaqutHamawi,Q316364,shamela_author:765,a_638bc7edae
+a_6458847089,الآجري,محمد بن الحسين بن عبد الله، أبو بكر الآجري,shamela_author,360,970,971,4,shamela_book,high,2,0360AbuBakrAjurri,Q12183231,shamela_author:264,a_6458847089
+a_645c1cf583,ابن حزم,علي بن أحمد بن سعيد بن حزم الظاهري، أبو محمد,shamela_author,456,1063,1064,5,shamela_book,high,1,0456IbnHazm,Q317787,shamela_author:2,a_645c1cf583
+a_696448fa14,ابن بشكوال,خلف بن عبد الملك بن مسعود بن بشكوال الخزرجي الأنصاري الأندلسي، أبو القاسم,shamela_author,578,1182,1183,6,shamela_book,high,1,0578IbnBashkuwal,Q1655886,shamela_author:205,a_696448fa14
+a_6b1bab4278,ابن الزبير,أحمد بن إبراهيم بن الزبير الثقفي الغرناطي، أبو جعفر,shamela_author,708,1308,1309,8,shamela_book,high,1,0708IbnIbrahimAbuJacfarGharnati,Q3147471,shamela_author:1178,a_6b1bab4278
+a_6c54c04246,ابن حنبل,أبو عبد الله أحمد بن محمد بن حنبل بن هلال بن أسد الشيباني,shamela_author,241,855,856,3,shamela_book,high,2,0241IbnHanbal,Q194442,shamela_author:220,a_6c54c04246
+a_6e7d9d83a7,سيف الدين الآمدي,أبو الحسن، سيف الدين، علي بن محمد بن سالم التغلبي الآمدي,shamela_author,631,1233,1234,7,shamela_book,high,1,0631SayfDinAmidi,Q292484,shamela_author:95,a_6e7d9d83a7
+a_6f2a99cca9,ابن العربي,محمد بن عبد الله بن محمد المعافري الإشبيلي المالكي، أبو بكر ابن العربي,shamela_author,543,1148,1149,6,shamela_book,high,1,0543IbnCarabiIshbili,Q918471,shamela_author:22,a_6f2a99cca9
+a_7220ca3f46,سيبويه,عمرو بن عثمان بن قنبر الحارثي بالولاء، أبو بشر، الملقب سيبويه,catalog_record,180,796,797,2,shamela_book,high,1,0180Sibawayhi,Q983355,shamela_author:347,a_7220ca3f46
+a_74d8203a13,أبو منصور الثعالبي,عبد الملك بن محمد بن إسماعيل، أبو منصور الثعالبي,shamela_author,429,1037,1038,5,shamela_book,high,1,0429AbuMansurThacalibi,Q1231017,shamela_author:112,a_f6b2d9d846
+a_7618333432,ابن تيمية,أحمد بن عبد الحليم بن عبد السلام بن عبد الله بن أبي القاسم الخضر النميري الحراني الدمشقي الحنبلي، أبو العباس، تقي الدين ابن تيمية,catalog_record,728,1327,1328,8,shamela_book,high,3,0728IbnTaymiyya,Q491558,shamela_author:54,a_7618333432
+a_793838a11a,أبو هلال العسكري,أبو هلال، الحسن بن عبد الله بن سهل بن سعيد ابن يحيى بن مهران العسكري,shamela_author,395,1004,1005,4,shamela_book,high,1,0395AbuHilalCaskari,Q4670215,shamela_author:348,a_793838a11a
+a_7d813526af,الونشريسي,أحمد بن يحيى بن محمد الونشريسي التلمساني، أبو العباس,shamela_author,914,1508,1509,10,shamela_book,high,1,0914IbnYahyaWansharisi,Q16117724,shamela_author:1689,a_7d813526af
+a_7f130fedd8,القرافي,أحمد بن إدريس بن عبد الرحمن، أبو العباس، شهاب الدين الصنهاجي القرافي,shamela_author,684,1285,1286,7,shamela_book,high,1,0684ShihabDinQarafi,Q7496464,shamela_author:615,a_7f130fedd8
+a_8303d6aa44,برهان الدين ابن فرحون,إبراهيم بن علي بن محمد، ابن فرحون، برهان الدين اليعمري,shamela_author,799,1396,1397,8,shamela_book,high,1,0799IbnFarhun,Q6537286,shamela_author:623,a_0ed0c8e840
+a_83762f2987,ابن بطة,عبيد الله بن محمد بن محمد بن حمدان، أبو عبد الله العكبري، المعروف بابن بطة,shamela_author,387,997,998,4,shamela_book,high,1,0387IbnBattaCukbari,Q5984193,shamela_author:143,a_83762f2987
+a_84694cf459,أحمد بن علي بن حجر العسقلاني,أحمد بن علي بن محمد الكناني العسقلاني، أبو الفضل، شهاب الدين، ابن حجر,shamela_author,852,1448,1449,9,shamela_book,high,1,0852IbnHajarCasqalani,Q471116,shamela_author:202,a_2c5e6ee699
+a_84993758a6,الدولابي,محمد بن أحمد بن حماد بن سعد بن مسلم، أبو بشر الأنصاري، بالولاء، الرازي الدولابي الوراق,shamela_author,310,922,923,4,shamela_book,high,1,0310IbnAhmadDulabi,Q12187477,shamela_author:300,a_84993758a6
+a_85a9259c5d,الأزهري,محمد بن أحمد بن الأزهري الهروي، أبو منصور,shamela_author,370,980,981,4,shamela_book,high,1,0370AbuMansurAzhari,Q6820795,shamela_author:901,a_85a9259c5d
+a_863dbcf220,ابن هشام,عبد الله بن يوسف بن أحمد بن عبد الله بن يوسف، أبو محمد، جمال الدين، ابن هشام,catalog_record,761,1359,1360,8,shamela_book,high,1,0761JamalDinIbnHisham,Q6538102,shamela_author:893,a_863dbcf220
+a_897f52ddbd,الدارمي,عثمان بن سعيد بن خالد الدارمي السجستاني، أبو سعيد,shamela_author,280,893,894,3,shamela_book,high,1,0280CuthmanIbnSacidDarimi,Q12224360,shamela_author:379,a_897f52ddbd
+a_9031a879e4,الطرطوشي,محمد بن الوليد بن محمد بن خلف القرشى الفهرى الأندلسي، أبو بكر الطرطوشى، ويقال له ابن,shamela_author,520,1126,1127,6,shamela_book,high,1,0520IbnWalidTurtushi,Q2837555,shamela_author:80,a_9031a879e4
+a_93238c5ad7,ابن الأبار,محمد بن عبد الله بن أبي بكر القضاعي البلنسي، أبو عبد الله، ابن الأبار,shamela_author,658,1259,1260,7,shamela_book,high,1,0658IbnAbbar,Q3321466,shamela_author:689,a_93238c5ad7
+a_962bda78e4,أبو محمد عبد الله بن مسلم بن قتيبة,عبد الله بن مسلم بن قتيبة الدينوري، أبو محمد,shamela_author,276,889,890,3,shamela_book,medium,1,0276IbnQutaybaDinawari,Q984663,shamela_author:249,a_962bda78e4
+a_9b729f9f43,أبو الوليد الباجي,سليمان بن خلف بن سعد التجيبي القرطبي، أبو الوليد الباجي,shamela_author,474,1081,1082,5,shamela_book,high,1,0474IbnKhalafBaji,Q4670455,shamela_author:360,a_9b729f9f43
+a_9c7d0a8dcc,ابن قدامة,عبد الله بن محمد بن قدامة الجماعيلي المقدسي ثم الدمشقي الحنبلي، أبو محمد، موفق الدين,shamela_author,620,1223,1224,7,shamela_book,high,2,0620IbnQudamaMaqdisi,Q785506,shamela_author:474,a_9c7d0a8dcc
+a_9c7e21ed3d,الروداني,,,1094,1682,1683,11,shamela_book,medium,1,1094IbnSulaymanRudani,Q6893439,shamela_author:2305,a_9c7e21ed3d
+a_9f306fc0aa,ابن الجوزي,عبد الرحمن بن علي بن محمد الجوزي القرشي البغدادي، أبو الفرج,shamela_author,597,1200,1201,6,shamela_book,high,4,0597IbnJawzi,Q731866,shamela_author:51,a_9f306fc0aa
+a_9fc101de63,الجلال السيوطي,عبد الرحمن بن أبي بكر بن محمد ابن سابق الدين الخضيري السيوطي، جلال الدين,shamela_author,911,1505,1506,10,shamela_book,high,2,0911Suyuti,Q468432,shamela_author:7,a_9fc101de63
+a_a3cf058dae,عياض,عياض بن موسى بن عياض بن عمرون اليحصبي السبتي، أبو الفضل,shamela_author,544,1149,1150,6,shamela_book,high,1,0544QadiCiyad,Q3101035,shamela_author:662,a_a3cf058dae
+a_a71dd1c601,عمر بن محمد السنامي,عمر بن محمد بن عوض السنامي,shamela_author,734,1333,1334,8,shamela_book,medium,1,,,shamela_author:1740,a_a71dd1c601
+a_afc95aac9e,ابن الجارود,عبد الله بن علي بن الجارود، أبو محمد النيسابوري، المجاور بمكة,shamela_author,307,919,920,4,shamela_book,high,1,0307IbnJarudNaysaburi,Q22684420,shamela_author:372,a_afc95aac9e
+a_b011f029b7,ابن السني,,,364,974,975,4,shamela_book,high,1,0364IbnSunniDinawari,Q6533874,shamela_author:518,a_b011f029b7
+a_b6aa400c48,أبو يعلى,أحمد بن علي بن المثنى التميمي الموصلي، أبو يعلى,catalog_record,307,919,920,4,shamela_book,high,1,0307AbuYaclaMawsili,Q12178251,shamela_author:234,a_b6aa400c48
+a_b6ba247a6e,ضياء الدين المقدسي,محمد بن عبد الواحد بن أحمد بن عبد الرحمن السعدي، المقدسي الأصل، الصالحي الحنبلي، أبو عبد,shamela_author,643,1245,1246,7,shamela_book,high,1,0643DiyaDinMaqdisi,Q5285014,shamela_author:603,a_b6ba247a6e
+a_ba1d185303,العقيلي,محمد بن عمرو بن موسى بن حماد العقيلي المكي، أبو جعفر,shamela_author,322,933,934,4,shamela_book,high,2,0322AbuJacfarCuqayli,Q12177922,shamela_author:312,a_ba1d185303
+a_bef435141f,الحكيم الترمذي,محمد بن علي بن الحسن بن بشر، أبو عبد الله، الحكيم الترمذي,shamela_author,320,932,933,4,shamela_book,high,1,0320HakimTirmidhi,Q1088315,shamela_author:647,a_bef435141f
+a_c0812b16bb,ابن عبد ربه,أحمد بن محمد بن عبد ربه ابن حبيب ابن حدير بن سالم، أبو عمر,catalog_record,328,939,940,4,shamela_book,high,2,0328IbnCabdRabbih,Q3143113,shamela_author:788,a_c0812b16bb
+a_c90046a44f,البلاذري,أحمد بن يحيى بن جابر بن داود البلاذري,shamela_author,279,892,893,3,shamela_book,high,1,0279Baladhuri,Q293528,shamela_author:356,a_c90046a44f
+a_ca981d4646,الماوردي,علي بن محمد حبيب، أبو الحسن الماوردي,catalog_record,450,1058,1059,5,shamela_book,high,2,0450AbuHasanMawardi,Q335635,shamela_author:109,a_ca981d4646
+a_ccc5a8c207,اليوسي,,,,,,,,,1,,,,a_ccc5a8c207
+a_ceb2798b44,ابن منده,محمد بن إسحاق بن محمد بن يحيى، ابن منده، أبو عبد الله العبدي الأصبهاني,catalog_record,395,1004,1005,4,shamela_book,high,1,0395IbnMandaMuhammad,Q6351410,shamela_author:243,a_ceb2798b44
+a_cf2b8bf711,العز بن عبد السلام,عبد العزيز بن عبد السلام بن أبي القاسم بن الحسن السلمي الدمشقي، عز الدين الملقب بسلطان,shamela_author,660,1261,1262,7,shamela_book,high,1,0660SultanCulamaCizzDinDimashqi,Q12190169,shamela_author:126,a_cf2b8bf711
+a_cfaac31374,أبو الشيخ الأصبهاني,أبو محمد، عبد الله بن محمد بن جعفر بن حيان، الأصبهاني، المعروف بأبي الشيخ، صاحب التصانيف,shamela_author,369,979,980,4,shamela_book,high,1,0369AbuShaykhIsbahani,Q20383638,shamela_author:265,a_cfaac31374
+a_d2547cd009,أبو عبد الله محمد بن علي بن عمر التميمي المازري,محمد بن علي بن عمر التميمي المازري، أبو عبد الله,shamela_author,536,1141,1142,6,shamela_book,medium,1,0536IbnCaliMazariTamimi,Q3796574,shamela_author:2605,a_d2547cd009
+a_d7ff8b8de6,الأنباري,عبد الرحمن بن محمد بن عبيد الله الأنصاري، أبو البركات، كمال الدين الأنباري,shamela_author,577,1181,1182,6,shamela_book,high,2,0577AbuBarakatAnbari,Q15686106,shamela_author:894,a_d7ff8b8de6
+a_dc0f587e3d,الواحدي,علي بن أحمد بن محمد بن علي الواحدي، النيسابوري، الشافعي أبو الحسن,shamela_author,468,1075,1076,5,shamela_book,high,1,0468IbnAhmadWahidiNaysaburi,Q12227985,shamela_author:1,a_dc0f587e3d
+a_de553b8079,الشهرستاني,محمد بن عبد الكريم بن أحمد، أبو الفتح الشهرستاني,shamela_author,548,1153,1154,6,shamela_book,high,1,0548Shahrastani,Q1050887,shamela_author:139,a_de553b8079
+a_deb5c294d0,ابن حبان,محمد بن حبان بن أحمد بن حبان بن معاذ بن معبد التميمي، أبو حاتم البستي، ويقال,shamela_author,354,965,966,4,shamela_book,high,1,0354IbnHibbanBusti,Q4794354,shamela_author:235,a_deb5c294d0
+a_e096df1cc9,ابن كثير,إسماعيل بن عمر بن كثير بن ضو بن درع القرشي البصروي ثم الدمشقي، أبو الفداء، عماد الدين,catalog_record,774,1372,1373,8,shamela_book,high,2,0774IbnKathir,Q369690,shamela_author:3,a_e096df1cc9
+a_e2f3b87898,الطبراني,سليمان بن أحمد بن أيوب بن مطير اللخمي الشامي، أبو القاسم,catalog_record,360,970,971,4,shamela_book,high,2,0360Tabarani,Q2627801,shamela_author:232,a_e2f3b87898
+a_e3f35991bf,إسماعيل بن يحيى المزني,إسماعيل بن يحيى بن إسماعيل، أبو إبراهيم المزني,shamela_author,264,877,878,3,shamela_book,high,1,0264IbnYahyaMuzani,Q48703,shamela_author:429,a_e3f35991bf
+a_e44279abe0,الحاكم النيسابوري,محمد بن عبد الله بن حمدويه بن نعيم الضبي، الطهماني النيسابورى، الشهير بالحاكم، ويعرف بابن البيع,shamela_author,405,1014,1015,5,shamela_book,high,1,0405HakimNaysaburi,Q1093121,shamela_author:231,a_e44279abe0
+a_e5cd8270fa,النووي,يحيى بن شرف بن مري بن حسن الحزامي الحوراني، النووي، الشافعي، أبو زكريا، محيي الدين,catalog_record,676,1277,1278,7,shamela_book,high,4,0676Nawawi,Q293571,shamela_author:44,a_e5cd8270fa
+a_e746b97c51,أبو إسحاق الشيرازي,أبو إسحاق، إبراهيم بن علي بن يوسف الفيروزآبادي الشيرازي,shamela_author,476,1083,1084,5,shamela_book,high,2,0476AbuIshaqShirazi,Q3603848,shamela_author:627,a_e746b97c51
+a_e81b88efd6,أبو عبد الرحمن السلمي,محمد بن الحسين بن محمد بن موسى الأزدي السلمي النيسابوري، أبو عبد الرحمن,shamela_author,412,1021,1022,5,shamela_book,high,1,0412Sulami,Q293651,shamela_author:266,a_e81b88efd6
+a_e95f6508ca,شعبان بن محمد الآثاري,,,,,,,,,1,,,,a_e95f6508ca
+a_ef49e4071e,ابن سيده,أبو الحسن، علي بن إسماعيل، المعروف بابن سيده,shamela_author,458,1065,1066,5,shamela_book,high,1,0458IbnSidaMursi,Q3778265,shamela_author:874,a_ef49e4071e
+a_efd417a53e,ابن خالويه,الحسين بن أحمد بن خالويه، أبو عبد الله,shamela_author,370,980,981,4,shamela_book,high,1,0370IbnAhmadIbnKhalawayh,Q4118843,shamela_author:1436,a_efd417a53e
+a_f258ba1d4e,ابن جرير الطبري,أبو جعفر، محمد بن جرير بن يزيد الطبري,shamela_author,310,922,923,4,shamela_book,high,2,0310Tabari,Q192124,shamela_author:59,a_f258ba1d4e
+a_f4ffe63b08,الزركشي، محمد بن عبد الله بن محمد الحنبلي، أبو عبد الله شمس الدين,,,772,1370,1371,8,shamela_book,high,1,0772ShamsDinHanbaliZarqashi,Q107344361,shamela_author:1356,a_f4ffe63b08
+a_f6b2d9d846,الثعالبي,عبد الملك بن محمد بن إسماعيل، أبو منصور الثعالبي,shamela_author,429,1037,1038,5,shamela_book,high,1,0429AbuMansurThacalibi,Q1231017,shamela_author:112,a_f6b2d9d846
+a_f94ec89453,الشاطبي,إبراهيم بن موسى بن محمد اللخمي الغرناطي [أبو إسحاق]، الشهير بالشاطبي,shamela_author,790,1388,1389,8,shamela_book,high,1,0790IbnMusaGharnatiShatibi,Q2621743,shamela_author:68,a_f94ec89453
+a_fa4ec6a5f0,أحمد بن الحسين البيهقي,أحمد بن الحسين بن علي بن موسى أبو بكر البيهقي، من أئمة الحديث,shamela_author,458,1065,1066,5,shamela_book,high,1,0458Bayhaqi,Q293663,shamela_author:74,a_fa4ec6a5f0
+a_fc06a98849,الصنعاني,محمد بن إسماعيل بن صلاح بن محمد الحسني، الكحلاني ثم الصنعاني، أبو إبراهيم، عز الدين، المعروف,shamela_author,1182,1768,1769,12,shamela_book,high,1,1182IbnIsmacilSancani,Q12240084,shamela_author:141,a_fc06a98849
+a_ffb8dd33b3,أبو عمر يوسف بن عبد البر القرطبي,يوسف بن عبد الله بن محمد بن عبد البر النمري القرطبي المالكي، أبو عمر,shamela_author,463,1070,1071,5,shamela_book,medium,1,0463IbnCabdBarr,Q732363,shamela_author:76,a_11a593cc43

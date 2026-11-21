@@ -55,6 +55,7 @@ class EditionRecord:
     files: list[Volume] = field(default_factory=list)
     death_ah: int | None = None
     death_source: str = ""
+    death_name_matched: bool = True  # False: the year's source names its author differently from `author`
     century_ah: int | None = None  # the author's century when no death year is known
     author_full_name: str = ""
     shamela_author_id: int | None = None
@@ -63,6 +64,7 @@ class EditionRecord:
     waqfeya_ids: list[str] = field(default_factory=list)
     title_page_read: bool = False
     sources: dict[str, str] = field(default_factory=dict)  # field -> SOURCES key
+    title_source: str = "file_label"  # SOURCES key of the title cell (an edition mark in it may fill the publisher)
     holding_library: str = ""  # manuscripts only
     shelfmark: str = ""
     holding_confidence: str = ""

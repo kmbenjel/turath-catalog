@@ -61,3 +61,15 @@ def test_pocketshelf_export(t, tmp_path):
     assert {r["work"] for r in rows} <= works
     linked = [r for r in pocketshelf_rows(t) if "openiti:" in r["ext_ids"]]
     assert linked
+
+
+def test_pocketshelf_gets_the_clean_title_and_the_rest_in_its_own_columns(t):
+    e = t["editions"][0]
+    e.update(
+        title_ar="الجامع = تفسير القرطبي (الجزء الأول)", title_clean_ar="الجامع", alt_titles_ar="تفسير القرطبي", title_note_ar="الجزء الأول"
+    )
+    (row,) = [r for r in pocketshelf_rows(t) if r["title"] == "الجامع"]
+    assert (row["alt_titles"], row["note"]) == ("تفسير القرطبي", "الجزء الأول")
+    assert POCKETSHELF_COLS[-2:] == ["alt_titles", "note"]  # appended: the earlier columns keep their place
+    plain = [r for r in pocketshelf_rows(t) if not r["alt_titles"] and not r["note"]]
+    assert len(plain) >= len(t["editions"]) - 30

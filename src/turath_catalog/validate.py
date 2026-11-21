@@ -29,6 +29,7 @@ def check(tables: dict, personal_names: tuple[str, ...] = ()) -> list[str]:
     errs += _keys(tables)
     errs += _references(tables)
     errs += _dates(tables)
+    errs += _titles(tables)
     errs += _leaks(tables, personal_names)
     return errs
 
@@ -36,8 +37,10 @@ def check(tables: dict, personal_names: tuple[str, ...] = ()) -> list[str]:
 def _schema(tables: dict) -> list[str]:
     errs = []
     for name in TABLES:
-        cols = {c.name: c for c in columns(name)}
-        for i, r in enumerate(tables.get(name, [])):
+        rows = tables.get(name, [])
+        # a column that no row carries was added after this release was built: an older release stays valid
+        cols = {c.name: c for c in columns(name) if not rows or any(c.name in r for r in rows)}
+        for i, r in enumerate(rows):
             extra = set(r) - set(cols)
             if extra:
                 errs.append(f"{name}[{i}]: unknown columns {sorted(extra)}")
@@ -105,11 +108,16 @@ def _references(tables: dict) -> list[str]:
         ("manuscripts", "author_id", "authors"),
         ("manuscripts", "printed_edition_id", "editions"),
         ("edition_files", "edition_id", "editions"),
+        ("authors", "canonical_author_id", "authors"),
     ]
     for table, col, target in refs:
         bad = [r[col] for r in tables.get(table, []) if r.get(col) and r[col] not in ids[target]]
         if bad:
             errs.append(f"{table}.{col}: {len(bad)} ids missing from {target}, e.g. {bad[0]}")
+    canonical = {a["author_id"]: a.get("canonical_author_id") for a in tables.get("authors", [])}
+    for aid, cid in canonical.items():
+        if cid and canonical.get(cid, cid) != cid:
+            errs.append(f"authors: {aid} points to {cid}, which is not its own canonical row")
     per_work = Counter(e["work_id"] for e in tables.get("editions", []))
     for w in tables.get("works", []):
         if per_work[w["work_id"]] == 0:
@@ -163,6 +171,22 @@ def _dates(tables: dict) -> list[str]:
         d = deaths.get(works.get(e["work_id"], {}).get("author_id"))
         if h and d and d < 1200 and h < d and e["kind"] != "manuscript":
             errs.append(f"editions: {e['edition_id']} printed {h} AH before its author died ({d} AH)")
+    return errs
+
+
+def _titles(tables: dict) -> list[str]:
+    """A clean title is the title alone: no second title, no bracket; and it is not listed as its own other title."""
+    errs = []
+    for name in ("works", "editions"):
+        for r in tables.get(name, []):
+            clean = r.get("title_clean_ar")
+            if not clean:
+                continue  # an older release, or reported by the schema check
+            key = r[TABLES[name]["key"]]
+            if re.search(r"[=()\[\]]", clean):
+                errs.append(f"{name}: {key} title_clean_ar still carries «=» or a bracket: {clean[:80]!r}")
+            if clean in (r.get("alt_titles_ar") or "").split(";"):
+                errs.append(f"{name}: {key} lists its own title among alt_titles_ar")
     return errs
 
 

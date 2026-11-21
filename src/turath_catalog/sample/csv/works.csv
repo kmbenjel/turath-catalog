@@ -1,150 +1,150 @@
-work_id,title_ar,alt_titles_ar,author_id,author_name_ar,category_ar,category_en,openiti_uri,openiti_confidence,wikidata_qid,ext_ids,n_editions,confidence
-w_00620b0805,بستان العارفين,,a_e5cd8270fa,النووي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0676Nawawi.BustanCarifin,high,,shamela:12719,2,medium
-w_024ef09b03,الدر المنثور في التفسير بالمأثور,,a_55e9499722,جلال الدين السيوطي,التفسير,Quranic exegesis,0911Suyuti.DurrManthur,high,Q12187251,shamela:12884,3,high
-w_028a739e32,المحكم والمحيط الأعظم,,a_ef49e4071e,ابن سيده,الغريب والمعاجم,Rare words and dictionaries,0458IbnSidaMursi.MuhkamWaMuhit,high,,shamela:9757,2,high
-w_03dd6b4667,النكت والعيون,تفسير الماوردي,a_ca981d4646,الماوردي,التفسير,Quranic exegesis,0450AbuHasanMawardi.NukatWaCuyun,high,,shamela:8346,2,medium
-w_040db23ba8,التحقيق في أحاديث الخلاف,,a_9f306fc0aa,ابن الجوزي,كتب السنة,Hadith collections,0597IbnJawzi.TahqiqFiAhadithKhilaf,high,,shamela:5907,2,medium
-w_054d932c51,الرسالة القبرصية,,a_7618333432,ابن تيمية,الفرق والردود,Sects and refutations,0728IbnTaymiyya.RisalaQubrusiyya,high,,,2,medium
-w_06fc22e874,الموقظة في علم مصطلح الحديث,,a_4c80649dd6,الذهبي,علوم الحديث,Hadith sciences,0748Dhahabi.MuqizaFiCilmMustalahHadith,high,,shamela:8195;shamela:147662,2,medium
-w_0848a8c38b,معجم مقاييس اللغة,,a_5cb18e685c,أبو الحسين أحمد بن فارس بن زكريا,الغريب والمعاجم,Rare words and dictionaries,0395IbnFarisQazwini.MucjamMaqayis,high,Q12244593,shamela:21710,2,high
-w_0b673a9525,كتاب الديات,,a_0fb965bedd,ابن أبي عاصم,الفقه العام,Comparative law,0287IbnAbiCasim.Diyat,high,,shamela:13018,2,medium
-w_0cd464f03e,مكارم الأخلاق,,a_1eb94a3544,ابن أبي الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.MakarimAkhlaq,high,,shamela:13180,2,high
-w_0cf82fbb00,عمل اليوم والليلة,,a_b011f029b7,ابن السني,كتب السنة,Hadith collections,0364IbnSunniDinawari.CamalYawmWaLayl,high,,shamela:13132,2,medium
-w_0daf6c53b2,شرح مقامات الحريري,,a_1f98e17e6f,أبو العباس أحمد بن عبد المؤمن القيسي الشريشي,الأدب,Literature,0619AbuCabbasSharishi.SharhMaqamatHariri,high,,shamela:760,2,high
-w_0de6022843,جزء فيه مجلسان,,a_2d09bf814a,النسائي,كتب السنة,Hadith collections,0303Nasai.MajlisanMinImla,medium,,shamela:8225,2,medium
-w_0fb2cbd3c8,ديوان جرير بشرح محمد بن حبيب,,a_236fc7505d,جرير,الشعر ودواوينه,Poetry and diwans,0110JarirShacir.Diwan,high,,shamela:133412,2,high
-w_0fcc88b6a3,الحجة في القراءات السبع,,a_efd417a53e,ابن خالويه,التجويد والقراءات,Quranic recitation and readings,0370IbnAhmadIbnKhalawayh.HujjaFiQiraatSabca,high,,shamela:26140,2,high
-w_110b2c1d5d,جماع العلم,,a_13dbc886f5,الشافعي,أصول الفقه,Principles of jurisprudence,0204Shafici.JimacCilm,high,,,2,high
-w_111a6ff2ec,الكافي في فقه أهل المدينة المالكي,,a_11a593cc43,ابن عبد البر,الفقه المالكي,Maliki law,0463IbnCabdBarr.KafiFiFiqh,medium,,shamela:7367,4,high
-w_111f56cf88,كتاب الوشاح وتثقيف الرماح في رد توهيم المجد الصحاح,,a_0565918ca6,أبو زيد عبد الرحمن بن عبد العزيز التادلي,الغريب والمعاجم,Rare words and dictionaries,,,,,1,high
-w_11da6eb48d,الرضا عن الله بقضائه والتسليم بقدره,,a_1eb94a3544,ابن أبي الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.Rida,medium,,,2,medium
-w_13f5fce4c5,البحر المحيط,,a_0c1d6b30ad,أبو حيان الأندلسي,التفسير,Quranic exegesis,0745AbuHayyanGharnati.TafsirBahrMuhit,high,,,2,high
-w_1a6c2e9eaa,الإبانة عن شريعة الفرقة الناجية ومجانبة,,a_83762f2987,ابن بطة,العقيدة,Creed,0387IbnBattaCukbari.IbanaCanSharica,medium,,,2,medium
-w_1aaeaf3fb5,كتاب الزهد,,a_6c54c04246,ابن حنبل,الرقائق والآداب والأذكار,"Piety, manners and devotions",0241IbnHanbal.Zuhd,high,Q115795068,shamela:8494,4,medium
-w_1beeddcac1,الاستيعاب في معرفة الأصحاب,,a_ffb8dd33b3,أبو عمر يوسف بن عبد البر القرطبي,التراجم والطبقات,Biographies and generations,0463IbnCabdBarr.IsticabFiMacrifatAshab,high,Q7216261,shamela:1499;shamela:12288,2,high
-w_1c2c4911a7,نصاب الاحتساب,,a_a71dd1c601,عمر بن محمد السنامي,السياسة الشرعية والقضاء,Governance and the judiciary,,,,shamela:9679,1,high
-w_1c518565f7,أخلاق النبي وآدابه صلى الله عليه وسلم,,a_cfaac31374,أبو الشيخ الأصبهاني,السيرة النبوية,Life of the Prophet,0369AbuShaykhIsbahani.AkhlaqNabi,medium,Q127327979,shamela:12980,2,medium
-w_1e55cfb4f6,الوجه الجميل في علم الخليل ألفية في العروض والقوافي,,a_e95f6508ca,شعبان بن محمد الآثاري,العروض والقوافي,Prosody and rhyme,,,,,1,high
-w_1e6d649223,أنوار التنزيل وأسرار التأويل المعروف بتفسير البيضاوي,تفسير البيضاوي,a_2283e33fd7,البيضاوي,التفسير,Quranic exegesis,0685NasirDinBaydawi.AnwarTanzil,high,Q4454730,shamela:23588,2,medium
-w_2251fc9744,الرسالة,,a_13dbc886f5,الشافعي,أصول الفقه,Principles of jurisprudence,0204Shafici.Risala,high,,shamela:8180,2,medium
-w_22fcb2533f,الروض الأنف في شرح السيرة النبوية,,a_12b883a810,السهيلي,السيرة النبوية,Life of the Prophet,0581AbuQasimSuhayli.RawdUnuf,high,,,2,high
-w_24534bf3ce,السيرة النبوية,سيرة ابن هشام,a_49a0f72d1a,ابن هشام,السيرة النبوية,Life of the Prophet,0213IbnHisham.SiraNabawiyya,high,Q12217763,shamela:7450;shamela:23833,2,medium
-w_2479e26f45,كتاب التوحيد ومعرفة أسماء الله عز وجل وصفاته,,a_ceb2798b44,ابن منده,العقيدة,Creed,0395IbnMandaMuhammad.Tawhid,medium,,,2,medium
-w_2521eaa5af,جزء علي بن محمد الحميري,,a_1bd8296fe5,الحميري، علي بن محمد بن هارون بن زياد أبو الحسن الكوفي,كتب السنة,Hadith collections,0323CaliHimyari.Juz,high,,shamela:9212,2,medium
-w_2555cdc671,تلبيس إبليس,,a_9f306fc0aa,ابن الجوزي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0597IbnJawzi.TalbisIblis,high,Q12203143,shamela:11302;shamela:11405;shamela:11407;shamela:11408;shamela:11438;shamela:30085,3,high
-w_2577aa2906,معجم البلدان,,a_638bc7edae,ياقوت الحموي,البلدان والرحلات,Geography and travel,0626YaqutHamawi.MucjamBuldan,high,Q3353486,shamela:23735,2,medium
-w_2685d4f75d,الإشارة في أصول الفقه ويليه الحدود في الأصول ويليهما تقريب الوصول إلى علم الأصول,,a_9b729f9f43,أبو الوليد الباجي,أصول الفقه,Principles of jurisprudence,0474IbnKhalafBaji.IsharaFiUsulFiqh,medium,,shamela:706;shamela:17871;shamela:20983;shamela:17872,2,high
-w_26a2361540,أشراط الساعة وذهاب الأخيار وبقاء الأشرار,,a_173fe7cc14,عبد الملك بن حبيب السلمي القرطبي,العقيدة,Creed,0238IbnHabibQurtubi.AshratSaca,high,,shamela:26569,2,high
-w_2774ea71b7,الفتوة,,a_e81b88efd6,أبو عبد الرحمن السلمي,كتب السنة,Hadith collections,0412Sulami.Futuwwa,high,,shamela:26864,2,high
-w_28e520e8ce,شرح مختصر ابن عبد الحكم الكبير للأبهري,,,,الفقه المالكي,Maliki law,,,,,1,low
-w_299f435a33,النوادر والزيادات على ما في المدونة من غيرها من الأمهات,,a_0a9bcc54c0,ابن أبي زيد القيرواني,الفقه المالكي,Maliki law,0386IbnAbiZaydQayrawani.NawadirWaZiyadat,high,,shamela:96257,2,medium
-w_2b9fcdba7c,من عاش بعد الموت,,a_1eb94a3544,ابن أبي الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.ManCashaBacdaMawt,high,,shamela:13183,2,medium
-w_2cee124fd5,ديوان الإمام الشافعي المسمى الجوهر النفيس في شعر الإمام محمد بن إدريس,,a_13dbc886f5,الشافعي,الشعر ودواوينه,Poetry and diwans,0204Shafici.Diwan,medium,,,2,high
-w_2e239c9c0b,مقالات الإسلاميين واختلاف المصلين,,a_602680ab38,أبو الحسن الأشعري,الفرق والردود,Sects and refutations,0324Ashcari.MaqalatIslamiyyin,high,Q25462080,shamela:4137;shamela:37614,2,high
-w_2f5e8f9343,مسند أبي داود الطيالسي,,a_055b8cf232,الطيالسي,كتب السنة,Hadith collections,0204AbuDawudTayalisi.Musnad,high,Q12243009,shamela:1456,2,medium
-w_2fa853a5fe,العقد الفريد,,a_c0812b16bb,ابن عبد ربه,الأدب,Literature,0328IbnCabdRabbih.CiqdFarid,high,Q6418033,shamela:23789,2,medium
-w_314b481db3,إرشاد السالك إلى أفعال المناسك,,a_8303d6aa44,برهان الدين ابن فرحون,الفقه المالكي,Maliki law,0799IbnFarhun.IrshadSalik,high,,shamela:132974,2,high
-w_3225245716,كتاب الضعفاء الكبير,,a_ba1d185303,العقيلي,العلل والسؤلات الحديثية,Hadith defects and questions,0322AbuJacfarCuqayli.DucafaKabir,high,Q12234463,shamela:13041,2,high
-w_348dfe066d,مشرب العام والخاص في كلمة الإخلاص,,a_ccc5a8c207,اليوسي,العقيدة,Creed,,,,,1,high
-w_34e880c5e2,ديوان ابن عبد ربه,,a_c0812b16bb,ابن عبد ربه,الشعر ودواوينه,Poetry and diwans,0328IbnCabdRabbih.Diwan,high,,,2,medium
-w_3a8883b709,نزهة النظر في توضيح نخبة الفكر في مصطلح أهل الأثر,,a_2c5e6ee699,ابن حجر العسقلاني,علوم الحديث,Hadith sciences,0852IbnHajarCasqalani.NuzhatNazar,high,,shamela:316;shamela:1565;shamela:37456,2,medium
-w_3cac415ce6,الشفا بتعريف حقوق المصطفى صلى الله,,a_a3cf058dae,عياض,السيرة النبوية,Life of the Prophet,0544QadiCiyad.Shifa,medium,,shamela:1753;shamela:23645,7,high
-w_3cd88974a6,صفة الصفوة,,a_9f306fc0aa,ابن الجوزي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0597IbnJawzi.SifatSafwa,high,Q12220060,shamela:12031,3,high
-w_3e4069d35a,وفيات المصريين,,a_0ca3895848,الحبال,التراجم والطبقات,Biographies and generations,0482AbuIshaqHabbal.WafayatMisriyyin,high,,shamela:5871,2,medium
-w_3ead517463,الملل والنحل,,a_de553b8079,الشهرستاني,العقيدة,Creed,0548Shahrastani.MilalWaNihal,high,Q4702895,shamela:11812,2,medium
-w_3fef58ba2b,المدخل إلى الصحيح,,a_e44279abe0,الحاكم النيسابوري,علوم الحديث,Hadith sciences,0405HakimNaysaburi.MadkhalIlaSahih,high,,shamela:6027,2,high
-w_40c06ffad4,الكنى والأسماء,,a_84993758a6,الدولابي,كتب السنة,Hadith collections,0310IbnAhmadDulabi.KunaWaAsma,high,,shamela:13056,2,medium
-w_414aa9e5e9,الرد على الشاذلي في حزبيه وما صنفه في آداب الطريق,,a_7618333432,ابن تيمية,الرقائق والآداب والأذكار,"Piety, manners and devotions",0728IbnTaymiyya.RaddCalaShadhili,high,,shamela:1463,2,high
-w_440033776d,المشتبه في الرجال أسمائهم وأنسابهم أو المختلف والمتشابه من الأسماء والأنساب,,a_4c80649dd6,الذهبي,التراجم والطبقات,Biographies and generations,,,,,1,high
-w_4416c77ef9,الاعتصام,,a_f94ec89453,الشاطبي,العقيدة,Creed,0790IbnMusaGharnatiShatibi.Ictisam,high,,shamela:21720;shamela:36558,5,high
-w_47930fecdc,مسند أبي يعلى الموصلي,,a_b6aa400c48,أبو يعلى,كتب السنة,Hadith collections,0307AbuYaclaMawsili.Musnad,medium,Q12243011,shamela:181;shamela:12520,2,medium
-w_494687b48a,الحوادث والبدع,,a_9031a879e4,الطرطوشي,العقيدة,Creed,0520IbnWalidTurtushi.Hawadith,high,,shamela:8590,2,medium
-w_49e39adc01,المنتخب من كتاب الزهد والرقائق,,a_17f38c8a8e,الخطيب البغدادي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0463KhatibBaghdadi.MuntakhabMinZuhdWaRaqaiq,high,,shamela:22551,2,high
-w_4a685fb773,رحلة العبدري,,a_56313cb3f7,محمد العبدري البلنسي,البلدان والرحلات,Geography and travel,,,,,1,high
-w_4b464c7bf2,صلة الخلف بموصول السلف,,a_9c7e21ed3d,الروداني,فهارس الكتب والأدلة,Bibliographies and guides,1094IbnSulaymanRudani.SilatKhalaf,high,,shamela:26033,2,high
-w_4c7ec8efe6,المعجم الكبير,,a_e2f3b87898,الطبراني,كتب السنة,Hadith collections,0360Tabarani.MucjamKabir,high,Q12193381,shamela:1353;shamela:1428;shamela:1733,3,high
-w_4e529ee94c,أخلاق العلماء,,a_6458847089,الآجري,الرقائق والآداب والأذكار,"Piety, manners and devotions",0360AbuBakrAjurri.AkhlaqCulama,high,Q127327957,shamela:1311,2,medium
-w_4ea431208e,جامع المسانيد والسنن الهادي لأقوم سنن,,a_e096df1cc9,ابن كثير,الجوامع,Hadith compendia,0774IbnKathir.JamicMasanid,high,,,2,medium
-w_5099646386,الإحاطة في أخبار غرناطة,,a_4c3561b675,لسان الدين ابن الخطيب,التراجم والطبقات,Biographies and generations,0776LisanDinIbnKhatib.Ihata,high,Q12183706,shamela:11682,3,medium
-w_516ec91960,سبل السلام شرح بلوغ المرام,,a_fc06a98849,الصنعاني,شروح الحديث,Hadith commentaries,1182IbnIsmacilSancani.SubulSalam,medium,Q12215383,shamela:1082;shamela:21590,2,medium
-w_5203ad154e,شرح السنة,,a_e3f35991bf,إسماعيل بن يحيى المزني,العقيدة,Creed,0264IbnYahyaMuzani.SharhSunna,high,,shamela:6484;shamela:8601,4,high
-w_526a454f04,الفصل للوصل المدرج في النقل,,a_17f38c8a8e,الخطيب البغدادي,علوم الحديث,Hadith sciences,0463KhatibBaghdadi.FaslLiWaslMudrajFiNaql,high,,shamela:10842,3,medium
-w_52924986ea,الواضح في أصول الفقه,,a_5785c1fe38,ابن عقيل,أصول الفقه,Principles of jurisprudence,0513AbuWafaIbnCaqil.WadihFiUsulFiqh,high,,shamela:122232,2,high
-w_57f3ff0c25,التبيان في آداب حملة القرآن,,a_e5cd8270fa,النووي,علوم القرآن وأصول التفسير,Quranic sciences,0676Nawawi.Tibyan,high,,shamela:1969,3,medium
-w_58320f2722,لامية الزقاق المالكي في القضاء,,,,السياسة الشرعية والقضاء,Governance and the judiciary,,,,,1,low
-w_59d03583e8,كتاب إتحاف ذرية سيدي علي ابهلول بأسانيد جوامع أحاديث الرسول,,a_5598de18b8,إبراهيم اللقاني المالكي,فهارس الكتب والأدلة,Bibliographies and guides,,,,,1,high
-w_5a05e77060,السنة,,a_14d5b833b8,محمد بن نصر المروزي,العقيدة,Creed,0294IbnNasrMarwazi.Sunna,high,,shamela:13032,3,high
-w_5b4b84cf01,العقل وفضله,,a_1eb94a3544,ابن أبي الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.CaqlWaFadluh,high,,shamela:3732,2,high
-w_5cbdd72f8d,المجروحين من المحدثين,,a_deb5c294d0,ابن حبان,التراجم والطبقات,Biographies and generations,0354IbnHibbanBusti.Majruhin,high,Q104631765,shamela:151099,2,high
-w_5e0e12fd11,نوادر الأصول في أحاديث الرسول صلي الله عليه وسلم,,a_bef435141f,الحكيم الترمذي,كتب السنة,Hadith collections,0320HakimTirmidhi.NawadirUsul,high,,shamela:720,2,medium
-w_5ef7042f0e,الأم,,a_13dbc886f5,الشافعي,الفقه الشافعي,Shafi'i law,0204Shafici.Umm,high,,shamela:1655,2,high
-w_5f6fa8b7fc,معرفة السنن والآثار,,a_fa4ec6a5f0,أحمد بن الحسين البيهقي,كتب السنة,Hadith collections,0458Bayhaqi.MacrifatSunanWaAthar,high,,shamela:2863,2,medium
-w_60a9656140,رياض الصالحين,,a_e5cd8270fa,النووي,كتب السنة,Hadith collections,0676Nawawi.RiyadSalihin,high,Q1806888,shamela:512;shamela:2348;shamela:12014,6,medium
-w_637900bfe5,كتاب فتوح البلدان,,a_c90046a44f,البلاذري,التاريخ,History,0279Baladhuri.FutuhBuldan,high,Q5510585,shamela:12221,2,high
-w_64871990a6,مسائل الإمام أحمد بن حنبل رواية ابنه عبد الله,,a_6c54c04246,ابن حنبل,الفقه الحنبلي,Hanbali law,0241IbnHanbal.MasailRiwayatCabdAllah,medium,Q136662362,shamela:3125,8,medium
-w_66f7385af4,روضة الطالبين وعمدة المفتين,,a_e5cd8270fa,النووي,الفقه الشافعي,Shafi'i law,0676Nawawi.RawdatTalibin,high,,shamela:499,2,medium
-w_671b02e5c9,شرح قطر الندى وبل الصدى,,a_863dbcf220,ابن هشام,النحو والصرف,Grammar and morphology,0761JamalDinIbnHisham.SharhQatrNada,high,,shamela:6970,2,high
-w_68b715cea6,حسن السمت فى الصمت,,a_9fc101de63,الجلال السيوطي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0911Suyuti.HusnSamt,high,,shamela:36951,2,medium
-w_6a1b8d3eb3,إعجاز القرآن,,a_1456d29f56,الباقلاني,علوم القرآن وأصول التفسير,Quranic sciences,0403AbuBakrBaqillani.IcjazQuran,high,,shamela:953,2,medium
-w_6a1e49e499,تدريب الراوي في شرح تقريب النواوي,,a_55e9499722,جلال الدين السيوطي,علوم الحديث,Hadith sciences,0911Suyuti.TadribRawi,high,Q19471502,shamela:9329,2,high
-w_6b42439b5b,شرح الزركشي على مختصر الخرقي,,a_f4ffe63b08,الزركشي، محمد بن عبد الله بن محمد الحنبلي، أبو عبد الله شمس الدين,الفقه الحنبلي,Hanbali law,0772ShamsDinHanbaliZarqashi.SharhCalaMukhtasarKhiraqi,high,,shamela:21743,2,medium
-w_6b91052a8e,أسباب نزول القرآن,,a_dc0f587e3d,الواحدي,علوم القرآن وأصول التفسير,Quranic sciences,0468IbnAhmadWahidiNaysaburi.AsbabNuzul,high,,,2,medium
-w_6bab3036f6,أدب الكاتب,,a_962bda78e4,أبو محمد عبد الله بن مسلم بن قتيبة,الأدب,Literature,0276IbnQutaybaDinawari.AdabKatib,high,Q12179230,shamela:26349,3,high
-w_6d0c71d25e,ثمار القلوب في المضاف والمنسوب,,a_74d8203a13,أبو منصور الثعالبي,الأدب,Literature,0429AbuMansurThacalibi.ThimarQulub,high,,shamela:6896,2,high
-w_6e0be135a0,الورع,,a_2f9e48c8ef,الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.Warac,high,,shamela:13078,3,medium
-w_6ec203e6ef,الدرر في اختصار المغازي والسير,,a_11a593cc43,ابن عبد البر,السيرة النبوية,Life of the Prophet,0463IbnCabdBarr.Durar,high,Q43032705,shamela:10695,3,high
-w_6eea320cbc,الكامل في التاريخ,,a_283d9db09f,ابن الأثير,التاريخ,History,0630IbnAthirCizzDin.Kamil,high,Q4116230,shamela:21712,2,high
-w_700949bacc,كتاب الجامع في السنن والآداب والمغازي والتاريخ,,a_0a9bcc54c0,ابن أبي زيد القيرواني,الرقائق والآداب والأذكار,"Piety, manners and devotions",0386IbnAbiZaydQayrawani.JamicFiSunan,high,,shamela:18260,2,high
-w_70e6584ff3,غريب الحديث,,a_4dd969d1eb,أبو عبيد,الغريب والمعاجم,Rare words and dictionaries,0224QasimIbnSallam.GharibHadith,high,,shamela:1309;shamela:32196;shamela:12042,5,medium
-w_71625ca771,العواصم من القواصم,,a_6f2a99cca9,ابن العربي,العقيدة,Creed,0543IbnCarabiIshbili.CawasimMinQawasim,high,,shamela:8314;shamela:30897;shamela:96180,3,high
-w_733642a43f,إمتاع الأسماع بما للنبي من الأحوال والأموال والحفدة والمتاع,,a_090f4cd580,المقريزي,السيرة النبوية,Life of the Prophet,0845Maqrizi.ImtacAsmac,high,Q124614657,shamela:1524,3,medium
-w_744bebafc7,خصائص أمير المؤمنين علي بن أبي طالب رضي الله عنه,,a_2d09bf814a,النسائي,كتب السنة,Hadith collections,0303Nasai.KhasaisAmirMumininCali,medium,,shamela:5645,2,high
-w_75243ca31d,اللمع في أصول الفقه,,a_e746b97c51,أبو إسحاق الشيرازي,أصول الفقه,Principles of jurisprudence,0476AbuIshaqShirazi.LumacFiUsulFiqh,high,Q20388992,shamela:8536,2,high
-w_77c50765c3,لسان الميزان,,a_84694cf459,أحمد بن علي بن حجر العسقلاني,التراجم والطبقات,Biographies and generations,0852IbnHajarCasqalani.LisanMizan,high,Q12237210,shamela:12063;shamela:36357,2,high
-w_7a34ae908e,تبصرة الحكام في أصول الأقضية ومناهج الأحكام,,a_0ed0c8e840,ابن فرحون,السياسة الشرعية والقضاء,Governance and the judiciary,0799IbnFarhun.TabsiratHukkam,high,,shamela:21595,2,high
-w_7a43e0e222,الإحكام في تمييز الفتاوى عن الأحكام,,a_7f130fedd8,القرافي,أصول الفقه,Principles of jurisprudence,0684ShihabDinQarafi.IhkamFiTamyizFatawa,medium,,shamela:14218,3,high
-w_7bbfef5ab4,المنتقى من السنن المسندة,,a_afc95aac9e,ابن الجارود,كتب السنة,Hadith collections,0307IbnJarudNaysaburi.Muntaqa,high,,shamela:627;shamela:13071,2,medium
-w_7c544efda7,مقامات بديع الزمان الهمذاني,,a_5e3870f169,بديع الزمان,الأدب,Literature,0398BadicZamanHamadhani.Maqamat,high,,shamela:28113,2,high
-w_7cea35a0f5,قواعد الأحكام في مصالح الأنام,,a_cf2b8bf711,العز بن عبد السلام,علوم الفقه والقواعد الفقهية,Legal maxims and theory,0660SultanCulamaCizzDinDimashqi.QawacidAhkam,high,,shamela:8608,2,high
-w_7d6a571388,التبصرة,,a_0a1cf02036,أبو الفرج ابن الجوزي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0597IbnJawzi.Tabsira,high,,shamela:26351,2,high
-w_8309fa7b85,الإصابة في تمييز الصحابة,,a_2c5e6ee699,ابن حجر العسقلاني,التراجم والطبقات,Biographies and generations,0852IbnHajarCasqalani.IsabaFiTamyiz,high,Q7216266,shamela:9767,2,medium
-w_83521ac86f,المغني,,a_9c7d0a8dcc,ابن قدامة,الفقه الحنبلي,Hanbali law,0620IbnQudamaMaqdisi.Mughni,high,Q4118573,shamela:6910;shamela:8463,2,high
-w_850c79a683,الرسالة القشيرية,,a_493f9f47b5,أبو القاسم القشيري النيسابوري,الرقائق والآداب والأذكار,"Piety, manners and devotions",0465IbnHawazinQushayri.RisalaQushayriyya,high,,shamela:9953,2,high
-w_860ca2fa6c,إيضاح المحصول من برهان الأصول,,a_d2547cd009,أبو عبد الله محمد بن علي بن عمر التميمي المازري,أصول الفقه,Principles of jurisprudence,0536IbnCaliMazariTamimi.Idah,high,,shamela:16974,2,high
-w_8906f56f4a,اتباع السنن واجتناب البدع,,a_b6ba247a6e,ضياء الدين المقدسي,العقيدة,Creed,0643DiyaDinMaqdisi.IttibacSunan,high,,shamela:178,2,high
-w_896b0fd4d4,الإحكام في أصول الأحكام,,a_6e7d9d83a7,سيف الدين الآمدي,أصول الفقه,Principles of jurisprudence,0631SayfDinAmidi.IhkamFiUsulAhkam,high,,shamela:10801,2,medium
-w_8a5e54ca4e,الإبانة عن أصول الديانة,,a_602680ab38,أبو الحسن الأشعري,العقيدة,Creed,0324Ashcari.Ibana,high,Q12183691,shamela:911;shamela:8178,3,high
-w_8a837455de,إيضاح المسالك إلى قواعد الإمام أبي عبد الله مالك,,a_7d813526af,الونشريسي,علوم الفقه والقواعد الفقهية,Legal maxims and theory,0914IbnYahyaWansharisi.IdahMasalik,high,,shamela:132374;shamela:133360,2,high
-w_8f378cd691,شرف أصحاب الحديث,,a_17f38c8a8e,الخطيب البغدادي,علوم الحديث,Hadith sciences,0463KhatibBaghdadi.SharafAshabHadith,high,,shamela:13125,2,medium
-w_928eaa193d,التمهيد لما في الموطأ من المعاني والأسانيد,,a_11a593cc43,ابن عبد البر,شروح الحديث,Hadith commentaries,0463IbnCabdBarr.TamhidMuwatta,high,,,3,high
-w_949823005c,الفصل في الملل والأهواء والنحل وبهامشه الملل والنحل,,a_645c1cf583,ابن حزم,الفرق والردود,Sects and refutations,0456IbnHazm.FisalFiMilal,medium,,shamela:6521,2,medium
-w_96ace2910e,الأحكام السلطانية,,a_ca981d4646,الماوردي,السياسة الشرعية والقضاء,Governance and the judiciary,0450AbuHasanMawardi.AhkamSultaniyya,high,,shamela:22881,2,medium
-w_9a38107421,جامع البيان عن تأويل آي القرآن,تفسير الطبري,a_f258ba1d4e,ابن جرير الطبري,التفسير,Quranic exegesis,0310Tabari.JamicBayan,high,,,3,high
-w_9b4bc6773d,الاستذكار الجامع لمذاهب فقهاء الأمصار,,a_11a593cc43,ابن عبد البر,شروح الحديث,Hadith commentaries,0463IbnCabdBarr.IstidhkarJamic,high,Q12184010,shamela:1722,2,high
-w_9e01132b0d,الكبائر,,a_4c80649dd6,الذهبي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0748Dhahabi.Kabair,high,,shamela:6848,3,medium
-w_a0a107b0b1,كتاب التوابين,,a_9c7d0a8dcc,ابن قدامة,الرقائق والآداب والأذكار,"Piety, manners and devotions",0620IbnQudamaMaqdisi.Tawwabin,high,,shamela:11317,2,medium
-w_a11df28b4c,أحسن ما سمعت,,a_f6b2d9d846,الثعالبي,الأدب,Literature,0429AbuMansurThacalibi.AhsanMaSamictu,high,,shamela:25011,2,high
-w_a27a531343,المعجم الصغير,,a_e2f3b87898,الطبراني,كتب السنة,Hadith collections,0360Tabarani.MucjamSaghir,high,Q12193379,shamela:13068,2,medium
-w_a3b44a661a,زاد المسير في علم التفسير,,a_9f306fc0aa,ابن الجوزي,التفسير,Quranic exegesis,0597IbnJawzi.ZadMasir,high,,shamela:23619,2,high
-w_a412cd5236,أسرار العربية,,a_d7ff8b8de6,الأنباري,كتب اللغة,Arabic language,0577AbuBarakatAnbari.AsrarCarabiyya,high,,shamela:7502,2,medium
-w_a66ae647dd,تهذيب الآثار وتفصيل الثابت,,a_f258ba1d4e,ابن جرير الطبري,الفقه العام,Comparative law,0310Tabari.TahdhibAthar,medium,,shamela:13090;shamela:13091;shamela:13092,3,medium
-w_a93243467d,الشريعة,,a_6458847089,الآجري,العقيدة,Creed,0360AbuBakrAjurri.Sharica,high,Q19241140,shamela:13035,4,medium
-w_aa4d731a52,الإنصاف في مسائل الخلاف,,a_d7ff8b8de6,الأنباري,النحو والصرف,Grammar and morphology,0577AbuBarakatAnbari.InsafFiMasail,high,Q139822417,shamela:7362,2,low
-w_aa61fe8fbb,اختلاف الحديث,,a_13dbc886f5,الشافعي,شروح الحديث,Hadith commentaries,0204Shafici.IkhtilafHadith,high,,shamela:1021;shamela:9348,2,medium
-w_aac10f3317,الإتقان في علوم القرآن,,a_9fc101de63,الجلال السيوطي,علوم القرآن وأصول التفسير,Quranic sciences,0911Suyuti.Itqan,high,Q16117637,shamela:11728,4,high
-w_aac93a23e1,كتاب المستغيثين بالله تعالى عند المهمات والحاجات والمتضرعين إليه بالرغبات والدعوات,,a_696448fa14,ابن بشكوال,الرقائق والآداب والأذكار,"Piety, manners and devotions",0578IbnBashkuwal.Mustaghithin,medium,,shamela:12845,2,high
-w_ad42e73768,نتائج الفكر في النحو,,a_12b883a810,السهيلي,النحو والصرف,Grammar and morphology,0581AbuQasimSuhayli.NataijFikrFiNahw,medium,,shamela:613,2,high
-w_ad7df71d36,ملاك التأويل القاطع بذوي الإلحاد والتعطيل,,a_6b1bab4278,ابن الزبير,التفسير,Quranic exegesis,0708IbnIbrahimAbuJacfarGharnati.MalakTawilQatic,medium,,shamela:1419,2,medium
-w_b0f1d52a07,الغريب المصنف,,a_4dd969d1eb,أبو عبيد,الغريب والمعاجم,Rare words and dictionaries,0224QasimIbnSallam.GharibMusannaf,high,,shamela:1750,3,medium
-w_b0f53e21c5,المهذب في فقه الإمام الشافعي,,a_e746b97c51,أبو إسحاق الشيرازي,الفقه الشافعي,Shafi'i law,0476AbuIshaqShirazi.MuhadhdhabFiFiqh,high,,shamela:11813,3,high
-w_b3211de12a,الأصل,,a_2109c9dd7f,الشيباني,الفقه الحنفي,Hanafi law,0189MuhammadShaybani.Asl,high,,shamela:342;shamela:6164;shamela:14285,2,medium
-w_b701a5da01,الزاهر في غريب ألفاظ الشافعي الذي,,a_85a9259c5d,الأزهري,الغريب والمعاجم,Rare words and dictionaries,0370AbuMansurAzhari.ZahirFiGharibAlfazShafici,medium,,shamela:11319,2,medium
-w_b7c0457229,التكملة لكتاب الصلة,,a_93238c5ad7,ابن الأبار,التاريخ,History,0658IbnAbbar.TakmilaLiSila,high,Q19452894,shamela:6608,2,medium
-w_b7cec60a08,الرد على الجهمية,,a_897f52ddbd,الدارمي,العقيدة,Creed,0280CuthmanIbnSacidDarimi.RaddCalaJahmiyya,high,Q19453894,shamela:13023;shamela:18089,4,medium
-w_ba416d4988,كتاب الصناعتين الكتابة والشعر,,a_793838a11a,أبو هلال العسكري,الأدب,Literature,0395AbuHilalCaskari.Sinacatayn,high,,shamela:23787,2,high
-w_bd19a70666,دلائل النبوة,,a_0a70ed0964,قوام السنة الأصبهاني,السيرة النبوية,Life of the Prophet,0535QawwamSunna.DalailNubuwwa,high,,shamela:6569;shamela:10637,3,high
-w_bd1dfda0a2,الضعفاء,,a_ba1d185303,العقيلي,العلل والسؤلات الحديثية,Hadith defects and questions,0322AbuJacfarCuqayli.DucafaKabir,high,Q12234463,shamela:13041,2,medium
-w_bd3ca9af71,رسائل في اللغة,,a_7df5d2ffe9,ابن السيد البطليوسي,كتب اللغة,Arabic language,0521IbnMuhammadBatalyawsi.RasailFiLugha,high,,shamela:18275,2,high
-w_c2c5e7b2c6,الحاوي الكبير في فقه مذهب الإمام الشافعي,,a_68f42e3c0d,أبو الحسن الماوردي,الفقه الشافعي,Shafi'i law,0450AbuHasanMawardi.HawiKabir,medium,,shamela:6157,2,high
-w_c2e354517e,التعديل والتجريح لمن خرج له البخاري,,a_9b729f9f43,أبو الوليد الباجي,التراجم والطبقات,Biographies and generations,0474IbnKhalafBaji.TacdilWaTajrih,medium,,shamela:5851,2,medium
-w_c420fcf625,الأنساب,,a_911469bacd,السمعاني,الأنساب,Genealogy,0562Samcani.Ansab,high,Q12549311,shamela:1656;shamela:1660;shamela:12317,3,high
+work_id,title_ar,alt_titles_ar,author_id,author_name_ar,category_ar,category_en,openiti_uri,openiti_confidence,wikidata_qid,ext_ids,n_editions,confidence,title_clean_ar
+w_00620b0805,بستان العارفين,,a_e5cd8270fa,النووي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0676Nawawi.BustanCarifin,high,,shamela:12719,2,medium,بستان العارفين
+w_024ef09b03,الدر المنثور في التفسير بالمأثور,,a_55e9499722,جلال الدين السيوطي,التفسير,Quranic exegesis,0911Suyuti.DurrManthur,high,Q12187251,shamela:12884,3,high,الدر المنثور في التفسير بالمأثور
+w_028a739e32,المحكم والمحيط الأعظم,,a_ef49e4071e,ابن سيده,الغريب والمعاجم,Rare words and dictionaries,0458IbnSidaMursi.MuhkamWaMuhit,high,,shamela:9757,2,high,المحكم والمحيط الأعظم
+w_03dd6b4667,النكت والعيون,تفسير الماوردي,a_ca981d4646,الماوردي,التفسير,Quranic exegesis,0450AbuHasanMawardi.NukatWaCuyun,high,,shamela:8346,2,medium,النكت والعيون
+w_040db23ba8,التحقيق في أحاديث الخلاف,,a_9f306fc0aa,ابن الجوزي,كتب السنة,Hadith collections,0597IbnJawzi.TahqiqFiAhadithKhilaf,high,,shamela:5907,2,medium,التحقيق في أحاديث الخلاف
+w_054d932c51,الرسالة القبرصية,,a_7618333432,ابن تيمية,الفرق والردود,Sects and refutations,0728IbnTaymiyya.RisalaQubrusiyya,high,,,2,medium,الرسالة القبرصية
+w_06fc22e874,الموقظة في علم مصطلح الحديث,,a_4c80649dd6,الذهبي,علوم الحديث,Hadith sciences,0748Dhahabi.MuqizaFiCilmMustalahHadith,high,,shamela:8195;shamela:147662,2,medium,الموقظة في علم مصطلح الحديث
+w_0848a8c38b,معجم مقاييس اللغة,,a_5cb18e685c,أبو الحسين أحمد بن فارس بن زكريا,الغريب والمعاجم,Rare words and dictionaries,0395IbnFarisQazwini.MucjamMaqayis,high,Q12244593,shamela:21710,2,high,معجم مقاييس اللغة
+w_0b673a9525,كتاب الديات,,a_0fb965bedd,ابن أبي عاصم,الفقه العام,Comparative law,0287IbnAbiCasim.Diyat,high,,shamela:13018,2,medium,كتاب الديات
+w_0cd464f03e,مكارم الأخلاق,,a_1eb94a3544,ابن أبي الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.MakarimAkhlaq,high,,shamela:13180,2,high,مكارم الأخلاق
+w_0cf82fbb00,عمل اليوم والليلة,,a_b011f029b7,ابن السني,كتب السنة,Hadith collections,0364IbnSunniDinawari.CamalYawmWaLayl,high,,shamela:13132,2,medium,عمل اليوم والليلة
+w_0daf6c53b2,شرح مقامات الحريري,,a_1f98e17e6f,أبو العباس أحمد بن عبد المؤمن القيسي الشريشي,الأدب,Literature,0619AbuCabbasSharishi.SharhMaqamatHariri,high,,shamela:760,2,high,شرح مقامات الحريري
+w_0de6022843,جزء فيه مجلسان,,a_2d09bf814a,النسائي,كتب السنة,Hadith collections,0303Nasai.MajlisanMinImla,medium,,shamela:8225,2,medium,جزء فيه مجلسان
+w_0fb2cbd3c8,ديوان جرير بشرح محمد بن حبيب,,a_236fc7505d,جرير,الشعر ودواوينه,Poetry and diwans,0110JarirShacir.Diwan,high,,shamela:133412,2,high,ديوان جرير بشرح محمد بن حبيب
+w_0fcc88b6a3,الحجة في القراءات السبع,,a_efd417a53e,ابن خالويه,التجويد والقراءات,Quranic recitation and readings,0370IbnAhmadIbnKhalawayh.HujjaFiQiraatSabca,high,,shamela:26140,2,high,الحجة في القراءات السبع
+w_110b2c1d5d,جماع العلم,,a_13dbc886f5,الشافعي,أصول الفقه,Principles of jurisprudence,0204Shafici.JimacCilm,high,,,2,high,جماع العلم
+w_111a6ff2ec,الكافي في فقه أهل المدينة المالكي,,a_11a593cc43,ابن عبد البر,الفقه المالكي,Maliki law,0463IbnCabdBarr.KafiFiFiqh,medium,,shamela:7367,4,high,الكافي في فقه أهل المدينة المالكي
+w_111f56cf88,كتاب الوشاح وتثقيف الرماح في رد توهيم المجد الصحاح,,a_0565918ca6,أبو زيد عبد الرحمن بن عبد العزيز التادلي,الغريب والمعاجم,Rare words and dictionaries,,,,,1,high,كتاب الوشاح وتثقيف الرماح في رد توهيم المجد الصحاح
+w_11da6eb48d,الرضا عن الله بقضائه والتسليم بقدره,,a_1eb94a3544,ابن أبي الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.Rida,medium,,,2,medium,الرضا عن الله بقضائه والتسليم بقدره
+w_13f5fce4c5,البحر المحيط,,a_0c1d6b30ad,أبو حيان الأندلسي,التفسير,Quranic exegesis,0745AbuHayyanGharnati.TafsirBahrMuhit,high,,,2,high,البحر المحيط
+w_1a6c2e9eaa,الإبانة عن شريعة الفرقة الناجية ومجانبة,,a_83762f2987,ابن بطة,العقيدة,Creed,0387IbnBattaCukbari.IbanaCanSharica,medium,,,2,medium,الإبانة عن شريعة الفرقة الناجية ومجانبة
+w_1aaeaf3fb5,كتاب الزهد,,a_6c54c04246,ابن حنبل,الرقائق والآداب والأذكار,"Piety, manners and devotions",0241IbnHanbal.Zuhd,high,Q115795068,shamela:8494,4,medium,كتاب الزهد
+w_1beeddcac1,الاستيعاب في معرفة الأصحاب,,a_ffb8dd33b3,أبو عمر يوسف بن عبد البر القرطبي,التراجم والطبقات,Biographies and generations,0463IbnCabdBarr.IsticabFiMacrifatAshab,high,Q7216261,shamela:1499;shamela:12288,2,high,الاستيعاب في معرفة الأصحاب
+w_1c2c4911a7,نصاب الاحتساب,,a_a71dd1c601,عمر بن محمد السنامي,السياسة الشرعية والقضاء,Governance and the judiciary,,,,shamela:9679,1,high,نصاب الاحتساب
+w_1c518565f7,أخلاق النبي وآدابه صلى الله عليه وسلم,,a_cfaac31374,أبو الشيخ الأصبهاني,السيرة النبوية,Life of the Prophet,0369AbuShaykhIsbahani.AkhlaqNabi,medium,Q127327979,shamela:12980,2,medium,أخلاق النبي وآدابه صلى الله عليه وسلم
+w_1e55cfb4f6,الوجه الجميل في علم الخليل ألفية في العروض والقوافي,,a_e95f6508ca,شعبان بن محمد الآثاري,العروض والقوافي,Prosody and rhyme,,,,,1,high,الوجه الجميل في علم الخليل ألفية في العروض والقوافي
+w_1e6d649223,أنوار التنزيل وأسرار التأويل المعروف بتفسير البيضاوي,تفسير البيضاوي,a_2283e33fd7,البيضاوي,التفسير,Quranic exegesis,0685NasirDinBaydawi.AnwarTanzil,high,Q4454730,shamela:23588,2,medium,أنوار التنزيل وأسرار التأويل المعروف بتفسير البيضاوي
+w_2251fc9744,الرسالة,,a_13dbc886f5,الشافعي,أصول الفقه,Principles of jurisprudence,0204Shafici.Risala,high,,shamela:8180,2,medium,الرسالة
+w_22fcb2533f,الروض الأنف في شرح السيرة النبوية,,a_12b883a810,السهيلي,السيرة النبوية,Life of the Prophet,0581AbuQasimSuhayli.RawdUnuf,high,,,2,high,الروض الأنف في شرح السيرة النبوية
+w_2479e26f45,كتاب التوحيد ومعرفة أسماء الله عز وجل وصفاته,,a_ceb2798b44,ابن منده,العقيدة,Creed,0395IbnMandaMuhammad.Tawhid,medium,,,2,medium,كتاب التوحيد ومعرفة أسماء الله عز وجل وصفاته
+w_2521eaa5af,جزء علي بن محمد الحميري,,a_1bd8296fe5,الحميري، علي بن محمد بن هارون بن زياد أبو الحسن الكوفي,كتب السنة,Hadith collections,0323CaliHimyari.Juz,high,,shamela:9212,2,medium,جزء علي بن محمد الحميري
+w_2555cdc671,تلبيس إبليس,,a_9f306fc0aa,ابن الجوزي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0597IbnJawzi.TalbisIblis,high,Q12203143,shamela:11302;shamela:11405;shamela:11407;shamela:11408;shamela:11438;shamela:30085,3,high,تلبيس إبليس
+w_2577aa2906,معجم البلدان,,a_638bc7edae,ياقوت الحموي,البلدان والرحلات,Geography and travel,0626YaqutHamawi.MucjamBuldan,high,Q3353486,shamela:23735,2,medium,معجم البلدان
+w_2685d4f75d,الإشارة في أصول الفقه ويليه الحدود في الأصول ويليهما تقريب الوصول إلى علم الأصول,,a_9b729f9f43,أبو الوليد الباجي,أصول الفقه,Principles of jurisprudence,0474IbnKhalafBaji.IsharaFiUsulFiqh,medium,,shamela:706;shamela:17871;shamela:20983;shamela:17872,2,high,الإشارة في أصول الفقه ويليه الحدود في الأصول ويليهما تقريب الوصول إلى علم الأصول
+w_26a2361540,أشراط الساعة وذهاب الأخيار وبقاء الأشرار,,a_173fe7cc14,عبد الملك بن حبيب السلمي القرطبي,العقيدة,Creed,0238IbnHabibQurtubi.AshratSaca,high,,shamela:26569,2,high,أشراط الساعة وذهاب الأخيار وبقاء الأشرار
+w_2774ea71b7,الفتوة,,a_e81b88efd6,أبو عبد الرحمن السلمي,كتب السنة,Hadith collections,0412Sulami.Futuwwa,high,,shamela:26864,2,high,الفتوة
+w_28e520e8ce,شرح مختصر ابن عبد الحكم الكبير للأبهري,,,,الفقه المالكي,Maliki law,,,,,1,low,شرح مختصر ابن عبد الحكم الكبير للأبهري
+w_299f435a33,النوادر والزيادات على ما في المدونة من غيرها من الأمهات,,a_0a9bcc54c0,ابن أبي زيد القيرواني,الفقه المالكي,Maliki law,0386IbnAbiZaydQayrawani.NawadirWaZiyadat,high,,shamela:96257,2,medium,النوادر والزيادات على ما في المدونة من غيرها من الأمهات
+w_2b9fcdba7c,من عاش بعد الموت,,a_1eb94a3544,ابن أبي الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.ManCashaBacdaMawt,high,,shamela:13183,2,medium,من عاش بعد الموت
+w_2cee124fd5,ديوان الإمام الشافعي المسمى الجوهر النفيس في شعر الإمام محمد بن إدريس,,a_13dbc886f5,الشافعي,الشعر ودواوينه,Poetry and diwans,0204Shafici.Diwan,medium,,,2,high,ديوان الإمام الشافعي المسمى الجوهر النفيس في شعر الإمام محمد بن إدريس
+w_2e239c9c0b,مقالات الإسلاميين واختلاف المصلين,,a_602680ab38,أبو الحسن الأشعري,الفرق والردود,Sects and refutations,0324Ashcari.MaqalatIslamiyyin,high,Q25462080,shamela:4137;shamela:37614,2,high,مقالات الإسلاميين واختلاف المصلين
+w_2f5e8f9343,مسند أبي داود الطيالسي,,a_055b8cf232,الطيالسي,كتب السنة,Hadith collections,0204AbuDawudTayalisi.Musnad,high,Q12243009,shamela:1456,2,medium,مسند أبي داود الطيالسي
+w_2fa853a5fe,العقد الفريد,,a_c0812b16bb,ابن عبد ربه,الأدب,Literature,0328IbnCabdRabbih.CiqdFarid,high,Q6418033,shamela:23789,2,medium,العقد الفريد
+w_314b481db3,إرشاد السالك إلى أفعال المناسك,,a_8303d6aa44,برهان الدين ابن فرحون,الفقه المالكي,Maliki law,0799IbnFarhun.IrshadSalik,high,,shamela:132974,2,high,إرشاد السالك إلى أفعال المناسك
+w_3225245716,كتاب الضعفاء الكبير,,a_ba1d185303,العقيلي,العلل والسؤلات الحديثية,Hadith defects and questions,0322AbuJacfarCuqayli.DucafaKabir,high,Q12234463,shamela:13041,2,high,كتاب الضعفاء الكبير
+w_33931b4c77,الكتاب (كتاب سيبويه),كتاب سيبويه,a_7220ca3f46,سيبويه,النحو والصرف,Grammar and morphology,0180Sibawayhi.KitabSibawayhi,high,Q3197258,shamela:23018,2,medium,الكتاب
+w_348dfe066d,مشرب العام والخاص في كلمة الإخلاص,,a_ccc5a8c207,اليوسي,العقيدة,Creed,,,,,1,high,مشرب العام والخاص في كلمة الإخلاص
+w_34e880c5e2,ديوان ابن عبد ربه,,a_c0812b16bb,ابن عبد ربه,الشعر ودواوينه,Poetry and diwans,0328IbnCabdRabbih.Diwan,high,,,2,medium,ديوان ابن عبد ربه
+w_3a8883b709,نزهة النظر في توضيح نخبة الفكر في مصطلح أهل الأثر,,a_2c5e6ee699,ابن حجر العسقلاني,علوم الحديث,Hadith sciences,0852IbnHajarCasqalani.NuzhatNazar,high,,shamela:316;shamela:1565;shamela:37456,2,medium,نزهة النظر في توضيح نخبة الفكر في مصطلح أهل الأثر
+w_3cac415ce6,الشفا بتعريف حقوق المصطفى صلى الله,,a_a3cf058dae,عياض,السيرة النبوية,Life of the Prophet,0544QadiCiyad.Shifa,medium,,shamela:1753;shamela:23645,7,high,الشفا بتعريف حقوق المصطفى صلى الله
+w_3cd88974a6,صفة الصفوة,,a_9f306fc0aa,ابن الجوزي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0597IbnJawzi.SifatSafwa,high,Q12220060,shamela:12031,3,high,صفة الصفوة
+w_3e4069d35a,وفيات المصريين,,a_0ca3895848,الحبال,التراجم والطبقات,Biographies and generations,0482AbuIshaqHabbal.WafayatMisriyyin,high,,shamela:5871,2,medium,وفيات المصريين
+w_3ead517463,الملل والنحل,,a_de553b8079,الشهرستاني,العقيدة,Creed,0548Shahrastani.MilalWaNihal,high,Q4702895,shamela:11812,2,medium,الملل والنحل
+w_3fef58ba2b,المدخل إلى الصحيح,,a_e44279abe0,الحاكم النيسابوري,علوم الحديث,Hadith sciences,0405HakimNaysaburi.MadkhalIlaSahih,high,,shamela:6027,2,high,المدخل إلى الصحيح
+w_40c06ffad4,الكنى والأسماء,,a_84993758a6,الدولابي,كتب السنة,Hadith collections,0310IbnAhmadDulabi.KunaWaAsma,high,,shamela:13056,2,medium,الكنى والأسماء
+w_414aa9e5e9,الرد على الشاذلي في حزبيه وما صنفه في آداب الطريق,,a_7618333432,ابن تيمية,الرقائق والآداب والأذكار,"Piety, manners and devotions",0728IbnTaymiyya.RaddCalaShadhili,high,,shamela:1463,2,high,الرد على الشاذلي في حزبيه وما صنفه في آداب الطريق
+w_440033776d,المشتبه في الرجال أسمائهم وأنسابهم أو المختلف والمتشابه من الأسماء والأنساب,,a_4c80649dd6,الذهبي,التراجم والطبقات,Biographies and generations,,,,,1,high,المشتبه في الرجال أسمائهم وأنسابهم أو المختلف والمتشابه من الأسماء والأنساب
+w_4416c77ef9,الاعتصام,,a_f94ec89453,الشاطبي,العقيدة,Creed,0790IbnMusaGharnatiShatibi.Ictisam,high,,shamela:21720;shamela:36558,5,high,الاعتصام
+w_47930fecdc,مسند أبي يعلى الموصلي,,a_b6aa400c48,أبو يعلى,كتب السنة,Hadith collections,0307AbuYaclaMawsili.Musnad,medium,Q12243011,shamela:181;shamela:12520,2,medium,مسند أبي يعلى الموصلي
+w_494687b48a,الحوادث والبدع,,a_9031a879e4,الطرطوشي,العقيدة,Creed,0520IbnWalidTurtushi.Hawadith,high,,shamela:8590,2,medium,الحوادث والبدع
+w_49e39adc01,المنتخب من كتاب الزهد والرقائق,,a_17f38c8a8e,الخطيب البغدادي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0463KhatibBaghdadi.MuntakhabMinZuhdWaRaqaiq,high,,shamela:22551,2,high,المنتخب من كتاب الزهد والرقائق
+w_4a685fb773,رحلة العبدري,,a_56313cb3f7,محمد العبدري البلنسي,البلدان والرحلات,Geography and travel,,,,,1,high,رحلة العبدري
+w_4b464c7bf2,صلة الخلف بموصول السلف,,a_9c7e21ed3d,الروداني,فهارس الكتب والأدلة,Bibliographies and guides,1094IbnSulaymanRudani.SilatKhalaf,high,,shamela:26033,2,high,صلة الخلف بموصول السلف
+w_4c7ec8efe6,المعجم الكبير,,a_e2f3b87898,الطبراني,كتب السنة,Hadith collections,0360Tabarani.MucjamKabir,high,Q12193381,shamela:1353;shamela:1428;shamela:1733,3,high,المعجم الكبير
+w_4e529ee94c,أخلاق العلماء,,a_6458847089,الآجري,الرقائق والآداب والأذكار,"Piety, manners and devotions",0360AbuBakrAjurri.AkhlaqCulama,high,Q127327957,shamela:1311,2,medium,أخلاق العلماء
+w_4ea431208e,جامع المسانيد والسنن الهادي لأقوم سنن,,a_e096df1cc9,ابن كثير,الجوامع,Hadith compendia,0774IbnKathir.JamicMasanid,high,,,2,medium,جامع المسانيد والسنن الهادي لأقوم سنن
+w_5099646386,الإحاطة في أخبار غرناطة,,a_4c3561b675,لسان الدين ابن الخطيب,التراجم والطبقات,Biographies and generations,0776LisanDinIbnKhatib.Ihata,high,Q12183706,shamela:11682,3,medium,الإحاطة في أخبار غرناطة
+w_516ec91960,سبل السلام شرح بلوغ المرام,,a_fc06a98849,الصنعاني,شروح الحديث,Hadith commentaries,1182IbnIsmacilSancani.SubulSalam,medium,Q12215383,shamela:1082;shamela:21590,2,medium,سبل السلام شرح بلوغ المرام
+w_5203ad154e,شرح السنة,,a_e3f35991bf,إسماعيل بن يحيى المزني,العقيدة,Creed,0264IbnYahyaMuzani.SharhSunna,high,,shamela:6484;shamela:8601,4,high,شرح السنة
+w_526a454f04,الفصل للوصل المدرج في النقل,,a_17f38c8a8e,الخطيب البغدادي,علوم الحديث,Hadith sciences,0463KhatibBaghdadi.FaslLiWaslMudrajFiNaql,high,,shamela:10842,3,medium,الفصل للوصل المدرج في النقل
+w_52924986ea,الواضح في أصول الفقه,,a_5785c1fe38,ابن عقيل,أصول الفقه,Principles of jurisprudence,0513AbuWafaIbnCaqil.WadihFiUsulFiqh,high,,shamela:122232,2,high,الواضح في أصول الفقه
+w_543efc87e1,تفسير القرآن العظيم,تفسير ابن كثير,a_e096df1cc9,ابن كثير,التفسير,Quranic exegesis,0774IbnKathir.TafsirQuran,high,Q1088356,shamela:1503;shamela:1509;shamela:8473;shamela:23604,2,medium,تفسير القرآن العظيم
+w_57f3ff0c25,التبيان في آداب حملة القرآن,,a_e5cd8270fa,النووي,علوم القرآن وأصول التفسير,Quranic sciences,0676Nawawi.Tibyan,high,,shamela:1969,3,medium,التبيان في آداب حملة القرآن
+w_58320f2722,لامية الزقاق المالكي في القضاء,,,,السياسة الشرعية والقضاء,Governance and the judiciary,,,,,1,low,لامية الزقاق المالكي في القضاء
+w_59d03583e8,كتاب إتحاف ذرية سيدي علي ابهلول بأسانيد جوامع أحاديث الرسول,,a_5598de18b8,إبراهيم اللقاني المالكي,فهارس الكتب والأدلة,Bibliographies and guides,,,,,1,high,كتاب إتحاف ذرية سيدي علي ابهلول بأسانيد جوامع أحاديث الرسول
+w_5a05e77060,السنة,,a_14d5b833b8,محمد بن نصر المروزي,العقيدة,Creed,0294IbnNasrMarwazi.Sunna,high,,shamela:13032,3,high,السنة
+w_5b4b84cf01,العقل وفضله,,a_1eb94a3544,ابن أبي الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.CaqlWaFadluh,high,,shamela:3732,2,high,العقل وفضله
+w_5b9027cc5b,السنن الكبرى,سنن النسائي الكبرى,a_2d09bf814a,النسائي,كتب السنة,Hadith collections,0303Nasai.SunanKubra,high,Q12217061,shamela:8361,2,medium,السنن الكبرى
+w_5cbdd72f8d,المجروحين من المحدثين,,a_deb5c294d0,ابن حبان,التراجم والطبقات,Biographies and generations,0354IbnHibbanBusti.Majruhin,high,Q104631765,shamela:151099,2,high,المجروحين من المحدثين
+w_5e0e12fd11,نوادر الأصول في أحاديث الرسول صلي الله عليه وسلم,,a_bef435141f,الحكيم الترمذي,كتب السنة,Hadith collections,0320HakimTirmidhi.NawadirUsul,high,,shamela:720,2,medium,نوادر الأصول في أحاديث الرسول صلي الله عليه وسلم
+w_5ef7042f0e,الأم,,a_13dbc886f5,الشافعي,الفقه الشافعي,Shafi'i law,0204Shafici.Umm,high,,shamela:1655,2,high,الأم
+w_5f6fa8b7fc,معرفة السنن والآثار,,a_fa4ec6a5f0,أحمد بن الحسين البيهقي,كتب السنة,Hadith collections,0458Bayhaqi.MacrifatSunanWaAthar,high,,shamela:2863,2,medium,معرفة السنن والآثار
+w_60a9656140,رياض الصالحين,,a_e5cd8270fa,النووي,كتب السنة,Hadith collections,0676Nawawi.RiyadSalihin,high,Q1806888,shamela:512;shamela:2348;shamela:12014,6,medium,رياض الصالحين
+w_637900bfe5,كتاب فتوح البلدان,,a_c90046a44f,البلاذري,التاريخ,History,0279Baladhuri.FutuhBuldan,high,Q5510585,shamela:12221,2,high,كتاب فتوح البلدان
+w_64871990a6,مسائل الإمام أحمد بن حنبل رواية ابنه عبد الله,,a_6c54c04246,ابن حنبل,الفقه الحنبلي,Hanbali law,0241IbnHanbal.MasailRiwayatCabdAllah,medium,Q136662362,shamela:3125,8,medium,مسائل الإمام أحمد بن حنبل رواية ابنه عبد الله
+w_66f7385af4,روضة الطالبين وعمدة المفتين,,a_e5cd8270fa,النووي,الفقه الشافعي,Shafi'i law,0676Nawawi.RawdatTalibin,high,,shamela:499,2,medium,روضة الطالبين وعمدة المفتين
+w_671b02e5c9,شرح قطر الندى وبل الصدى,,a_863dbcf220,ابن هشام,النحو والصرف,Grammar and morphology,0761JamalDinIbnHisham.SharhQatrNada,high,,shamela:6970,2,high,شرح قطر الندى وبل الصدى
+w_68b715cea6,حسن السمت فى الصمت,,a_9fc101de63,الجلال السيوطي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0911Suyuti.HusnSamt,high,,shamela:36951,2,medium,حسن السمت فى الصمت
+w_6a1b8d3eb3,إعجاز القرآن,,a_1456d29f56,الباقلاني,علوم القرآن وأصول التفسير,Quranic sciences,0403AbuBakrBaqillani.IcjazQuran,high,,shamela:953,2,medium,إعجاز القرآن
+w_6a1e49e499,تدريب الراوي في شرح تقريب النواوي,,a_55e9499722,جلال الدين السيوطي,علوم الحديث,Hadith sciences,0911Suyuti.TadribRawi,high,Q19471502,shamela:9329,2,high,تدريب الراوي في شرح تقريب النواوي
+w_6b42439b5b,شرح الزركشي على مختصر الخرقي,,a_f4ffe63b08,الزركشي، محمد بن عبد الله بن محمد الحنبلي، أبو عبد الله شمس الدين,الفقه الحنبلي,Hanbali law,0772ShamsDinHanbaliZarqashi.SharhCalaMukhtasarKhiraqi,high,,shamela:21743,2,medium,شرح الزركشي على مختصر الخرقي
+w_6b91052a8e,أسباب نزول القرآن,,a_dc0f587e3d,الواحدي,علوم القرآن وأصول التفسير,Quranic sciences,0468IbnAhmadWahidiNaysaburi.AsbabNuzul,high,,,2,medium,أسباب نزول القرآن
+w_6bab3036f6,أدب الكاتب,,a_962bda78e4,أبو محمد عبد الله بن مسلم بن قتيبة,الأدب,Literature,0276IbnQutaybaDinawari.AdabKatib,high,Q12179230,shamela:26349,3,high,أدب الكاتب
+w_6d0c71d25e,ثمار القلوب في المضاف والمنسوب,,a_74d8203a13,أبو منصور الثعالبي,الأدب,Literature,0429AbuMansurThacalibi.ThimarQulub,high,,shamela:6896,2,high,ثمار القلوب في المضاف والمنسوب
+w_6e0be135a0,الورع,,a_2f9e48c8ef,الدنيا,كتب السنة,Hadith collections,0281IbnAbiDunya.Warac,high,,shamela:13078,3,medium,الورع
+w_6ec203e6ef,الدرر في اختصار المغازي والسير,,a_11a593cc43,ابن عبد البر,السيرة النبوية,Life of the Prophet,0463IbnCabdBarr.Durar,high,Q43032705,shamela:10695,3,high,الدرر في اختصار المغازي والسير
+w_6eea320cbc,الكامل في التاريخ,,a_283d9db09f,ابن الأثير,التاريخ,History,0630IbnAthirCizzDin.Kamil,high,Q4116230,shamela:21712,2,high,الكامل في التاريخ
+w_700949bacc,كتاب الجامع في السنن والآداب والمغازي والتاريخ,,a_0a9bcc54c0,ابن أبي زيد القيرواني,الرقائق والآداب والأذكار,"Piety, manners and devotions",0386IbnAbiZaydQayrawani.JamicFiSunan,high,,shamela:18260,2,high,كتاب الجامع في السنن والآداب والمغازي والتاريخ
+w_70e6584ff3,غريب الحديث,,a_4dd969d1eb,أبو عبيد,الغريب والمعاجم,Rare words and dictionaries,0224QasimIbnSallam.GharibHadith,high,,shamela:1309;shamela:32196;shamela:12042,5,medium,غريب الحديث
+w_71625ca771,العواصم من القواصم,,a_6f2a99cca9,ابن العربي,العقيدة,Creed,0543IbnCarabiIshbili.CawasimMinQawasim,high,,shamela:8314;shamela:30897;shamela:96180,3,high,العواصم من القواصم
+w_733642a43f,إمتاع الأسماع بما للنبي من الأحوال والأموال والحفدة والمتاع,,a_090f4cd580,المقريزي,السيرة النبوية,Life of the Prophet,0845Maqrizi.ImtacAsmac,high,Q124614657,shamela:1524,3,medium,إمتاع الأسماع بما للنبي من الأحوال والأموال والحفدة والمتاع
+w_744bebafc7,خصائص أمير المؤمنين علي بن أبي طالب رضي الله عنه,,a_2d09bf814a,النسائي,كتب السنة,Hadith collections,0303Nasai.KhasaisAmirMumininCali,medium,,shamela:5645,2,high,خصائص أمير المؤمنين علي بن أبي طالب رضي الله عنه
+w_75243ca31d,اللمع في أصول الفقه,,a_e746b97c51,أبو إسحاق الشيرازي,أصول الفقه,Principles of jurisprudence,0476AbuIshaqShirazi.LumacFiUsulFiqh,high,Q20388992,shamela:8536,2,high,اللمع في أصول الفقه
+w_77c50765c3,لسان الميزان,,a_84694cf459,أحمد بن علي بن حجر العسقلاني,التراجم والطبقات,Biographies and generations,0852IbnHajarCasqalani.LisanMizan,high,Q12237210,shamela:12063;shamela:36357,2,high,لسان الميزان
+w_7a34ae908e,تبصرة الحكام في أصول الأقضية ومناهج الأحكام,,a_0ed0c8e840,ابن فرحون,السياسة الشرعية والقضاء,Governance and the judiciary,0799IbnFarhun.TabsiratHukkam,high,,shamela:21595,2,high,تبصرة الحكام في أصول الأقضية ومناهج الأحكام
+w_7a43e0e222,الإحكام في تمييز الفتاوى عن الأحكام,,a_7f130fedd8,القرافي,أصول الفقه,Principles of jurisprudence,0684ShihabDinQarafi.IhkamFiTamyizFatawa,medium,,shamela:14218,3,high,الإحكام في تمييز الفتاوى عن الأحكام
+w_7bbfef5ab4,المنتقى من السنن المسندة,,a_afc95aac9e,ابن الجارود,كتب السنة,Hadith collections,0307IbnJarudNaysaburi.Muntaqa,high,,shamela:627;shamela:13071,2,medium,المنتقى من السنن المسندة
+w_7c544efda7,مقامات بديع الزمان الهمذاني,,a_5e3870f169,بديع الزمان,الأدب,Literature,0398BadicZamanHamadhani.Maqamat,high,,shamela:28113,2,high,مقامات بديع الزمان الهمذاني
+w_7cea35a0f5,قواعد الأحكام في مصالح الأنام,,a_cf2b8bf711,العز بن عبد السلام,علوم الفقه والقواعد الفقهية,Legal maxims and theory,0660SultanCulamaCizzDinDimashqi.QawacidAhkam,high,,shamela:8608,2,high,قواعد الأحكام في مصالح الأنام
+w_7d6a571388,التبصرة,,a_0a1cf02036,أبو الفرج ابن الجوزي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0597IbnJawzi.Tabsira,high,,shamela:26351,2,high,التبصرة
+w_8309fa7b85,الإصابة في تمييز الصحابة,,a_2c5e6ee699,ابن حجر العسقلاني,التراجم والطبقات,Biographies and generations,0852IbnHajarCasqalani.IsabaFiTamyiz,high,Q7216266,shamela:9767,2,medium,الإصابة في تمييز الصحابة
+w_83521ac86f,المغني,,a_9c7d0a8dcc,ابن قدامة,الفقه الحنبلي,Hanbali law,0620IbnQudamaMaqdisi.Mughni,high,Q4118573,shamela:6910;shamela:8463,2,high,المغني
+w_850c79a683,الرسالة القشيرية,,a_493f9f47b5,أبو القاسم القشيري النيسابوري,الرقائق والآداب والأذكار,"Piety, manners and devotions",0465IbnHawazinQushayri.RisalaQushayriyya,high,,shamela:9953,2,high,الرسالة القشيرية
+w_860ca2fa6c,إيضاح المحصول من برهان الأصول,,a_d2547cd009,أبو عبد الله محمد بن علي بن عمر التميمي المازري,أصول الفقه,Principles of jurisprudence,0536IbnCaliMazariTamimi.Idah,high,,shamela:16974,2,high,إيضاح المحصول من برهان الأصول
+w_8906f56f4a,اتباع السنن واجتناب البدع,,a_b6ba247a6e,ضياء الدين المقدسي,العقيدة,Creed,0643DiyaDinMaqdisi.IttibacSunan,high,,shamela:178,2,high,اتباع السنن واجتناب البدع
+w_896b0fd4d4,الإحكام في أصول الأحكام,,a_6e7d9d83a7,سيف الدين الآمدي,أصول الفقه,Principles of jurisprudence,0631SayfDinAmidi.IhkamFiUsulAhkam,high,,shamela:10801,2,medium,الإحكام في أصول الأحكام
+w_8a5e54ca4e,الإبانة عن أصول الديانة,,a_602680ab38,أبو الحسن الأشعري,العقيدة,Creed,0324Ashcari.Ibana,high,Q12183691,shamela:911;shamela:8178,3,high,الإبانة عن أصول الديانة
+w_8a837455de,إيضاح المسالك إلى قواعد الإمام أبي عبد الله مالك,,a_7d813526af,الونشريسي,علوم الفقه والقواعد الفقهية,Legal maxims and theory,0914IbnYahyaWansharisi.IdahMasalik,high,,shamela:132374;shamela:133360,2,high,إيضاح المسالك إلى قواعد الإمام أبي عبد الله مالك
+w_8f378cd691,شرف أصحاب الحديث,,a_17f38c8a8e,الخطيب البغدادي,علوم الحديث,Hadith sciences,0463KhatibBaghdadi.SharafAshabHadith,high,,shamela:13125,2,medium,شرف أصحاب الحديث
+w_91f77981fd,العقود,نظرية العقد,a_7618333432,ابن تيمية,الفقه الحنبلي,Hanbali law,0728IbnTaymiyya.NazariyyatCaqd,high,,,2,medium,العقود
+w_928eaa193d,التمهيد لما في الموطأ من المعاني والأسانيد,,a_11a593cc43,ابن عبد البر,شروح الحديث,Hadith commentaries,0463IbnCabdBarr.TamhidMuwatta,high,,,3,high,التمهيد لما في الموطأ من المعاني والأسانيد
+w_949823005c,الفصل في الملل والأهواء والنحل وبهامشه الملل والنحل,,a_645c1cf583,ابن حزم,الفرق والردود,Sects and refutations,0456IbnHazm.FisalFiMilal,medium,,shamela:6521,2,medium,الفصل في الملل والأهواء والنحل وبهامشه الملل والنحل
+w_96ace2910e,الأحكام السلطانية,,a_ca981d4646,الماوردي,السياسة الشرعية والقضاء,Governance and the judiciary,0450AbuHasanMawardi.AhkamSultaniyya,high,,shamela:22881,2,medium,الأحكام السلطانية
+w_9a38107421,جامع البيان عن تأويل آي القرآن,تفسير الطبري,a_f258ba1d4e,ابن جرير الطبري,التفسير,Quranic exegesis,0310Tabari.JamicBayan,high,,,3,high,جامع البيان عن تأويل آي القرآن
+w_9b4bc6773d,الاستذكار الجامع لمذاهب فقهاء الأمصار,,a_11a593cc43,ابن عبد البر,شروح الحديث,Hadith commentaries,0463IbnCabdBarr.IstidhkarJamic,high,Q12184010,shamela:1722,2,high,الاستذكار الجامع لمذاهب فقهاء الأمصار
+w_9c85be166e,السيرة النبوية,سيرة ابن هشام,a_49a0f72d1a,ابن هشام,السيرة النبوية,Life of the Prophet,0213IbnHisham.SiraNabawiyya,high,Q12217763,shamela:7450;shamela:23833,3,medium,السيرة النبوية
+w_9e01132b0d,الكبائر,,a_4c80649dd6,الذهبي,الرقائق والآداب والأذكار,"Piety, manners and devotions",0748Dhahabi.Kabair,high,,shamela:6848,3,medium,الكبائر
+w_a0a107b0b1,كتاب التوابين,,a_9c7d0a8dcc,ابن قدامة,الرقائق والآداب والأذكار,"Piety, manners and devotions",0620IbnQudamaMaqdisi.Tawwabin,high,,shamela:11317,2,medium,كتاب التوابين
+w_a11df28b4c,أحسن ما سمعت,,a_f6b2d9d846,الثعالبي,الأدب,Literature,0429AbuMansurThacalibi.AhsanMaSamictu,high,,shamela:25011,2,high,أحسن ما سمعت
+w_a27a531343,المعجم الصغير,,a_e2f3b87898,الطبراني,كتب السنة,Hadith collections,0360Tabarani.MucjamSaghir,high,Q12193379,shamela:13068,2,medium,المعجم الصغير
+w_a3b44a661a,زاد المسير في علم التفسير,,a_9f306fc0aa,ابن الجوزي,التفسير,Quranic exegesis,0597IbnJawzi.ZadMasir,high,,shamela:23619,2,high,زاد المسير في علم التفسير
+w_a412cd5236,أسرار العربية,,a_d7ff8b8de6,الأنباري,كتب اللغة,Arabic language,0577AbuBarakatAnbari.AsrarCarabiyya,high,,shamela:7502,2,medium,أسرار العربية
+w_a66ae647dd,تهذيب الآثار وتفصيل الثابت,,a_f258ba1d4e,ابن جرير الطبري,الفقه العام,Comparative law,0310Tabari.TahdhibAthar,medium,,shamela:13090;shamela:13091;shamela:13092,3,medium,تهذيب الآثار وتفصيل الثابت
+w_a93243467d,الشريعة,,a_6458847089,الآجري,العقيدة,Creed,0360AbuBakrAjurri.Sharica,high,Q19241140,shamela:13035,4,medium,الشريعة
+w_aa4d731a52,الإنصاف في مسائل الخلاف,,a_d7ff8b8de6,الأنباري,النحو والصرف,Grammar and morphology,0577AbuBarakatAnbari.InsafFiMasail,high,Q139822417,shamela:7362,2,low,الإنصاف في مسائل الخلاف
+w_aa61fe8fbb,اختلاف الحديث,,a_13dbc886f5,الشافعي,شروح الحديث,Hadith commentaries,0204Shafici.IkhtilafHadith,high,,shamela:1021;shamela:9348,2,medium,اختلاف الحديث
+w_aac10f3317,الإتقان في علوم القرآن,,a_9fc101de63,الجلال السيوطي,علوم القرآن وأصول التفسير,Quranic sciences,0911Suyuti.Itqan,high,Q16117637,shamela:11728,4,high,الإتقان في علوم القرآن
+w_aac93a23e1,كتاب المستغيثين بالله تعالى عند المهمات والحاجات والمتضرعين إليه بالرغبات والدعوات,,a_696448fa14,ابن بشكوال,الرقائق والآداب والأذكار,"Piety, manners and devotions",0578IbnBashkuwal.Mustaghithin,medium,,shamela:12845,2,high,كتاب المستغيثين بالله تعالى عند المهمات والحاجات والمتضرعين إليه بالرغبات والدعوات
+w_ad42e73768,نتائج الفكر في النحو,,a_12b883a810,السهيلي,النحو والصرف,Grammar and morphology,0581AbuQasimSuhayli.NataijFikrFiNahw,medium,,shamela:613,2,high,نتائج الفكر في النحو
+w_ad7df71d36,ملاك التأويل القاطع بذوي الإلحاد والتعطيل,,a_6b1bab4278,ابن الزبير,التفسير,Quranic exegesis,0708IbnIbrahimAbuJacfarGharnati.MalakTawilQatic,medium,,shamela:1419,2,medium,ملاك التأويل القاطع بذوي الإلحاد والتعطيل
+w_b0f1d52a07,الغريب المصنف,,a_4dd969d1eb,أبو عبيد,الغريب والمعاجم,Rare words and dictionaries,0224QasimIbnSallam.GharibMusannaf,high,,shamela:1750,3,medium,الغريب المصنف
+w_b0f53e21c5,المهذب في فقه الإمام الشافعي,,a_e746b97c51,أبو إسحاق الشيرازي,الفقه الشافعي,Shafi'i law,0476AbuIshaqShirazi.MuhadhdhabFiFiqh,high,,shamela:11813,3,high,المهذب في فقه الإمام الشافعي
+w_b3211de12a,الأصل,,a_2109c9dd7f,الشيباني,الفقه الحنفي,Hanafi law,0189MuhammadShaybani.Asl,high,,shamela:342;shamela:6164;shamela:14285,2,medium,الأصل
+w_b701a5da01,الزاهر في غريب ألفاظ الشافعي الذي,,a_85a9259c5d,الأزهري,الغريب والمعاجم,Rare words and dictionaries,0370AbuMansurAzhari.ZahirFiGharibAlfazShafici,medium,,shamela:11319,2,medium,الزاهر في غريب ألفاظ الشافعي الذي
+w_b7c0457229,التكملة لكتاب الصلة,,a_93238c5ad7,ابن الأبار,التاريخ,History,0658IbnAbbar.TakmilaLiSila,high,Q19452894,shamela:6608,2,medium,التكملة لكتاب الصلة
+w_b7cec60a08,الرد على الجهمية,,a_897f52ddbd,الدارمي,العقيدة,Creed,0280CuthmanIbnSacidDarimi.RaddCalaJahmiyya,high,Q19453894,shamela:13023;shamela:18089,4,medium,الرد على الجهمية
+w_ba416d4988,كتاب الصناعتين الكتابة والشعر,,a_793838a11a,أبو هلال العسكري,الأدب,Literature,0395AbuHilalCaskari.Sinacatayn,high,,shamela:23787,2,high,كتاب الصناعتين الكتابة والشعر
+w_bd19a70666,دلائل النبوة,,a_0a70ed0964,قوام السنة الأصبهاني,السيرة النبوية,Life of the Prophet,0535QawwamSunna.DalailNubuwwa,high,,shamela:6569;shamela:10637,3,high,دلائل النبوة
+w_bd1dfda0a2,الضعفاء,,a_ba1d185303,العقيلي,العلل والسؤلات الحديثية,Hadith defects and questions,0322AbuJacfarCuqayli.DucafaKabir,high,Q12234463,shamela:13041,2,medium,الضعفاء

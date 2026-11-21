@@ -118,6 +118,8 @@ POCKETSHELF_COLS = [
     "tags",
     "ext_ids",
     "century",
+    "alt_titles",
+    "note",
 ]
 KIND_TAGS = {"printed": "", "lithograph": "طبعة حجرية", "manuscript": "مخطوط", "thesis": "رسالة جامعية", "offprint": "مستل"}
 
@@ -147,7 +149,7 @@ def pocketshelf_rows(tables: dict) -> list[dict]:
         vols = files.get(e["edition_id"], [])
         out.append(
             {
-                "title": e["title_ar"],
+                "title": e["title_clean_ar"],
                 "author": w["author_name_ar"] or "",
                 "author_death": a.get("death_ah") or "",
                 "author_calendar": "ah",
@@ -166,6 +168,8 @@ def pocketshelf_rows(tables: dict) -> list[dict]:
                 "tags": ";".join(tags),
                 "ext_ids": ext,
                 "century": a.get("century_ah") or "",
+                "alt_titles": e["alt_titles_ar"] or "",
+                "note": e["title_note_ar"] or "",
             }
         )
     return out

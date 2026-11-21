@@ -16,11 +16,11 @@
       "pattern": "^w_[0-9a-f]{10}$"
     },
     "title_ar": {
-      "description": "Title as given on this edition.",
+      "description": "Title as the library gives it for this edition, kept verbatim: it may carry another title after «=», a bracketed remark or an edition mark.",
       "type": "string"
     },
     "label_ar": {
-      "description": "Citation form composed from this row's fields: «title - author - ت editors - publisher place» (title_ar without alternative titles, the author's name, editors_ar with their role, publisher_ar, place_ar).",
+      "description": "Citation form composed from this row's fields: «title - author - ت editors - publisher place» (title_clean_ar, the author's name, editors_ar with their role, publisher_ar, place_ar).",
       "type": "string"
     },
     "kind": {
@@ -151,6 +151,24 @@
         "medium",
         "low"
       ]
+    },
+    "title_clean_ar": {
+      "description": "title_ar alone: other titles moved to alt_titles_ar, bracketed remarks to title_note_ar, and edition or editor marks («ط. الخانجي», «ت - الميمني») checked against publisher_ar and editors_ar. The title to display and to match on.",
+      "type": "string"
+    },
+    "alt_titles_ar": {
+      "description": "Other titles that title_ar gives for the work, `;`-separated: the names after «=», and a bracket that names the work another way (it opens with «أو» or with a genre word such as تفسير, شرح, كتاب).",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "title_note_ar": {
+      "description": "What else title_ar carried, `;`-separated: a bracketed remark (the part covered, a disambiguator, a series), and an edition mark that the row's publisher or editors do not confirm (written «ط X» or «ت X»). A mark the row confirms is dropped; a publisher mark on a row without publisher fills publisher_ar.",
+      "type": [
+        "string",
+        "null"
+      ]
     }
   },
   "required": [
@@ -162,7 +180,8 @@
     "n_files",
     "size_bytes",
     "title_page_read",
-    "confidence"
+    "confidence",
+    "title_clean_ar"
   ],
   "additionalProperties": false
 }

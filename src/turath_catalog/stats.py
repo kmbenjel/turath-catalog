@@ -72,6 +72,13 @@ def cut_sample(t: dict, n_works: int = 150) -> dict:
             a = dict(a)
             a["n_works"] = sum(1 for w in works.values() if w["author_id"] == a["author_id"])
             au.append(a)
+    # name forms of one person stay folded: onto the release's canonical row when the sample holds it, else onto one of theirs
+    in_sample = {a["author_id"] for a in au}
+    heads: dict[str, str] = {}
+    for a in sorted(au, key=lambda a: (a["death_ah"] is None, -a["n_works"], a["author_id"])):
+        if "canonical_author_id" in a:
+            c = a["canonical_author_id"]
+            a["canonical_author_id"] = c if c in in_sample else heads.setdefault(c, a["author_id"])
     editors = []
     for p in t["editors"]:
         if p["person_id"] in pids:

@@ -11,11 +11,11 @@
       "pattern": "^w_[0-9a-f]{10}$"
     },
     "title_ar": {
-      "description": "Title of the work in Arabic, as on the best-attested edition.",
+      "description": "Title of the work in Arabic, as on the best-attested edition and as the library gives it (it may carry a bracketed remark or an edition mark; `title_clean_ar` is the title alone).",
       "type": "string"
     },
     "alt_titles_ar": {
-      "description": "Other titles of the work, `;`-separated (titles written «A = B» are split).",
+      "description": "Other titles of the work, `;`-separated, gathered from its editions: the names after «=» in «A = B», and a bracket that names the work another way («(تفسير ابن عادل)»).",
       "type": [
         "string",
         "null"
@@ -94,6 +94,10 @@
         "medium",
         "low"
       ]
+    },
+    "title_clean_ar": {
+      "description": "title_ar alone: without bracketed remarks and without edition or editor marks («ط. الخانجي», «ت - الميمني»). The title to display and to match on.",
+      "type": "string"
     }
   },
   "required": [
@@ -102,7 +106,8 @@
     "category_ar",
     "category_en",
     "n_editions",
-    "confidence"
+    "confidence",
+    "title_clean_ar"
   ],
   "additionalProperties": false
 }

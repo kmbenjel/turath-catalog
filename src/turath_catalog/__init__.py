@@ -5,15 +5,15 @@ from __future__ import annotations
 
 from pathlib import Path
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __all__ = ["__version__", "load"]
 
 
 def load(path: str | Path, table: str | None = None, as_pandas: bool = False):
     """Load a release folder, or the sample shipped inside the package with ``path="sample"``.
 
-    >>> tables = load("releases/turath-catalog-0.1.0")      # dict of table name -> list of rows
-    >>> works = load("releases/turath-catalog-0.1.0", "works", as_pandas=True)
+    >>> tables = load("releases/turath-catalog-0.2.0")      # dict of table name -> list of rows
+    >>> works = load("releases/turath-catalog-0.2.0", "works", as_pandas=True)
     """
     from .export import read_tables
 

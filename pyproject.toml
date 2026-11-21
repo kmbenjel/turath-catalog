@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "turath-catalog"
-version = "0.1.0"
+version = "0.2.0"
 description = "Open bibliographic dataset of classical Arabic works and their printed editions (works, editions, authors with death years, editors, manuscripts), with the tools that build and validate it."
 readme = "README.md"
 license = "MIT"

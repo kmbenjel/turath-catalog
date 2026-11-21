@@ -106,3 +106,16 @@ def test_compare_with_cached_sources(sample_dir, tmp_path):
     (tmp_path / "wikidata-openiti_author.csv").write_text("item,v,d\n", encoding="utf-8")
     res = coverage(load(sample_dir), tmp_path)
     assert res["openiti"]["books"] == 1 and res["wikidata"]["items_with_shamela_book_id"] == 1
+
+
+def test_sample_cut_keeps_name_forms_of_one_person_folded(sample_dir):
+    t = load(sample_dir)
+    a, b, c = t["authors"][:3]
+    outside = "a_0123456789"  # the release's canonical row, which this cut does not hold
+    a["canonical_author_id"] = b["canonical_author_id"] = outside
+    c["canonical_author_id"] = c["author_id"]
+    cut = cut_sample(t, len(t["works"]) + 10)
+    assert check(cut) == []
+    got = {x["author_id"]: x["canonical_author_id"] for x in cut["authors"]}
+    assert got[a["author_id"]] == got[b["author_id"]] and got[a["author_id"]] in (a["author_id"], b["author_id"])
+    assert got[c["author_id"]] == c["author_id"]

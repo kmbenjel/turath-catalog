@@ -30,7 +30,7 @@ from pathlib import Path
 
 from ..hijri import ah_to_ce_range, century_ah
 from ..record import EditionRecord, Editor, Volume
-from ..textnorm import arabic_digits_to_ascii, author_key, nfc, norm, tokens
+from ..textnorm import WAW_NAMES, arabic_digits_to_ascii, author_key, nfc, norm, tokens
 
 SOURCE_MAP = {
     "قراءة صفحة العنوان": "title_page",
@@ -69,9 +69,9 @@ ROLE_WORDS = [  # (regex on the words before the name, role, Arabic role as writ
     (r"تحقيق|حقق|^ت$|ت-|اعتنى|عني|بعناية|علق|خرج|تخريج", "editor", "تحقيق"),
 ]
 NOT_A_PERSON = re.compile(r"^(ط\.?|طبعة|مخطوط|رسالة|أطروحة|اطروحة|بدون|مستل|مجلة|تصوير)(\s|$)")
+BODY = re.compile(r"^(?:مركز|مكتب|المكتب|لجنة|اللجنة|قسم|مؤسسة|هيئة|وزارة|جامعة|مجموعة|جماعة|شركة|مجمع|إدارة|دار|فريق|نخبة)\s")
 PERSON_PREFIX = re.compile(r"^(?:(?:الدكتور|الأستاذ|الشيخ|د\.|د/|د|أ\.د\.|ا\.د\.)\s*(?<=\s|\.|/))+")
 HONORIFICS = re.compile(r"^(?:(?:الإمام|الامام|الحافظ|الشيخ|العلامة|شيخ الإسلام|القاضي)\s+)+")
-WAW_NAMES = {"ولد", "وليد", "وهبة", "وهبه", "وصي", "وائل", "وداد", "وفاء", "وحيد", "ولي", "وجيه", "وسيم", "وضاح", "ورقة", "وهب", "وكيع"}
 GROUP_AUTHORS = {norm(x) for x in ("مجموعة من المؤلفين", "مجموعة مؤلفين", "مجهول", "غير معروف", "مؤلف مجهول")}
 EXTRA_CITIES = [
     "القاهرة",
@@ -199,7 +199,15 @@ class WarraqWorkspace:
     def parse_editors(value: str, edition_text: str) -> list[Editor]:
         out = []
         parts = []
-        for part in re.split(r"\s+-\s+|؛|(?<!^د)/", value):
+        for part in re.split(r"\s*-\s+|\s+-\s*|؛|(?<!^د)/", value):
+            part = part.strip(" .،-")
+            if BODY.match(part):  # «مركز البحوث وتقنية المعلومات»: one body, whatever «و» it holds
+                parts.append(part)
+                continue
+            joined = part.split("-")  # «فؤاد سزكين-علاء الدين جوخوشا»: full names joined by a bare dash
+            if len(joined) > 1 and all(len(p.split()) >= 2 for p in joined):
+                parts += joined
+                continue
             # «عادل أحمد عبد الموجود وعلي محمد معوض»: two people, when both sides are full names
             pieces = re.split(r"\s+و(?=\S)", part)
             if (
@@ -212,14 +220,14 @@ class WarraqWorkspace:
             else:
                 parts.append(part)
         for part in parts:
-            name = PERSON_PREFIX.sub("", part.strip(" .،"))
-            if not name or NOT_A_PERSON.match(name) or re.search(r"\d", name):
+            name = PERSON_PREFIX.sub("", part.strip(" .،-"))
+            if len(name) < 3 or NOT_A_PERSON.match(name) or re.search(r"\d", name) or name.count("(") != name.count(")"):
                 continue
             if name.count("،") == 1:  # catalog form «معروف، بشار عواد» → «بشار عواد معروف»
                 family, given = (x.strip() for x in name.split("،"))
                 if given and len(family.split()) <= 2:
                     name = f"{given} {family}"
-            if "،" in name or len(name) > 80:
+            if "،" in name or len(name) > (120 if BODY.match(name) else 80):
                 continue
             role, role_ar = "editor", "تحقيق"
             first = name.split()[0]
@@ -382,12 +390,16 @@ class WarraqWorkspace:
                 self.report.dropped_values["death year in doubt (two people may share the name)"] += 1
             # Shamela links: the work, its author, and the same edition when the card supplied values
             ours = tokens(rec.author)
+            name_agrees = False
             for sid, how, sauthor in work_links.get(str(b["id"]), []):
                 agree = bool(ours & tokens(sauthor)) if ours else False
+                name_agrees = name_agrees or agree
                 rec.shamela_work_ids.append((sid, "high" if agree and how.startswith("exact") else "medium"))
                 sb = sham_books.get(str(sid))
                 if agree and sb and sb.get("author_id", "").isdigit():
                     rec.shamela_author_id = rec.shamela_author_id or int(sb["author_id"])
+            if rec.death_source == "shamela_book" and not name_agrees:
+                rec.death_name_matched = False  # the year is the Shamela book's author's; is he this author?
             if rec.shamela_author_id in sham_auth and not rec.author_full_name:
                 rec.author_full_name, rec.sources["author_full_name"] = sham_auth[rec.shamela_author_id], "shamela_author"
             if "shamela_card" in rec.sources.values() and len({s for s, _ in rec.shamela_work_ids}) == 1:

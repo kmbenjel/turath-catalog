@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/kmbenjel/turath-catalog/schema/authors.schema.json",
   "title": "turath-catalog authors",
-  "description": "One row per author. Two people who share a name form are two rows when their death years differ.",
+  "description": "One row per author name form. Two people who share a name form are two rows when their death years differ; two name forms of one person are two rows that share a canonical_author_id.",
   "type": "object",
   "properties": {
     "author_id": {
@@ -88,7 +88,7 @@
       ]
     },
     "death_confidence": {
-      "description": "`high`: every edition that gives a year agrees and the year is in the recorded century; `medium`: a single witness.",
+      "description": "`high`: every edition that gives a year agrees and the year is in the recorded century; `medium`: a single witness; `low`: the year is that of the author of a matched Shamela book whose name could not be matched to this row's name (the row may name that book's commentator, transmitter or editor).",
       "type": [
         "string",
         "null"
@@ -128,12 +128,18 @@
         "null"
       ],
       "pattern": "^([a-z_]+:[^;:\\s]+)(;[a-z_]+:[^;:\\s]+)*$"
+    },
+    "canonical_author_id": {
+      "description": "The row that stands for this person (authors.author_id). Name forms that carry the same catalog author id in ext_ids and no conflicting death year («ابن الجوزي», «أبو الفرج ابن الجوزي») share one: the dated row with the most works. Equal to author_id for every other row. Group by it to count people rather than name forms.",
+      "type": "string",
+      "pattern": "^a_[0-9a-f]{10}$"
     }
   },
   "required": [
     "author_id",
     "name_ar",
-    "n_works"
+    "n_works",
+    "canonical_author_id"
   ],
   "additionalProperties": false
 }

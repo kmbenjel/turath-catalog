@@ -14,8 +14,8 @@ One row per work (a text by an author), whatever the number of its editions in t
 | column | type | required | description |
 |---|---|---|---|
 | `work_id` | string | yes | Stable id: `w_` + first 10 hex digits of sha1(`title_key/author_key`). (e.g. `w_5c1f0e2b9a`) |
-| `title_ar` | string | yes | Title of the work in Arabic, as on the best-attested edition. (e.g. `آداب الفتوى والمفتي والمستفتي`) |
-| `alt_titles_ar` | string |  | Other titles of the work, `;`-separated (titles written «A = B» are split). |
+| `title_ar` | string | yes | Title of the work in Arabic, as on the best-attested edition and as the library gives it (it may carry a bracketed remark or an edition mark; `title_clean_ar` is the title alone). (e.g. `آداب الفتوى والمفتي والمستفتي`) |
+| `alt_titles_ar` | string |  | Other titles of the work, `;`-separated, gathered from its editions: the names after «=» in «A = B», and a bracket that names the work another way («(تفسير ابن عادل)»). |
 | `author_id` | string |  | The work's author (authors.author_id). Empty for anonymous works and collections. |
 | `author_name_ar` | string |  | The author's name as cited (denormalised from authors.name_ar for convenience). |
 | `category_ar` | string | yes | Subject category, one of the 40 categories of al-Maktaba al-Shamila. (e.g. `أصول الفقه`) |
@@ -26,6 +26,7 @@ One row per work (a text by an author), whatever the number of its editions in t
 | `ext_ids` | string |  | Other catalogs' ids for the work, `;`-separated `scheme:id` (scheme `shamela` = al-Maktaba al-Shamila book id). (e.g. `shamela:1094`) |
 | `n_editions` | integer | yes | Number of editions of this work in the dataset. (range 1..) |
 | `confidence` | string | yes | Confidence of the work's identity (title and author): the best confidence among its editions. (one of `high`, `medium`, `low`) |
+| `title_clean_ar` | string | yes | title_ar alone: without bracketed remarks and without edition or editor marks («ط. الخانجي», «ت - الميمني»). The title to display and to match on. (e.g. `آداب الفتوى والمفتي والمستفتي`) |
 
 ## `editions`
 
@@ -35,8 +36,8 @@ One row per edition (a printing, lithograph, thesis or manuscript copy) of a wor
 |---|---|---|---|
 | `edition_id` | string | yes | Stable id: `e_` + first 10 hex digits of sha1 of the edition's label within its category. |
 | `work_id` | string | yes | The work (works.work_id). |
-| `title_ar` | string | yes | Title as given on this edition. |
-| `label_ar` | string | yes | Citation form composed from this row's fields: «title - author - ت editors - publisher place» (title_ar without alternative titles, the author's name, editors_ar with their role, publisher_ar, place_ar). |
+| `title_ar` | string | yes | Title as the library gives it for this edition, kept verbatim: it may carry another title after «=», a bracketed remark or an edition mark. |
+| `label_ar` | string | yes | Citation form composed from this row's fields: «title - author - ت editors - publisher place» (title_clean_ar, the author's name, editors_ar with their role, publisher_ar, place_ar). |
 | `kind` | string | yes | printed, lithograph, manuscript (a copy of a manuscript), thesis (university thesis) or offprint (a journal article). (one of `printed`, `lithograph`, `manuscript`, `thesis`, `offprint`) |
 | `editors_ar` | string |  | Editors and other contributors, `;`-separated, in order (details in edition_editors). |
 | `publisher_ar` | string |  | Publisher or printing house. |
@@ -54,10 +55,13 @@ One row per edition (a printing, lithograph, thesis or manuscript copy) of a wor
 | `ext_ids` | string |  | `;`-separated `scheme:id`: `waqfeya` = waqfeya.net book id of a record for this very scan (linked by exact file size); `shamela` = Shamela book whose card describes this same edition. |
 | `field_sources` | string |  | JSON object: column → source of its value (title_page, imprint_page, catalog_record, shamela_card, shamela_author, file_label, user). |
 | `confidence` | string | yes | `high`: title page read by eye; `medium`: values from a size-linked catalog record or the same-edition Shamela card; `low`: from the library's label only. (one of `high`, `medium`, `low`) |
+| `title_clean_ar` | string | yes | title_ar alone: other titles moved to alt_titles_ar, bracketed remarks to title_note_ar, and edition or editor marks («ط. الخانجي», «ت - الميمني») checked against publisher_ar and editors_ar. The title to display and to match on. (e.g. `الجامع لأحكام القرآن`) |
+| `alt_titles_ar` | string |  | Other titles that title_ar gives for the work, `;`-separated: the names after «=», and a bracket that names the work another way (it opens with «أو» or with a genre word such as تفسير, شرح, كتاب). (e.g. `تفسير القرطبي`) |
+| `title_note_ar` | string |  | What else title_ar carried, `;`-separated: a bracketed remark (the part covered, a disambiguator, a series), and an edition mark that the row's publisher or editors do not confirm (written «ط X» or «ت X»). A mark the row confirms is dropped; a publisher mark on a row without publisher fills publisher_ar. (e.g. `من النحل إلى الصافات`) |
 
 ## `authors`
 
-One row per author. Two people who share a name form are two rows when their death years differ.
+One row per author name form. Two people who share a name form are two rows when their death years differ; two name forms of one person are two rows that share a canonical_author_id.
 
 | column | type | required | description |
 |---|---|---|---|
@@ -70,15 +74,16 @@ One row per author. Two people who share a name form are two rows when their dea
 | `death_ce_to` | integer |  | Last Gregorian year that the Hijri death year overlaps (equal to or one more than death_ce_from). (range 600..2030) |
 | `century_ah` | integer |  | Hijri century of death (from death_ah, else from a catalog record). (range 1..15) |
 | `death_source` | string |  | `shamela_book`: the Shamela author record of a Shamela book matched to one of the author's works; `author_table`: the same name's year on another of the author's books, or Shamela's author table when name and century agree. (one of `shamela_book`, `author_table`, `user`) |
-| `death_confidence` | string |  | `high`: every edition that gives a year agrees and the year is in the recorded century; `medium`: a single witness. (one of `high`, `medium`, `low`) |
+| `death_confidence` | string |  | `high`: every edition that gives a year agrees and the year is in the recorded century; `medium`: a single witness; `low`: the year is that of the author of a matched Shamela book whose name could not be matched to this row's name (the row may name that book's commentator, transmitter or editor). (one of `high`, `medium`, `low`) |
 | `n_works` | integer | yes | Number of the author's works in the dataset. (range 1..) |
 | `openiti_author_uri` | string |  | OpenITI author URI. (e.g. `0676Nawawi`) |
 | `wikidata_qid` | string |  | Wikidata item of the author, through Wikidata's Shamela author id (P12435), with the death year checked. |
 | `ext_ids` | string |  | `;`-separated `scheme:id` (`shamela_author` = al-Maktaba al-Shamila author id). |
+| `canonical_author_id` | string | yes | The row that stands for this person (authors.author_id). Name forms that carry the same catalog author id in ext_ids and no conflicting death year («ابن الجوزي», «أبو الفرج ابن الجوزي») share one: the dated row with the most works. Equal to author_id for every other row. Group by it to count people rather than name forms. |
 
 ## `editors`
 
-One row per person named as editor or contributor of an edition.
+One row per person, or body (a research centre, a committee), named as editor or contributor of an edition.
 
 | column | type | required | description |
 |---|---|---|---|

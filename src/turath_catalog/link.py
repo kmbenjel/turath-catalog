@@ -29,7 +29,7 @@ from .textnorm import norm, title_key, tokens
 OPENITI_URL = "https://raw.githubusercontent.com/OpenITI/RELEASE/master/metadata/OpenITI_metadata_2025-1-9.tsv"
 OPENITI_RELEASE = "2025.1.9"
 SPARQL = "https://query.wikidata.org/sparql"
-USER_AGENT = "turath-catalog/0.1 (open bibliographic dataset; https://github.com/kmbenjel/turath-catalog)"
+USER_AGENT = "turath-catalog/0.2 (open bibliographic dataset; https://github.com/kmbenjel/turath-catalog)"
 QUERIES = {
     "shamela_author": "SELECT ?item ?v ?d WHERE { ?item wdt:P12435 ?v . OPTIONAL { ?item wdt:P570 ?d } }",
     "shamela_book": "SELECT ?item ?v ?work WHERE { ?item wdt:P12239 ?v . OPTIONAL { ?item wdt:P629 ?work } }",

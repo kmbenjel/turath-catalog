@@ -11,10 +11,10 @@ from . import __version__
 
 EPILOG = """examples:
   turath-catalog info sample                              what is in a release (here: the bundled sample)
-  turath-catalog validate releases/turath-catalog-0.1.0   check ids, references, dates, leaks
+  turath-catalog validate releases/turath-catalog-0.2.0   check ids, references, dates, leaks
   turath-catalog build --csv my-library.csv --out out/     normalise your own catalog into the same tables
-  turath-catalog build --warraq ~/library --out releases/turath-catalog-0.1.0
-  turath-catalog charts releases/turath-catalog-0.1.0 --out docs/media
+  turath-catalog build --warraq ~/library --out releases/turath-catalog-0.2.0
+  turath-catalog charts releases/turath-catalog-0.2.0 --out docs/media
   turath-catalog schema --out schema --dictionary docs/data-dictionary.md
 """
 

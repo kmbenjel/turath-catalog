@@ -45,6 +45,7 @@ def read_user_csv(path: str | Path) -> tuple[list[EditionRecord], dict]:
                 category_ar=cat,
                 author=row.get("author", ""),
                 work_group=row.get("work", ""),
+                title_source="user",
             )
             r.label = " - ".join(x for x in (r.title, r.author, row.get("publisher", "")) if x)
             for part in filter(None, (p.strip() for p in row.get("editors", "").split(";"))):

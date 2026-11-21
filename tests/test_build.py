@@ -1,3 +1,4 @@
+import json
 import re
 
 from turath_catalog.build import build_tables, compose_label, h10, work_id_for
@@ -114,3 +115,139 @@ def test_label_is_composed_from_the_fields_not_the_input_label():
     assert compose_label(rec("t", "الرسالة")) == "الرسالة"
     two = rec("u", "الأم", "الشافعي", editors=[Editor("رفعت فوزي"), Editor("علي محمد")])
     assert compose_label(two) == "الأم - الشافعي - ت رفعت فوزي وعلي محمد"
+
+
+def test_a_title_with_a_second_name_groups_with_the_plain_title():
+    t = build_tables(
+        [
+            rec("a", "السيرة النبوية = سيرة ابن هشام", "ابن هشام", publisher="دار الكتاب العربي"),
+            rec("b", "السيرة النبوية", "ابن هشام", publisher="دار المعرفة"),
+            rec("c", "السيرة النبوية", "ابن كثير"),
+        ]
+    )
+    assert check(t) == []
+    (w,) = [w for w in t["works"] if w["author_name_ar"] == "ابن هشام"]
+    assert (w["title_ar"], w["title_clean_ar"], w["alt_titles_ar"], w["n_editions"]) == (
+        "السيرة النبوية",
+        "السيرة النبوية",
+        "سيرة ابن هشام",
+        2,
+    )
+    assert w["work_id"] == work_id_for("السيرة النبوية", "ابن هشام")  # the recipe id, not a disambiguated one
+    assert len(t["works"]) == 2
+
+
+def test_edition_keeps_the_title_as_given_and_offers_the_parts():
+    t = build_tables(
+        [
+            rec("a", "الجامع لأحكام القرآن = تفسير القرطبي", "القرطبي"),
+            rec("b", "تفسير يحيى بن سلام (من النحل إلى الصافات)", "يحيى بن سلام"),
+            rec("c", "آداب الفتوى", "النووي"),
+        ]
+    )
+    e = {e["title_ar"]: e for e in t["editions"]}
+    a, b, c = e["الجامع لأحكام القرآن = تفسير القرطبي"], e["تفسير يحيى بن سلام (من النحل إلى الصافات)"], e["آداب الفتوى"]
+    assert (a["title_clean_ar"], a["alt_titles_ar"], a["title_note_ar"]) == ("الجامع لأحكام القرآن", "تفسير القرطبي", None)
+    assert (b["title_clean_ar"], b["alt_titles_ar"], b["title_note_ar"]) == ("تفسير يحيى بن سلام", None, "من النحل إلى الصافات")
+    assert (c["title_clean_ar"], c["alt_titles_ar"], c["title_note_ar"]) == ("آداب الفتوى", None, None)
+    assert b["label_ar"] == "تفسير يحيى بن سلام - يحيى بن سلام"
+    w = {w["title_clean_ar"]: w for w in t["works"]}
+    assert w["تفسير يحيى بن سلام"]["title_ar"] == "تفسير يحيى بن سلام (من النحل إلى الصافات)"
+    assert w["تفسير يحيى بن سلام"]["work_id"] == work_id_for("تفسير يحيى بن سلام", "يحيى بن سلام")
+
+
+def test_an_edition_mark_the_row_confirms_is_dropped():
+    r = rec("a", "الحماسة البصرية (ط. الخانجي)", "البصري", editors=[Editor("عادل سليمان جمال")], publisher="مكتبة الخانجي")
+    e = build_tables([r])["editions"][0]
+    assert (e["title_clean_ar"], e["title_note_ar"], e["publisher_ar"]) == ("الحماسة البصرية", None, "مكتبة الخانجي")
+    assert e["label_ar"] == "الحماسة البصرية - البصري - ت عادل سليمان جمال - مكتبة الخانجي"
+    r = rec("b", "سمط اللآلي (ت - الميمني)", "البكري", editors=[Editor("عبد العزيز الميمني")])
+    e = build_tables([r])["editions"][0]
+    assert (e["title_clean_ar"], e["title_note_ar"]) == ("سمط اللآلي", None)
+
+
+def test_a_publisher_mark_fills_an_empty_publisher_with_its_source():
+    r = rec("a", "النفح الشذي شرح جامع الترمذي ط الصميعي", "ابن سيد الناس", sources={"year_ah": "catalog_record"}, year_ah=1428)
+    e = build_tables([r])["editions"][0]
+    assert (e["title_clean_ar"], e["publisher_ar"], e["title_note_ar"]) == ("النفح الشذي شرح جامع الترمذي", "الصميعي", None)
+    assert json.loads(e["field_sources"]) == {"publisher_ar": "file_label", "year_ah": "catalog_record"}
+    assert e["label_ar"] == "النفح الشذي شرح جامع الترمذي - ابن سيد الناس - الصميعي"
+    r.title_source = "user"
+    assert json.loads(build_tables([r])["editions"][0]["field_sources"])["publisher_ar"] == "user"
+
+
+def test_a_mark_that_disagrees_with_the_row_is_kept_as_a_remark():
+    r = rec(
+        "a",
+        "صحيح سنن أبي داود ط غراس (الأم)",
+        "الألباني",
+        publisher="مكتبة المعارف",
+        editors=[Editor("زهير الشاويش")],
+        sources={"publisher": "catalog_record"},
+    )
+    e = build_tables([r])["editions"][0]
+    assert (e["title_clean_ar"], e["publisher_ar"], e["title_note_ar"]) == ("صحيح سنن أبي داود", "مكتبة المعارف", "الأم;ط غراس")
+    assert json.loads(e["field_sources"]) == {"publisher_ar": "catalog_record"}
+    r = rec("b", "الإخنائية ت زهوي", "ابن تيمية", editors=[Editor("أحمد بن مونس العنزي")])
+    assert build_tables([r])["editions"][0]["title_note_ar"] == "ت زهوي"
+    r = rec("c", "الإخنائية ت زهوي", "ابن تيمية")  # a surname alone is not an editor's name: a remark, not a credit
+    e = build_tables([r])["editions"][0]
+    assert (e["editors_ar"], e["title_note_ar"]) == (None, "ت زهوي")
+
+
+def test_marks_never_change_an_id():
+    plain = build_tables([rec("k", "الحماسة البصرية", "البصري", publisher="مكتبة الخانجي")])
+    marked = build_tables([rec("k", "الحماسة البصرية (ط. الخانجي)", "البصري", publisher="مكتبة الخانجي")])
+    for table, col in [("works", "work_id"), ("editions", "edition_id"), ("authors", "author_id")]:
+        assert plain[table][0][col] == marked[table][0][col]
+
+
+def test_name_forms_of_one_person_share_a_canonical_author():
+    t = build_tables(
+        [
+            rec("a", "صيد الخاطر", "ابن الجوزي", death_ah=597, death_source="shamela_book", shamela_author_id=51),
+            rec("b", "تلبيس إبليس", "ابن الجوزي", death_ah=597, death_source="shamela_book", shamela_author_id=51),
+            rec("c", "المنتظم", "أبو الفرج ابن الجوزي", shamela_author_id=51),
+            rec("d", "زاد المعاد", "ابن قيم الجوزية", death_ah=751, death_source="shamela_book", shamela_author_id=9),
+            rec("e", "المعجم الصغير", "الطبراني", death_ah=360, death_source="shamela_book", shamela_author_id=232),
+            rec("f", "جزء فيه أحاديث", "الطبراني وابن مردويه", death_ah=360, death_source="shamela_book", shamela_author_id=232),
+            rec("g", "الفتاوى", "ولي الله الدهلوي", death_ah=1176, death_source="shamela_book", shamela_author_id=1349),
+            rec("h", "حجة الله البالغة", "شاه ولي الله الدهلوي", death_ah=1176, death_source="shamela_book", shamela_author_id=1349),
+        ]
+    )
+    assert check(t) == []
+    a = {a["name_ar"]: a for a in t["authors"]}
+    head = a["ابن الجوزي"]
+    assert head["canonical_author_id"] == head["author_id"]  # dated, most works
+    assert a["أبو الفرج ابن الجوزي"]["canonical_author_id"] == head["author_id"]
+    assert a["أبو الفرج ابن الجوزي"]["author_id"] != head["author_id"]  # the row and its id stay
+    assert a["ابن قيم الجوزية"]["canonical_author_id"] == a["ابن قيم الجوزية"]["author_id"]
+    # «الطبراني وابن مردويه» names two people: the identifier of the first does not make them one
+    assert a["الطبراني وابن مردويه"]["canonical_author_id"] == a["الطبراني وابن مردويه"]["author_id"]
+    # «ولي» is a name, not «و» + a second person
+    assert a["شاه ولي الله الدهلوي"]["canonical_author_id"] == a["ولي الله الدهلوي"]["canonical_author_id"]
+    assert len({x["canonical_author_id"] for x in t["authors"]}) == 5
+
+
+def test_one_identifier_with_two_death_years_is_left_apart():
+    t = build_tables(
+        [
+            rec("a", "كتاب أ", "السخاوي", death_ah=902, death_source="shamela_book", shamela_author_id=34),
+            rec("b", "كتاب ب", "شمس الدين السخاوي", death_ah=903, death_source="shamela_book", shamela_author_id=34),
+        ]
+    )
+    assert all(a["canonical_author_id"] == a["author_id"] for a in t["authors"])
+
+
+def test_a_death_year_whose_source_names_another_author_is_low():
+    t = build_tables(
+        [
+            rec("a", "طبقات الفقهاء الشافعية", "النووي", death_ah=643, death_source="shamela_book", death_name_matched=False),
+            rec("b", "الأذكار", "الآجري", death_ah=360, death_source="shamela_book"),
+            rec("c", "الشريعة", "الآجري", death_ah=360, death_source="shamela_book", death_name_matched=False),
+        ]
+    )
+    a = {a["name_ar"]: a for a in t["authors"]}
+    assert a["النووي"]["death_confidence"] == "low"
+    assert a["الآجري"]["death_confidence"] == "high"  # one witness whose name matches is enough
+    assert check(t) == []

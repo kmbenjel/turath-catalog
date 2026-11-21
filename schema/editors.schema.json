@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/kmbenjel/turath-catalog/schema/editors.schema.json",
   "title": "turath-catalog editors",
-  "description": "One row per person named as editor or contributor of an edition.",
+  "description": "One row per person, or body (a research centre, a committee), named as editor or contributor of an edition.",
   "type": "object",
   "properties": {
     "person_id": {

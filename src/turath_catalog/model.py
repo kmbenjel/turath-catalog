@@ -68,11 +68,15 @@ TABLES: dict[str, dict] = {
             C(
                 "title_ar",
                 "string",
-                "Title of the work in Arabic, as on the best-attested edition.",
+                "Title of the work in Arabic, as on the best-attested edition and as the library gives it (it may carry a bracketed remark or an edition mark; `title_clean_ar` is the title alone).",
                 required=True,
                 example="آداب الفتوى والمفتي والمستفتي",
             ),
-            C("alt_titles_ar", "string", "Other titles of the work, `;`-separated (titles written «A = B» are split)."),
+            C(
+                "alt_titles_ar",
+                "string",
+                "Other titles of the work, `;`-separated, gathered from its editions: the names after «=» in «A = B», and a bracket that names the work another way («(تفسير ابن عادل)»).",
+            ),
             C(
                 "author_id",
                 "string",
@@ -122,6 +126,13 @@ TABLES: dict[str, dict] = {
                 required=True,
                 enum=CONF,
             ),
+            C(
+                "title_clean_ar",
+                "string",
+                "title_ar alone: without bracketed remarks and without edition or editor marks («ط. الخانجي», «ت - الميمني»). The title to display and to match on.",
+                required=True,
+                example="آداب الفتوى والمفتي والمستفتي",
+            ),
         ],
     },
     "editions": {
@@ -136,11 +147,16 @@ TABLES: dict[str, dict] = {
                 pattern=ID["edition"],
             ),
             C("work_id", "string", "The work (works.work_id).", required=True, pattern=ID["work"]),
-            C("title_ar", "string", "Title as given on this edition.", required=True),
+            C(
+                "title_ar",
+                "string",
+                "Title as the library gives it for this edition, kept verbatim: it may carry another title after «=», a bracketed remark or an edition mark.",
+                required=True,
+            ),
             C(
                 "label_ar",
                 "string",
-                "Citation form composed from this row's fields: «title - author - ت editors - publisher place» (title_ar without alternative titles, the author's name, editors_ar with their role, publisher_ar, place_ar).",
+                "Citation form composed from this row's fields: «title - author - ت editors - publisher place» (title_clean_ar, the author's name, editors_ar with their role, publisher_ar, place_ar).",
                 required=True,
             ),
             C(
@@ -199,10 +215,29 @@ TABLES: dict[str, dict] = {
                 required=True,
                 enum=CONF,
             ),
+            C(
+                "title_clean_ar",
+                "string",
+                "title_ar alone: other titles moved to alt_titles_ar, bracketed remarks to title_note_ar, and edition or editor marks («ط. الخانجي», «ت - الميمني») checked against publisher_ar and editors_ar. The title to display and to match on.",
+                required=True,
+                example="الجامع لأحكام القرآن",
+            ),
+            C(
+                "alt_titles_ar",
+                "string",
+                "Other titles that title_ar gives for the work, `;`-separated: the names after «=», and a bracket that names the work another way (it opens with «أو» or with a genre word such as تفسير, شرح, كتاب).",
+                example="تفسير القرطبي",
+            ),
+            C(
+                "title_note_ar",
+                "string",
+                "What else title_ar carried, `;`-separated: a bracketed remark (the part covered, a disambiguator, a series), and an edition mark that the row's publisher or editors do not confirm (written «ط X» or «ت X»). A mark the row confirms is dropped; a publisher mark on a row without publisher fills publisher_ar.",
+                example="من النحل إلى الصافات",
+            ),
         ],
     },
     "authors": {
-        "doc": "One row per author. Two people who share a name form are two rows when their death years differ.",
+        "doc": "One row per author name form. Two people who share a name form are two rows when their death years differ; two name forms of one person are two rows that share a canonical_author_id.",
         "key": "author_id",
         "cols": [
             C(
@@ -234,7 +269,7 @@ TABLES: dict[str, dict] = {
             C(
                 "death_confidence",
                 "string",
-                "`high`: every edition that gives a year agrees and the year is in the recorded century; `medium`: a single witness.",
+                "`high`: every edition that gives a year agrees and the year is in the recorded century; `medium`: a single witness; `low`: the year is that of the author of a matched Shamela book whose name could not be matched to this row's name (the row may name that book's commentator, transmitter or editor).",
                 enum=CONF,
             ),
             C("n_works", "integer", "Number of the author's works in the dataset.", required=True, minimum=1),
@@ -246,10 +281,17 @@ TABLES: dict[str, dict] = {
                 pattern=QID,
             ),
             C("ext_ids", "string", "`;`-separated `scheme:id` (`shamela_author` = al-Maktaba al-Shamila author id).", pattern=EXT_IDS),
+            C(
+                "canonical_author_id",
+                "string",
+                "The row that stands for this person (authors.author_id). Name forms that carry the same catalog author id in ext_ids and no conflicting death year («ابن الجوزي», «أبو الفرج ابن الجوزي») share one: the dated row with the most works. Equal to author_id for every other row. Group by it to count people rather than name forms.",
+                required=True,
+                pattern=ID["author"],
+            ),
         ],
     },
     "editors": {
-        "doc": "One row per person named as editor or contributor of an edition.",
+        "doc": "One row per person, or body (a research centre, a committee), named as editor or contributor of an edition.",
         "key": "person_id",
         "cols": [
             C(

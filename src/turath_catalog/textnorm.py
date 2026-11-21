@@ -78,3 +78,31 @@ STOP_TOKENS = frozenset(
 def tokens(s: str | None, min_len: int = 3) -> set[str]:
     """Distinctive folded words of a name (common name parts and short words dropped)."""
     return {w for w in norm(s).split() if len(w) >= min_len and w not in STOP_TOKENS}
+
+
+# Given names that open with «و»: in «أحمد ووهبة الزحيلي» the «و…» word is a name, not "and"
+WAW_NAMES = frozenset(
+    [
+        "ولد",
+        "وليد",
+        "وهبة",
+        "وهبه",
+        "وصي",
+        "وائل",
+        "وداد",
+        "وفاء",
+        "وحيد",
+        "ولي",
+        "وجيه",
+        "وسيم",
+        "وضاح",
+        "ورقة",
+        "وهب",
+        "وكيع",
+        "وجدي",
+        "وفيق",
+        "واصل",
+        "واثق",
+        "وديع",
+    ]
+)

@@ -132,6 +132,23 @@ def test_split_place(ws, value, expected):
         ("محمود وأحمد شاكر", ["محمود وأحمد شاكر"]),  # cannot be split into two full names
         ("عبد الله ولد إسلم", ["عبد الله ولد إسلم"]),  # «ولد» is part of the name
         ("محمد بن علي ووليد قصاب", ["محمد بن علي", "وليد قصاب"]),
+        # a body is one contributor, whatever «و» its name holds
+        ("مركز البحوث وتقنية المعلومات - دار التأصيل", ["مركز البحوث وتقنية المعلومات", "دار التأصيل"]),
+        ("قسم التحقيق والبحث العلمي بالمكتبة الإسلامية", ["قسم التحقيق والبحث العلمي بالمكتبة الإسلامية"]),
+        (
+            "اللجنة العلمية بمركز دار المنهاج للدراسات والتحقيق العلمي بإشراف محمد غسان نصوح عزقول الحسيني",
+            ["اللجنة العلمية بمركز دار المنهاج للدراسات والتحقيق العلمي بإشراف محمد غسان نصوح عزقول الحسيني"],
+        ),
+        # full names joined by a dash, with or without spaces
+        ("فؤاد سزكين-علاء الدين جوخوشا-مازن عماوي", ["فؤاد سزكين", "علاء الدين جوخوشا", "مازن عماوي"]),
+        ("محمد الحاج ناصر- محمد عوام", ["محمد الحاج ناصر", "محمد عوام"]),
+        ("عبد المعز عبد الحميد الجزار -", ["عبد المعز عبد الحميد الجزار"]),
+        ("عبد-الله الأنصاري", ["عبد-الله الأنصاري"]),  # a dash inside one name
+        # what is left of a mark or a bracket is not a name
+        ("ت- الأرناؤوط", ["الأرناؤوط"]),
+        ("-", []),
+        ("ت", []),
+        ("الجامعة الأردنية)", []),
     ],
 )
 def test_joint_editors(value, names):
@@ -142,3 +159,35 @@ def test_a_file_label_publisher_that_is_the_author_is_dropped(ws):
     r = by_title(ws.records())["مسائل"]
     assert (r.publisher, r.place) == ("", "") and "publisher" not in r.sources
     assert ws.report.dropped_values["publisher: the author's name, read from a file label"] == 1
+
+
+def test_a_death_year_taken_from_a_book_by_another_name_is_marked(workspace):
+    """The year comes from the matched Shamela book. When that book's author is not this row's author (here the
+    row names who gathered the questions, the book names who answered them) the year may be the other man's."""
+    d = workspace / "data"
+    cat = json.loads((d / "catalog.json").read_text(encoding="utf-8"))
+    cat["books"].append(
+        {
+            "id": 8,
+            "cat": "علوم الحديث",
+            "folder": "سؤالات البرقاني - محمد الأزهري",
+            "title": "سؤالات البرقاني",
+            "author": "محمد الأزهري",
+            "edition": "",
+            "files": [["سؤالات البرقاني.pdf", 500]],
+        }
+    )
+    (d / "catalog.json").write_text(json.dumps(cat, ensure_ascii=False), encoding="utf-8")
+    info = json.loads((d / "editions/edition-info.json").read_text(encoding="utf-8"))
+    info["علوم الحديث/سؤالات البرقاني - محمد الأزهري"] = {"death": {"v": 385, "s": "الشاملة"}}
+    (d / "editions/edition-info.json").write_text(json.dumps(info, ensure_ascii=False), encoding="utf-8")
+    with (d / "compare/shamela-matches.tsv").open("a", encoding="utf-8") as f:
+        f.write("9\tسؤالات البرقاني\tالدارقطني\t385\tعلوم الحديث\t1\texact\t8\n")
+    recs = by_title(WarraqWorkspace(workspace).records())
+    r = recs["سؤالات البرقاني"]
+    assert (r.death_ah, r.death_source, r.death_name_matched, r.shamela_author_id) == (385, "shamela_book", False, None)
+    assert recs["آداب الفتوى"].death_name_matched  # «النووي» on both sides
+    t = build_tables(list(recs.values()))
+    conf = {a["name_ar"]: a["death_confidence"] for a in t["authors"]}
+    assert conf["محمد الأزهري"] == "low" and conf["النووي"] in ("high", "medium")
+    assert check(t) == []
