@@ -7,6 +7,7 @@ and a confidence for every row.**
 [![CI](https://github.com/kmbenjel/turath-catalog/actions/workflows/ci.yml/badge.svg)](https://github.com/kmbenjel/turath-catalog/actions/workflows/ci.yml)
 [![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-1f6feb)](LICENSE-DATA)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-1f6feb)](LICENSE)
+[![Arabic docs](https://img.shields.io/badge/docs-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-0a7)](https://warraq.benjelloun.dev/turath-catalog/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%E2%80%933.13-1f6feb)](pyproject.toml)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-dataset-ffcc4d)](https://huggingface.co/datasets/kmbenjel/turath-catalog)
 
