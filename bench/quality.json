@@ -1,0 +1,152 @@
+{
+  "release": "turath-catalog-0.2.0",
+  "titles": {
+    "editions_title_differs_from_clean": 103,
+    "editions_with_alt_titles": 59,
+    "editions_with_title_note": 19,
+    "edition_marks_kept_as_note": 3,
+    "works_title_differs_from_clean": 45,
+    "works_with_alt_titles": 56,
+    "clean_titles_with_equals_or_bracket": 0
+  },
+  "duplicates": {
+    "author_rows": 2643,
+    "people_by_canonical_author_id": 2451,
+    "author_rows_folded_into_another": 192,
+    "catalog_author_ids_on_several_rows": 167,
+    "of_which_left_apart": 7,
+    "work_groups_same_title_key_same_person": 1,
+    "edition_groups_same_work_editors_publisher_year": 16
+  },
+  "death_years": {
+    "authors_with_death_year": 1239,
+    "by_confidence": {
+      "high": 932,
+      "low": 44,
+      "medium": 263
+    },
+    "by_source": {
+      "author_table": 66,
+      "shamela_book": 1173
+    },
+    "people_with_two_death_years": 0,
+    "openiti_uri_year_differs": 0,
+    "editions_printed_80_years_before_author_death": 0,
+    "name_forms_on_several_rows": 37
+  },
+  "ids": {
+    "work_ids_equal_to_sha1_of_title_key_author_key": 5133,
+    "work_ids_disambiguated": 1,
+    "author_ids_equal_to_sha1_of_author_key": 2543,
+    "author_ids_with_death_year_or_century_in_the_hash": 100
+  },
+  "against": {
+    "release": "turath-catalog-0.1.0",
+    "tables": {
+      "works": {
+        "rows_before": 5139,
+        "rows_now": 5134,
+        "ids_kept": 5134,
+        "ids_gone": 5,
+        "ids_new": 0,
+        "columns_added": [
+          "title_clean_ar"
+        ],
+        "values_changed_in_kept_rows": {
+          "alt_titles_ar": 13,
+          "confidence": 1,
+          "ext_ids": 3,
+          "n_editions": 5,
+          "openiti_confidence": 3,
+          "openiti_uri": 3,
+          "wikidata_qid": 2
+        }
+      },
+      "editions": {
+        "rows_before": 5626,
+        "rows_now": 5626,
+        "ids_kept": 5626,
+        "ids_gone": 0,
+        "ids_new": 0,
+        "columns_added": [
+          "title_clean_ar",
+          "alt_titles_ar",
+          "title_note_ar"
+        ],
+        "values_changed_in_kept_rows": {
+          "editors_ar": 37,
+          "field_sources": 11,
+          "label_ar": 68,
+          "publisher_ar": 2,
+          "work_id": 6
+        }
+      },
+      "authors": {
+        "rows_before": 2643,
+        "rows_now": 2643,
+        "ids_kept": 2643,
+        "ids_gone": 0,
+        "ids_new": 0,
+        "columns_added": [
+          "canonical_author_id"
+        ],
+        "values_changed_in_kept_rows": {
+          "death_confidence": 44,
+          "n_works": 5
+        }
+      },
+      "editors": {
+        "rows_before": 2265,
+        "rows_now": 2265,
+        "ids_kept": 2244,
+        "ids_gone": 21,
+        "ids_new": 21,
+        "columns_added": [],
+        "values_changed_in_kept_rows": {
+          "n_editions": 6,
+          "name_ar": 2
+        }
+      },
+      "edition_editors": {
+        "rows_before": 4012,
+        "rows_now": 3999,
+        "ids_kept": 3957,
+        "ids_gone": 55,
+        "ids_new": 42,
+        "columns_added": [],
+        "values_changed_in_kept_rows": {
+          "seq": 17
+        }
+      },
+      "manuscripts": {
+        "rows_before": 31,
+        "rows_now": 31,
+        "ids_kept": 31,
+        "ids_gone": 0,
+        "ids_new": 0,
+        "columns_added": [],
+        "values_changed_in_kept_rows": {}
+      },
+      "edition_files": {
+        "rows_before": 15079,
+        "rows_now": 15079,
+        "ids_kept": 15079,
+        "ids_gone": 0,
+        "ids_new": 0,
+        "columns_added": [],
+        "values_changed_in_kept_rows": {}
+      },
+      "categories": {
+        "rows_before": 40,
+        "rows_now": 40,
+        "ids_kept": 40,
+        "ids_gone": 0,
+        "ids_new": 0,
+        "columns_added": [],
+        "values_changed_in_kept_rows": {
+          "n_works": 5
+        }
+      }
+    }
+  }
+}

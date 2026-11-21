@@ -1,16 +1,16 @@
 {
   "release": {
-    "works": 5139,
+    "works": 5134,
     "editions": 5626,
     "authors": 2643,
-    "works_with_dated_author": 3233,
-    "works_by_authors_died_by_1300_ah": 2730,
-    "editions_with_editor": 3529,
-    "editions_with_publisher": 4438,
+    "works_with_dated_author": 3228,
+    "works_by_authors_died_by_1300_ah": 2725,
+    "editions_with_editor": 3524,
+    "editions_with_publisher": 4437,
     "editions_with_year": 4208,
     "editions_with_volumes": 3459,
     "authors_with_death_year": 1239,
-    "works_with_2plus_editions": 367
+    "works_with_2plus_editions": 371
   },
   "openiti": {
     "release": "2025.1.9",
@@ -18,13 +18,13 @@
     "versions": 13368,
     "versions_with_any_edition_statement": 10552,
     "has_columns_for_publisher_editor_volumes": false,
-    "dated_works_found": 1685,
-    "dated_works_not_found": 1548,
-    "classical_works_found": 1630,
-    "classical_works_not_found": 1100,
-    "our_editions_of_found_works_with_editor": 1550,
-    "of_which_editor_named_in_openiti_ed_info": 941,
-    "extra_editions_for_found_works": 1980
+    "dated_works_found": 1683,
+    "dated_works_not_found": 1545,
+    "classical_works_found": 1628,
+    "classical_works_not_found": 1097,
+    "our_editions_of_found_works_with_editor": 1552,
+    "of_which_editor_named_in_openiti_ed_info": 944,
+    "extra_editions_for_found_works": 1984
   },
   "wikidata": {
     "items_with_shamela_author_id": 1460,
@@ -38,9 +38,9 @@
   },
   "shamela": {
     "works_linked": 2313,
-    "works_not_linked": 2826,
+    "works_not_linked": 2821,
     "editions_same_edition_in_shamela": 400,
-    "editions_of_linked_works_in_another_edition": 2269,
-    "editions_of_works_not_in_shamela": 2957
+    "editions_of_linked_works_in_another_edition": 2273,
+    "editions_of_works_not_in_shamela": 2953
   }
 }

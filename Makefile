@@ -4,7 +4,7 @@ WORKSPACE ?= ../library
 PY        := .venv/bin/python
 TC        := .venv/bin/turath-catalog
 
-.PHONY: help venv check release charts sample bench zip clean
+.PHONY: help venv check release charts sample bench quality zip clean
 
 help:          ## this list
 	@grep -E '^[a-z]+:.*##' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-9s %s\n", $$1, $$2}'
@@ -30,6 +30,9 @@ sample:        ## the 150-work sample shipped in the package
 
 bench:         ## coverage against OpenITI, Wikidata and Shamela -> bench/results.json
 	PYTHON=$(PY) TC=$(TC) bench/compare.sh $(RELEASE)
+
+quality:       ## audit titles, duplicates, death years, ids -> bench/quality.json (PREVIOUS=an earlier release)
+	$(PY) bench/quality.py $(RELEASE) $(if $(PREVIOUS),--previous $(PREVIOUS)) --out bench/quality.json
 
 zip:           ## one archive per release for the GitHub release page
 	cd releases && ../$(PY) -m zipfile -c turath-catalog-$(VERSION).zip turath-catalog-$(VERSION)

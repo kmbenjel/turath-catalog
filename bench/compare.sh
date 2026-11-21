@@ -2,7 +2,7 @@
 # Coverage of a turath-catalog release in the open sources it links to (OpenITI 2025.1.9 metadata,
 # Wikidata identifier crosswalks, Shamela links carried by the release). Reproducible: the sources are
 # downloaded once into ./cache (OpenITI TSV ~12 MB from GitHub, three small Wikidata SPARQL results).
-#   bench/compare.sh releases/turath-catalog-0.1.0
+#   bench/compare.sh releases/turath-catalog-0.2.0
 set -euo pipefail
 REL=${1:?usage: bench/compare.sh RELEASE_DIR}
 CACHE=${CACHE:-cache}
