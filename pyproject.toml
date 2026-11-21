@@ -39,6 +39,7 @@ turath-catalog = "turath_catalog.cli:main"
 Homepage = "https://github.com/kmbenjel/turath-catalog"
 Documentation = "https://warraq.benjelloun.dev/turath-catalog/"
 Issues = "https://github.com/kmbenjel/turath-catalog/issues"
+Changelog = "https://github.com/kmbenjel/turath-catalog/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/turath_catalog"]
