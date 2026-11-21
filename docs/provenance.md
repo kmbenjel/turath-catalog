@@ -38,7 +38,7 @@ Their prose (descriptions, biographies, blurbs) is never read into a record.
 |---|---|---|
 | «A = B» | `alt_titles_ar` | B is another title of the same work; what follows «ويليه», «ومعه», «وبهامشه» stays with A |
 | a bracket that names the work another way | `alt_titles_ar` | it opens with «أو» or with a genre word (تفسير, شرح, كتاب, صحيح, مختصر …) and has a second word |
-| any other bracket | `title_note_ar` | the part covered, a disambiguator, a series |
+| any other bracket | `title_note_ar` | the part covered («(كتاب الإيمان)», «(مقدمة المحقق)», a bracket that opens with the title's own first word), a disambiguator, a series |
 | «ط. X», «ط X» (a publisher) | checked against `publisher_ar` and `place_ar` | the row confirms it: dropped; the row has no publisher: `publisher_ar` = X with source `file_label`; the row says otherwise: kept in `title_note_ar` as «ط X» |
 | «ت - X», «ت X» (an editor) | checked against `editors_ar` | confirmed: dropped; otherwise kept in `title_note_ar` as «ت X» (a surname alone is not entered as an editor) |
 

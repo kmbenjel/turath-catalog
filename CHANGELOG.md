@@ -19,8 +19,9 @@ edition, author, manuscript and file id of 0.1.0 is in 0.2.0 (`bench/quality.jso
   named no publisher (2 editions, source `file_label`), and stays in `title_note_ar` when the row says
   otherwise (3 editions). `label_ar` is composed from the clean title.
 - **Works.** A title written «A = B» is the work «A»: it groups with the editions titled «A» (5,134
-  works; 371 with several editions). `works.alt_titles_ar` also takes the other titles given in brackets,
-  which adds 3 OpenITI links.
+  works; 371 with several editions; each merged work's OpenITI link stays on the work it joins).
+  `works.alt_titles_ar` also takes the other titles given in brackets, which links 2 more works to
+  OpenITI (1,683 OpenITI URIs in all).
 - **People.** New `authors.canonical_author_id`: name forms that carry the same Shamela author id and no
   conflicting death year point to one row (192 forms folded, 2,451 people). Author rows and their ids
   are unchanged.
