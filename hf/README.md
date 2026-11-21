@@ -5,7 +5,7 @@ language:
 - en
 pretty_name: turath-catalog — classical Arabic works and their printed editions
 size_categories:
-- 1K<n<10K
+- 10K<n<100K
 source_datasets:
 - original
 annotations_creators:
@@ -50,10 +50,10 @@ configs:
 
 # turath-catalog
 
-An open bibliographic dataset of **classical Arabic works and their printed editions**: 5,139 works,
-5,626 editions (editor, publisher, place, year, edition number, volumes, pages), 2,643 authors (1,239
-with a sourced death year in Hijri, with its Gregorian range), 2,265 editors with 4,012 credits, and 31
-manuscript copies with their holding library. Works link to OpenITI (1,685) and Shamela (2,313);
+An open bibliographic dataset of **classical Arabic works and their printed editions**: 5,134 works,
+5,626 editions (editor, publisher, place, year, edition number, volumes, pages), 2,451 authors under 2,643 name forms
+(1,239 with a sourced death year in Hijri, with its Gregorian range), 2,265 editors with 3,999 credits, and 31
+manuscript copies with their holding library. Works link to OpenITI (1,683) and Shamela (2,313);
 authors to Wikidata (842) and OpenITI (875). Every value names its source and every edition carries a
 confidence level. **Metadata only**: no scans and no text.
 
@@ -90,28 +90,41 @@ repository; a JSON Schema per table in `schema/`.
 | config | rows | key | one row per |
 |---|---:|---|---|
 | `editions` | 5,626 | `edition_id` | printing, lithograph, thesis, offprint or manuscript copy |
-| `works` | 5,139 | `work_id` | text by an author |
-| `authors` | 2,643 | `author_id` | person (one name with two death years is two people) |
-| `editors` | 2,265 | `person_id` | person credited on an edition |
-| `edition_editors` | 4,012 | — | credit: edition × person × role |
+| `works` | 5,134 | `work_id` | text by an author |
+| `authors` | 2,643 | `author_id` | name form of an author (one name with two death years is two people; the forms of one person share `canonical_author_id`: 2,451 people) |
+| `editors` | 2,265 | `person_id` | person or body credited on an edition |
+| `edition_editors` | 3,999 | — | credit: edition × person × role |
 | `manuscripts` | 31 | `manuscript_id` | manuscript copy, with holding library |
 | `edition_files` | 15,079 | — | scan file of an edition: volume label, exact byte size |
 | `categories` | 40 | `category_ar` | subject category (al-Maktaba al-Shamila's 40), with English name |
 
 Ids: `work_id = "w_" + sha1(title_key|author_key)[:10]` (the recipe shared with the
 `turath-match` and `arabic-bib` tools); editions, authors, editors and manuscripts use the same
-`<letter>_<10 hex>` form. Multi-valued cells are `;`-separated; `ext_ids` are `scheme:id` pairs
+`<letter>_<10 hex>` form. A release only appends columns, at the end of a table, and keeps the id recipes.
+Multi-valued cells are `;`-separated; `ext_ids` are `scheme:id` pairs
 (`shamela`, `shamela_author`, `waqfeya`); `field_sources` is a JSON object from column to source.
 
 Example row (`editions`, abridged):
 
 ```json
 {"edition_id": "e_f5c4f8c472", "work_id": "w_92c7dcdccd", "title_ar": "آداب الفتوى والمفتي والمستفتي",
+ "title_clean_ar": "آداب الفتوى والمفتي والمستفتي", "alt_titles_ar": null, "title_note_ar": null,
  "kind": "printed", "editors_ar": "بسام عبد الوهاب الجابي", "publisher_ar": "دار الفكر", "place_ar": "دمشق",
  "year_ah": 1408, "year_ce": 1988, "edition_number": 1, "volumes": 1, "pages": 96, "title_page_read": true,
  "ext_ids": "waqfeya:66a88e0187c55ca3e12f3acb", "confidence": "high",
  "field_sources": "{\"editors_ar\": \"title_page\", \"publisher_ar\": \"title_page\", \"year_ah\": \"catalog_record\", ...}"}
 ```
+
+**Titles.** `title_ar` keeps the title cell as the library gives it; `title_clean_ar` is the title alone.
+What else the cell carried has its own column: another title of the work in `alt_titles_ar`
+(«الجامع لأحكام القرآن = تفسير القرطبي»), a remark in `title_note_ar` («(من النحل إلى الصافات)»), and an
+edition mark («ط. الخانجي», «ت - الميمني») is checked against the row: dropped when `publisher_ar` or
+`editors_ar` already says it, used to fill an empty `publisher_ar` (source `file_label`), kept as a remark
+when the row says otherwise. 103 edition titles carry such a part; ids hash the title as given.
+
+**People.** `authors` has one row per name form. Forms that carry the same Shamela author id and no
+conflicting death year share a `canonical_author_id` (192 forms folded, 2,451 people); group by it to
+count people.
 
 ## Dataset creation
 
@@ -131,7 +144,7 @@ curator. For each edition, values come from, in order of strength:
 | `title_page` | the title page of the scan, read by eye | 2,230 read in full |
 | `imprint_page` | the imprint or copyright page of the scan | |
 | `catalog_record` | a [Waqfeya](https://waqfeya.net) record for the same file, linked by its exact byte size | |
-| `shamela_card` | the [al-Maktaba al-Shamila](https://shamela.ws) card of the same edition (same editor, or same publisher) | 400 |
+| `shamela_card` | the [al-Maktaba al-Shamila](https://shamela.ws) card of the same edition (same editor, or same publisher) | 446 |
 | `shamela_author` | names from the Shamela author record of a matched work | |
 | `file_label` | the library's own label, composed from the above | |
 
@@ -152,14 +165,16 @@ metadata (CC BY-NC-SA 4.0) is not copied.
 `editions.confidence` is `high` when the title page was read by eye (2,230), `medium` when the values come
 from a size-linked catalog record or the same-edition Shamela card (3,021), `low` when only the library
 label supports them (375). `authors.death_confidence` is `high` when two witnesses agree or the year
-falls in the century a catalog record gives, `medium` for a single witness.
+falls in the century a catalog record gives (932), `medium` for a single witness (263), `low` when the year
+is that of the author of a matched Shamela book whose name could not be matched to the row's name, so
+that the row may name that book's commentator, transmitter or editor (44).
 
 ### What was excluded
 
 151 editions whose sources disagree and 116 whose title or author is under review; 125 titles not in
 Arabic script. Values that fail a check are dropped rather than kept: 166 death years where two people
 may share a name, 48 death years outside the century given by a catalog record, 32 Hijri/Gregorian
-year pairs that disagree, 80 "editor" values that are not a person's name, 3 publisher values from a file
+year pairs that disagree, 85 "editor" values that are not a person's name, 3 publisher values from a file
 label that repeat the author's name. File names, paths, download
 links, OCR text, notes and comments are never part of a record. The counts of each build are in
 `build-report.json`.
@@ -174,13 +189,16 @@ words.
 
 ## Bias, risks and limitations
 
-- **Collection bias.** One library's choices: classical works first (2,730 of the 3,233 works with a
+- **Collection bias.** One library's choices: classical works first (2,725 of the 3,228 works with a
   dated author are by authors who died by 1300 AH), with major modern studies. Subjects follow the 40
   categories of al-Maktaba al-Shamila, which name the four Sunni schools of law and no other tradition.
-  Most dated editions were printed 1975–2024 (3,472 of 3,818); 344 are older.
+  Most editions with a Gregorian year were printed 1975–2024 (3,472 of 3,818); 344 are older.
 - **Edition coverage.** 63% of editions name an editor, 79% a publisher, 75% a year, 31% a place.
 - **Name variants.** Editors are merged only when one form is contained in a unique fuller form with the
-  same first and last name; some persons still appear under two forms.
+  same first and last name; some persons still appear under two forms. Authors are folded only by a shared
+  catalog identifier (`canonical_author_id`); an author without one may appear under two forms.
+- **Copies.** A row of `editions` is a scanned copy: two scans of one printing are two rows with the same
+  editor, publisher and year (16 such pairs).
 - **Links are lower bounds.** A work not linked to OpenITI or Wikidata may exist there under another
   title or without the identifiers used here.
 - **Dates.** Hijri→Gregorian ranges use the tabular Islamic calendar, which can differ from observed
@@ -193,7 +211,7 @@ words.
   author    = {Benjelloun, Khalid},
   title     = {turath-catalog: classical Arabic works and their printed editions},
   year      = {2026},
-  version   = {0.1.0},
+  version   = {0.2.0},
   license   = {CC-BY-4.0},
   url       = {https://github.com/kmbenjel/turath-catalog}
 }

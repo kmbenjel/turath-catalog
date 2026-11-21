@@ -1,7 +1,7 @@
 # Provenance, confidence and exclusions
 
 This page explains where every value in turath-catalog comes from, how confident it is, and what was
-left out. The numbers are those of release 0.1.0 (`build-report.json`).
+left out. The numbers are those of release 0.2.0 (`build-report.json`).
 
 ## The editions
 
@@ -29,6 +29,30 @@ A catalog record that contradicts the scan's own label (a different editor or pu
 for that edition. Only facts are taken from catalogs: names, titles, years, counts and identifiers.
 Their prose (descriptions, biographies, blurbs) is never read into a record.
 
+## Titles
+
+`title_ar` is the title cell as the library gives it, kept verbatim. `title_clean_ar` is the title alone;
+`turath_catalog.titles.split_title` separates the rest, and nothing is dropped unless the row already says it:
+
+| in the title cell | goes to | rule |
+|---|---|---|
+| «A = B» | `alt_titles_ar` | B is another title of the same work; what follows «ويليه», «ومعه», «وبهامشه» stays with A |
+| a bracket that names the work another way | `alt_titles_ar` | it opens with «أو» or with a genre word (تفسير, شرح, كتاب, صحيح, مختصر …) and has a second word |
+| any other bracket | `title_note_ar` | the part covered, a disambiguator, a series |
+| «ط. X», «ط X» (a publisher) | checked against `publisher_ar` and `place_ar` | the row confirms it: dropped; the row has no publisher: `publisher_ar` = X with source `file_label`; the row says otherwise: kept in `title_note_ar` as «ط X» |
+| «ت - X», «ت X» (an editor) | checked against `editors_ar` | confirmed: dropped; otherwise kept in `title_note_ar` as «ت X» (a surname alone is not entered as an editor) |
+
+In release 0.2.0, 103 edition titles carry such a part: 59 another title, 19 a remark; 2 publisher marks
+filled an empty `publisher_ar` and 3 marks that the row does not confirm are kept as remarks. `work_id`
+hashes the title as given, so the clean title never moves an id; a title written «A = B» is the work «A».
+
+## People
+
+`authors` has one row per name form: «ابن الجوزي» and «أبو الفرج ابن الجوزي» are two rows. Rows that carry
+the same Shamela author id and no conflicting death year share a `canonical_author_id`, the dated row with
+the most works. A name that joins two people («الطبراني وابن مردويه») is left on its own. 192 of the 2,643
+rows are folded this way, which leaves 2,451 people; no row is merged on a name alone.
+
 ## Confidence
 
 - **Editions.** `high`: the title page was read by eye and the label made from it (2,230). `medium`: at
@@ -39,7 +63,9 @@ Their prose (descriptions, biographies, blurbs) is never read into a record.
   author's works (1,173 authors). `author_table`: the same name carries that year on another of the
   author's books, or Shamela's author table has exactly one author of that name whose death falls in the
   century a catalog record gives (66). `death_confidence` is `high` when two witnesses agree or the year
-  falls in the recorded century (962), `medium` for a single witness (277).
+  falls in the recorded century (932), `medium` for a single witness (263), `low` when the year is that of
+  the author of a matched Shamela book whose name could not be matched to the row's name, so that the row may
+  name that book's commentator, transmitter or editor (44).
 - **Manuscript holdings.** `high`: read in the copy itself (stamp, card, ownership note); `medium`: from
   the description of the upload; `low`: probable from the copy.
 - **Links.** `openiti_confidence` `high` (same death year, same folded title, agreeing author) or
@@ -56,7 +82,7 @@ Their prose (descriptions, biographies, blurbs) is never read into a record.
 | death years where two people may share a name | 166 values | the same name form carries two years |
 | death years outside the recorded century | 48 values | the year and the catalog's century disagree |
 | Hijri/Gregorian year pairs that disagree | 32 pairs | both dropped rather than guessing which is right |
-| "editor" values that are not a person | 80 values | e.g. an edition statement or a thesis note in the editor field |
+| "editor" values that are not a person | 85 values | e.g. an edition statement or a thesis note in the editor field |
 | publisher values that repeat the author's name | 3 values | read from a file label, where the author's name had taken the publisher's place |
 | file names, paths, download links, OCR text, notes, comments | all | never part of a record; the validator rejects paths, URLs, e-mails, IPs and credential words |
 

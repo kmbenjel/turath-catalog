@@ -19,10 +19,10 @@ turath-catalog info sample
 
 ```python
 import pandas as pd
-works = pd.read_parquet("turath-catalog-0.1.0/parquet/works.parquet")
-eds = pd.read_parquet("turath-catalog-0.1.0/parquet/editions.parquet")
-tabari = works.loc[works.title_ar == "جامع البيان عن تأويل آي القرآن", "work_id"]
-print(eds[eds.work_id.isin(tabari)][["editors_ar", "publisher_ar", "year_ah", "volumes"]])
+works = pd.read_parquet("turath-catalog-0.2.0/parquet/works.parquet")
+eds = pd.read_parquet("turath-catalog-0.2.0/parquet/editions.parquet")
+tabari = works.loc[works.title_clean_ar == "جامع البيان عن تأويل آي القرآن", "work_id"]
+print(eds[eds.work_id.isin(tabari)][["title_clean_ar", "alt_titles_ar", "editors_ar", "publisher_ar", "year_ah", "volumes"]])
 ```
 
 فتظهر طبعات تفسير الطبري الثلاث: طبعة محمود وأحمد شاكر، وطبعة عبد الله التركي في 25 مجلدًا، مع ناشر كل منها وسنته.
@@ -30,23 +30,24 @@ print(eds[eds.work_id.isin(tabari)][["editors_ar", "publisher_ar", "year_ah", "v
 ## 3. كل ما حققه محقق
 
 ```python
-editors = pd.read_parquet("turath-catalog-0.1.0/parquet/editors.parquet")
-credits = pd.read_parquet("turath-catalog-0.1.0/parquet/edition_editors.parquet")
+editors = pd.read_parquet("turath-catalog-0.2.0/parquet/editors.parquet")
+credits = pd.read_parquet("turath-catalog-0.2.0/parquet/edition_editors.parquet")
 harun = editors[editors.name_ar.str.contains("عبد السلام") & editors.name_ar.str.contains("هارون")]
-print(credits.merge(harun, on="person_id").merge(eds, on="edition_id")[["title_ar", "publisher_ar", "year_ce"]])
+print(credits.merge(harun, on="person_id").merge(eds, on="edition_id")[["title_clean_ar", "publisher_ar", "year_ce"]])
 ```
 
 ## 4. المؤلفون حسب القرن
 
 ```python
-authors = pd.read_parquet("turath-catalog-0.1.0/parquet/authors.parquet")
-print(authors.groupby("century_ah").size())
+authors = pd.read_parquet("turath-catalog-0.2.0/parquet/authors.parquet")
+people = authors[authors.author_id == authors.canonical_author_id]   # صف واحد لكل مؤلف لا لكل صيغة اسم
+print(people.groupby("century_ah").size())
 ```
 
 ## 5. التحقق من سلامة الجداول
 
 ```bash
-turath-catalog validate turath-catalog-0.1.0
+turath-catalog validate turath-catalog-0.2.0
 ```
 
 يفحص الأمر أنواع الحقول، وتفرّد المعرّفات، وأن لكل طبعة كتابًا، واتساق السنة الهجرية مع الميلادية، وأن لا

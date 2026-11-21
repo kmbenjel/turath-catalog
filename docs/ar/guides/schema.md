@@ -12,9 +12,9 @@ Schema لكل جدول في مجلد `schema/`.
 
 | الجدول | المعرّف | أهم الحقول |
 |---|---|---|
-| `works` الكتب | `work_id` | العنوان، المؤلف، القسم بالعربية والإنجليزية، `openiti_uri`، `wikidata_qid`، أرقام الشاملة، عدد الطبعات |
-| `editions` الطبعات | `edition_id` | الكتاب، نوع الطبعة، المحققون، الناشر، المكان، السنة الهجرية والميلادية، رقم الطبعة، المجلدات، الصفحات، مصادر الحقول، درجة الثقة |
-| `authors` المؤلفون | `author_id` | الاسم المشهور، الاسم الكامل، سنة الوفاة الهجرية ومقابلها الميلادي، القرن، مصدر السنة |
+| `works` الكتب | `work_id` | العنوان كما ورد، والعنوان مجرّدًا (`title_clean_ar`)، والعناوين الأخرى (`alt_titles_ar`)، المؤلف، القسم بالعربية والإنجليزية، `openiti_uri`، `wikidata_qid`، أرقام الشاملة، عدد الطبعات |
+| `editions` الطبعات | `edition_id` | الكتاب، العنوان كما ورد ومجرّدًا وعناوينه الأخرى وملاحظته (`title_ar`، `title_clean_ar`، `alt_titles_ar`، `title_note_ar`)، نوع الطبعة، المحققون، الناشر، المكان، السنة الهجرية والميلادية، رقم الطبعة، المجلدات، الصفحات، مصادر الحقول، درجة الثقة |
+| `authors` المؤلفون | `author_id` | الاسم المشهور، الاسم الكامل، سنة الوفاة الهجرية ومقابلها الميلادي، القرن، مصدر السنة ودرجة الثقة فيها، والصف الجامع لصيغ اسم المؤلف الواحد (`canonical_author_id`) |
 | `editors` المحققون | `person_id` | الاسم بأتم صيغه، والصيغ الأقصر المدمجة فيه |
 | `edition_editors` الإسهامات | — | الطبعة، الشخص، الدور (تحقيق، شرح، جمع، ضبط وتصحيح، تقديم، ترجمة، إشراف)، الترتيب |
 | `manuscripts` المخطوطات | `manuscript_id` | الخزانة، رقم الحفظ، درجة الثقة، طبعة مطبوعة للكتاب نفسه |
@@ -34,11 +34,29 @@ Schema لكل جدول في مجلد `schema/`.
 - الحقول المتعددة القيم مفصولة بفاصلة منقوطة `;`.
 - حقل `ext_ids` أزواج `نظام:معرّف`، مثل `shamela:6345;waqfeya:66a88e01…`.
 - حقل `field_sources` كائن JSON يربط كل حقل بمصدره.
+- الإصدار الجديد يزيد أعمدة في آخر الجدول ولا يغيّر عمودًا قائمًا ولا طريقة حساب المعرّفات؛ فما كُتب
+  لقراءة الإصدار 0.1.0 يقرأ 0.2.0 كما هو.
+
+## العنوان والمؤلف: كما وردا، وموحَّدَين
+
+- `title_ar` العنوان كما كتبته المكتبة، وقد يحمل عنوانًا آخر بعد «=» أو ملاحظة بين قوسين أو علامة طبعة.
+  و`title_clean_ar` العنوان وحده، وهو ما يُعرض ويُطابَق به.
+- `author_id` صيغة اسم، و`canonical_author_id` الشخص: اجمع به لتعدّ المؤلفين لا صيغ أسمائهم.
+
+```python
+import pandas as pd
+authors = pd.read_parquet("turath-catalog-0.2.0/parquet/authors.parquet")
+works = pd.read_parquet("turath-catalog-0.2.0/parquet/works.parquet")
+person = authors.set_index("author_id").canonical_author_id
+print(works.assign(person=works.author_id.map(person)).groupby("person").size().sort_values().tail(5))
+```
+
+التفصيل والقواعد في [المصادر والثقة](sources.md).
 
 ## مثال
 
 ```python
 import pandas as pd
-eds = pd.read_parquet("turath-catalog-0.1.0/parquet/editions.parquet")
+eds = pd.read_parquet("turath-catalog-0.2.0/parquet/editions.parquet")
 print(eds[eds.confidence == "high"].groupby("publisher_ar").size().sort_values().tail(10))
 ```

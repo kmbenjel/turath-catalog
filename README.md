@@ -14,9 +14,9 @@ and a confidence for every row.**
 
 | | |
 |---|---|
-| **5,139** works | **5,626** editions, **15,079** scan files with exact sizes |
-| **2,643** authors, **1,239** with a sourced death year (AH, with the CE range) | **2,265** editors and other contributors, **4,012** credits |
-| **31** manuscript copies, 25 with their holding library | links: **1,685** OpenITI URIs, **842** Wikidata authors, **2,313** Shamela books |
+| **5,134** works | **5,626** editions, **15,079** scan files with exact sizes |
+| **2,451** authors under 2,643 name forms, **1,239** forms with a sourced death year (AH, with the CE range) | **2,265** editors and other contributors, **3,999** credits |
+| **31** manuscript copies, 25 with their holding library | links: **1,683** OpenITI URIs, **842** Wikidata authors, **2,313** Shamela books |
 
 Every edition was checked while building a 16,700-volume library of Arabic scans; 2,230 of them were
 read from the title page by eye. The dataset is **metadata only**: no scans, no text.
@@ -39,10 +39,10 @@ editions = load_dataset("kmbenjel/turath-catalog", "editions", split="train")
 
 ```python
 import pandas as pd
-works = pd.read_parquet("turath-catalog-0.1.0/parquet/works.parquet")
-eds = pd.read_parquet("turath-catalog-0.1.0/parquet/editions.parquet")
-tabari = works.loc[works.title_ar == "جامع البيان عن تأويل آي القرآن", "work_id"]
-print(eds[eds.work_id.isin(tabari)][["editors_ar", "publisher_ar", "year_ah", "volumes"]])
+works = pd.read_parquet("turath-catalog-0.2.0/parquet/works.parquet")
+eds = pd.read_parquet("turath-catalog-0.2.0/parquet/editions.parquet")
+tabari = works.loc[works.title_clean_ar == "جامع البيان عن تأويل آي القرآن", "work_id"]
+print(eds[eds.work_id.isin(tabari)][["title_clean_ar", "alt_titles_ar", "editors_ar", "publisher_ar", "year_ah", "volumes"]])
 ```
 
 ## Why turath-catalog? How it compares
@@ -52,10 +52,10 @@ Open catalogs of Arabic heritage describe **texts** (OpenITI), **people and work
 librarians who must tell two printings apart, need the edition itself as a row. Cells checked on
 2026-11-13 against each source's current data or terms; "–" = not checked.
 
-| | **turath-catalog** 0.1.0 | OpenITI / KITAB metadata 2025.1.9 | Wikidata | Shamela catalogue | Arabic Collections Online | WorldCat |
+| | **turath-catalog** 0.2.0 | OpenITI / KITAB metadata 2025.1.9 | Wikidata | Shamela catalogue | Arabic Collections Online | WorldCat |
 |---|---|---|---|---|---|---|
 | Printed edition as a row (editor, publisher, place, year, volumes) | ✓ 5,626 | ✗ free-text `ed_info` only | partial: 1,054 items with a Shamela edition id | partial: one edition per book | – | ✓ |
-| Several editions of one work, grouped | ✓ 367 works | ✗ versions are digital texts | partial (P629) | ✗ | – | – |
+| Several editions of one work, grouped | ✓ 371 works | ✗ versions are digital texts | partial (P629) | ✗ | – | – |
 | Death year in Hijri, with its source | ✓ AH + CE range + source + confidence | ✓ AH (in the URI) | partial: CE (P570) | ✓ | – | – |
 | Source of each value, confidence of each row | ✓ | ✗ | partial (statement references) | ✗ | – | – |
 | Manuscript holding library | ✓ 25 of 31 copies | ✗ | – | ✗ | – | – |
@@ -67,10 +67,10 @@ What the numbers show (`bench/compare.sh`, results in [`bench/results.json`](ben
 
 1. **Editions, not just works.** 63% of editions name the editor, 79% the publisher, 75% the year,
    61% the volume count. OpenITI 2025.1.9 has no column for any of these: 10,552 of its 13,368 Arabic
-   versions carry a free-text edition note. For 609 of our 1,550 editor-credited editions of works that
+   versions carry a free-text edition note. For 608 of our 1,552 editor-credited editions of works that
    OpenITI holds, the editor's name appears nowhere in OpenITI's notes.
-2. **It adds to the open record.** Of 2,730 works by authors who died by 1300 AH, 1,100 have no OpenITI
-   book we could match; 2,826 of 5,139 works have no Shamela book; 5,517 of 5,626 editions have no
+2. **It adds to the open record.** Of 2,725 works by authors who died by 1300 AH, 1,097 have no OpenITI
+   book we could match; 2,821 of 5,134 works have no Shamela book; 5,517 of 5,626 editions have no
    Wikidata item. (Lower bounds: a work we could not match may exist under another title.)
 3. **Every value says where it came from.** `field_sources` names the source of each value (title page,
    imprint page, a catalog record linked by exact file size, the same-edition Shamela card, the file
@@ -81,6 +81,11 @@ What the numbers show (`bench/compare.sh`, results in [`bench/results.json`](ben
 5. **Checked and reproducible.** `turath-catalog validate` checks types, unique ids, orphans, counts,
    Hijri↔Gregorian consistency and leaks (paths, e-mails, URLs, credentials); two builds from the same
    inputs give byte-identical files (`SHA256SUMS`).
+6. **Audited, with the audit in the repository.** `bench/quality.py` counts what a user would trip on
+   ([`bench/quality.json`](bench/quality.json)): 0 people with two death years, 0 editions dated more than
+   80 years before their author's death, 0 OpenITI links whose year disagrees; 192 name forms folded onto
+   another row of the same person by catalog identifier, never by name alone; and against 0.1.0, every
+   edition, author, manuscript and file id kept.
 
 **When to use something else.** For full texts and text reuse, use OpenITI and the KITAB tools. To
 search a book's text, use Shamela. For world library holdings of a printed book, WorldCat. To read
@@ -102,11 +107,11 @@ erDiagram
 
 | table | rows | one row per |
 |---|---:|---|
-| `works` | 5,139 | text by an author, with OpenITI URI, Wikidata QID, Shamela ids |
+| `works` | 5,134 | text by an author, with its other titles, OpenITI URI, Wikidata QID, Shamela ids |
 | `editions` | 5,626 | printing, lithograph, thesis, offprint or manuscript copy of a work |
-| `authors` | 2,643 | person; one name with two death years = two people |
-| `editors` | 2,265 | person credited on an edition (shorter name forms merged, kept as variants) |
-| `edition_editors` | 4,012 | credit: edition × person × role (editor, commentator, compiler, corrector, introducer, translator, supervisor) |
+| `authors` | 2,643 | name form of an author; one name with two death years = two people, and the forms of one person share a `canonical_author_id` (2,451 people) |
+| `editors` | 2,265 | person or body credited on an edition (shorter name forms merged, kept as variants) |
+| `edition_editors` | 3,999 | credit: edition × person × role (editor, commentator, compiler, corrector, introducer, translator, supervisor) |
 | `manuscripts` | 31 | manuscript copy with holding library, shelfmark and a printed edition of the same work |
 | `edition_files` | 15,079 | scan file: volume label and exact byte size (no file names) |
 | `categories` | 40 | subject category of al-Maktaba al-Shamila, with an English name |
@@ -124,6 +129,24 @@ are in [`schema/`](schema). One edition, as the tables give it:
 | `volumes` · `pages` | 1 · 96 | catalog record (size-linked) |
 | `openiti_uri` · `ext_ids` | `0676Nawawi.AdabFatwa` (high) · `shamela:6345`, `waqfeya:66a88e01…` | |
 | `confidence` | high (title page read by eye) | |
+
+### Titles: as given, and clean
+
+Catalogs and file labels write more than the title in the title cell. `title_ar` keeps the cell verbatim;
+`title_clean_ar` is the title alone, and every other part has its own column. An edition mark is checked
+against the row before it goes anywhere, so one source never silently overrules another:
+
+| `title_ar` (as given) | `title_clean_ar` | where the rest went |
+|---|---|---|
+| الجامع لأحكام القرآن = تفسير القرطبي | الجامع لأحكام القرآن | `alt_titles_ar`: تفسير القرطبي |
+| اللباب في علوم الكتاب (تفسير ابن عادل) | اللباب في علوم الكتاب | `alt_titles_ar`: تفسير ابن عادل |
+| تفسير يحيى بن سلام (من النحل إلى الصافات) | تفسير يحيى بن سلام | `title_note_ar`: من النحل إلى الصافات |
+| الحماسة البصرية (ط. الخانجي) | الحماسة البصرية | `publisher_ar` already says مكتبة الخانجي: the mark adds nothing |
+| النفح الشذي شرح جامع الترمذي ط الصميعي | النفح الشذي شرح جامع الترمذي | the row named no publisher: `publisher_ar` = الصميعي, source `file_label` |
+| صحيح سنن أبي داود ط غراس | صحيح سنن أبي داود | the row says مكتبة المعارف: kept as the remark «ط غراس» in `title_note_ar` |
+
+103 of the 5,626 edition titles carry such a part: 59 another title, 19 a remark. Ids hash the title as
+given, so none of this moves an id. The same split is a function: `turath_catalog.titles.split_title`.
 
 | | |
 |---|---|
@@ -143,9 +166,10 @@ flowchart LR
 ```
 
 ```bash
-make release WORKSPACE=~/library   # inputs -> releases/turath-catalog-0.1.0 (validated, checksummed)
+make release WORKSPACE=~/library   # inputs -> releases/turath-catalog-0.2.0 (validated, checksummed)
 make charts                        # docs/media/*.png from the release
 make bench                         # bench/results.json: coverage against OpenITI, Wikidata, Shamela
+make quality PREVIOUS=releases/turath-catalog-0.1.0   # bench/quality.json: duplicates, death years, ids kept
 ```
 
 Ids are stable hashes, not row numbers: `work_id = "w_" + sha1(title_key|author_key)[:10]`, the same
@@ -165,8 +189,9 @@ turath-catalog validate my-release
 
 One row per edition; only `title` is required. Columns: `title, author, author_death_ah, category,
 editors` (`;`-separated, optionally `role:name`), `publisher, place, year_ah, year_ce, edition_number,
-volumes, pages, kind, work, sizes, verified`. The build links your works to OpenITI and your authors to
-Wikidata by the same rules.
+volumes, pages, kind, work, sizes, verified`. A title cell written «A = B», with a bracketed remark or with
+an edition mark is split the same way (`title_clean_ar`, `alt_titles_ar`, `title_note_ar`). The build links
+your works to OpenITI and your authors to Wikidata by the same rules.
 
 ## Provenance and what is left out
 
@@ -181,7 +206,7 @@ names, titles, years, counts. Left out by design:
 - 151 editions whose sources disagree and 116 whose title or author is under review; 125 titles not in
   Arabic script;
 - values that fail a check: 166 death years where two people may share a name, 48 outside the century
-  the catalog gives, 32 pairs of Hijri and Gregorian years that disagree, 80 "editor" values that are not
+  the catalog gives, 32 pairs of Hijri and Gregorian years that disagree, 85 "editor" values that are not
   a person's name, 3 publisher values from a file label that repeat the author's name.
 
 The counts are in each release's `build-report.json`; details in [docs/provenance.md](docs/provenance.md).
@@ -191,6 +216,10 @@ The counts are in each release's `build-report.json`; details in [docs/provenanc
 - **Edition as the unit, work as the join.** Scholars cite editions; the work row only groups them.
 - **No guessed values.** A death year needs a Shamela record of the same work or two agreeing witnesses;
   a link needs an identifier crosswalk or year + title + author agreement. Empty beats wrong.
+- **As given, and clean beside it.** A title or a name is never rewritten in place: the source's form
+  stays in its column and the normalised form gets its own (`title_clean_ar`, `canonical_author_id`).
+- **Releases only add columns.** A minor version appends columns at the end of a table and keeps the id
+  recipes, so code written for 0.1.0 reads 0.2.0 unchanged.
 - **Hijri first.** Years are stored as printed (AH), with the Gregorian range the Hijri year overlaps
   (`death_ce_from`, `death_ce_to`) rather than a rounded single year.
 - **Stdlib core.** Building and validating need only Python; Parquet, pandas and charts are extras.
