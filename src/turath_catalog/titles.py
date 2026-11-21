@@ -28,7 +28,10 @@ _TAIL_MARK = re.compile(rf"^(.*)(?:\s*[-،.]\s*|\s+)(ط|ت){_SEP}(\S.*)$")  # th
 _JOINERS = "ويليه|ويليها|ومعه|ومعها|وبهامشه|وبهامشها|وبذيله|وبذيلها"
 _JOINED = re.compile(rf"\s*،?\s+(?:{_JOINERS})(?:\s|$)")
 _DANGLING = re.compile(rf"\s*،?\s*(?:{_JOINERS})-?$")
-_ORDINAL = re.compile(r"^(?:ال)?(?:أولى|اولى|ثانية|ثالثة|رابعة|خامسة|سادسة|سابعة|ثامنة|تاسعة|عاشرة|جديدة|مصورة|ملونة|منقحة|مزيدة)(?:\s|$)")
+_ORDINAL = re.compile(
+    r"^(?:ال)?(?:أولى|اولى|ثانية|ثالثة|رابعة|خامسة|سادسة|سابعة|ثامنة|تاسعة|عاشرة|جديدة|مصورة|ملونة|منقحة|مزيدة"
+    r"|قديمة|حديثة|حجرية|كاملة|محققة|مصححة|أخرى|اخرى)(?:\s|$)"
+)  # «ط. الثانية», «ط. حجرية»: the kind of edition, not its publisher
 # A bracket that opens with one of these (and has a second word) names the work another way: «(تفسير ابن عادل)»
 _GENRE = frozenset(
     norm(w)
@@ -56,6 +59,8 @@ _GENRE = frozenset(
         "تاريخ",
     ]
 )
+# «(كتاب الإيمان)», «(مقدمة المحقق)»: a bracket that names a part of the book, not another title of it
+_PART = re.compile(r"^(?:كتاب ال\S+|مقدمه (?:المحقق|التحقيق|الناشر|المولف|المترجم))$")
 _GENERIC = frozenset(norm(w) for w in ["دار", "مكتبة", "المكتبة", "مطبعة", "المطبعة", "مؤسسة", "طبعة", "نشر", "للنشر"])
 _MAX_MARK_WORDS = 6
 
@@ -95,6 +100,8 @@ def split_title(title: str | None, author: str = "") -> TitleParts:
     pubs: list[str] = []
     eds: list[str] = []
 
+    head = norm(_BRACKET.sub(" ", raw)).split()[:1]  # the title's first word: «مسند أحمد (مسند المكثرين)»
+
     def bracket(m: re.Match[str]) -> str:
         x = _tidy(m.group(1) if m.group(1) is not None else m.group(2))
         if not x:
@@ -107,7 +114,13 @@ def split_title(title: str | None, author: str = "") -> TitleParts:
             eds.append(_tidy(em.group(1)))
         elif x.startswith("أو ") and len(words) > 1:
             alts.append(_tidy(x[3:]))
-        elif len(words) > 1 and words[0] in _GENRE and not re.search(r"[0-9٠-٩]", x):
+        elif (
+            len(words) > 1
+            and words[0] in _GENRE
+            and words[:1] != head
+            and not _PART.match(" ".join(words))
+            and not re.search(r"[0-9٠-٩]", x)
+        ):
             alts.append(x)
         else:
             notes.append(x)

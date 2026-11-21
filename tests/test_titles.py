@@ -42,6 +42,11 @@ def test_what_comes_with_the_book_stays_with_the_title_not_with_its_second_name(
         ("الأم (ط 2)", "الأم", "ط 2"),  # an edition number is not a publisher
         ("الأم (ط. الثانية)", "الأم", "ط. الثانية"),
         ("الرسالة (ت 204 هـ)", "الرسالة", "ت 204 هـ"),  # a death date is not an editor
+        ("الحماسة البصرية (ط. قديمة)", "الحماسة البصرية", "ط. قديمة"),  # the kind of edition is not a publisher
+        ("تفسير الطبري (ط حجرية)", "تفسير الطبري", "ط حجرية"),
+        ("صحيح البخاري (كتاب الإيمان)", "صحيح البخاري", "كتاب الإيمان"),  # a part of the book, not another title
+        ("شرح صحيح مسلم (مقدمة المحقق)", "شرح صحيح مسلم", "مقدمة المحقق"),
+        ("مسند أحمد (مسند المكثرين من الصحابة)", "مسند أحمد", "مسند المكثرين من الصحابة"),  # same genre word: a part
     ],
 )
 def test_remarks(title, clean, note):
